@@ -17,7 +17,7 @@ func _process(delta):
 	var xTile = round(mousePos.x / tileSize.x)
 	var yTile = round(mousePos.y / tileSize.y)
 	if(int(abs(yTile))%2 == 1):
-		xTile += 0.5
+		xTile += 0.50
 	var pos = Vector2(xTile, yTile) * tileSize + viewportSize/2
 	#print(xTile, " ", yTile)
 	set_position(pos)
