@@ -10,7 +10,7 @@ var tilesWithBuilding : Array
 var tilesWithPlants : Array
 
 
-export var tileSpacing = Vector2(360.0,180.0)
+export var tileSpacing = Vector2(180.0,90.0)
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -37,7 +37,7 @@ func initTiles():
 					print("error, already exists")
 					print(arrayPosition.x,", ",arrayPosition.y)
 					break
-		print("no error")
+				
 		allTiles[(arrayPosition.x+arrayPosition.y)*0.5][(-arrayPosition.x+arrayPosition.y)*0.5] = tile
 		#on tourne de 45 degrees
 	print(allTiles)
