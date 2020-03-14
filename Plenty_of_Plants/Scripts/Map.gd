@@ -49,7 +49,7 @@ func _ready():
 	pass # Replace with function body.
 
 func neighbors(centerPos):
-	otherPos = 
+	var otherPos:Array = []
 	pass
 
 func can_place_on(this):
