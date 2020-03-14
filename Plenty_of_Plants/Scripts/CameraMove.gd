@@ -1,25 +1,41 @@
 extends Node2D
 
-export (float) var  sensibility = 1.5
+export (float) var minSensibilityRadius = 30
+export (float) var  sensibilityRadius = 300
+export (float) var maxSpeed = 30
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var lastPos
-
+var lastMousePos
+var rightClicking = false
+var sensibility
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	lastPos = position
+	sensibility = 1/sensibilityRadius
+	lastMousePos = Vector2(0,0)
 	pass # Replace with function body.
+
+
+
 func moveCamera(delta):
-	position = sensibility*(get_global_mouse_position() - lastPos)
+	var vectorToMove = get_local_mouse_position() - lastMousePos
+	var length = vectorToMove.length()
+	if length < minSensibilityRadius:
+		return
+	vectorToMove *= sensibility
+	if vectorToMove.length() > 1:
+		vectorToMove = vectorToMove/vectorToMove.length()
+	position += maxSpeed * vectorToMove
 
 func _input(event):
-	if event is InputEventKey:
-		print(event.get_button_index())
-
+	if event is InputEventMouse:
+		if event.is_pressed() && event.button_index == 2:
+			rightClicking = !rightClicking
+			lastMousePos = get_local_mouse_position()
 
 func _process(delta):
-	moveCamera(delta)
+	if (rightClicking):
+		moveCamera(delta)
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
