@@ -1,17 +1,14 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Tile.gd" type="Script" id=1]
-
-[sub_resource type="StreamTexture" id=1]
-flags = 4
-load_path = "res://.import/sol neutre.png-01f9da2891969f2c1825cba9becfe173.stex"
+[ext_resource path="res://Sprites/TileSprite/Building/Sol neutre.png" type="Texture" id=2]
 
 [node name="Tile" type="Area2D"]
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = SubResource( 1 )
+texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
-polygon = PoolVector2Array( 1.86606, -80.4036, -171.526, 3.38034, 1.86606, 85.3721, 176.603, 2.9323 )
+polygon = PoolVector2Array( 0.31604, -88.1919, -178.047, 1.13266, 0.0955963, 89.2006, 179.119, 0.581482 )
