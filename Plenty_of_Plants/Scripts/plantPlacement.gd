@@ -1,15 +1,23 @@
-extends Node
+extends Area2D
 
-export (int) var xTilesNumber = 21
-export (int) var yTilesNumber = 21
+export (int) var xTilesNumber
+export (int) var yTilesNumber
+#export (NodePath) var plantPath
 var tileSize = Vector2()
+var viewportSize = Vector2()
+var plant
 
 func _ready():
 	tileSize = Vector2(get_viewport().size.x / xTilesNumber, get_viewport().size.y / yTilesNumber)
+	viewportSize = get_viewport().size
+	#plant = get_node(plantPath)
 
 func _process(delta):
-	var mousePos = get_viewport().get_mouse_position()
-	var xTile = int(round(mousePos.x / tileSize.x))
-	var yTile = int(round(mousePos.y / tileSize.y))
+	var mousePos = get_viewport().get_mouse_position() - viewportSize/2
+	var xTile = round(mousePos.x / tileSize.x)
+	var yTile = round(mousePos.y / tileSize.y)
+	if(int(abs(yTile))%2 == 1):
+		xTile += 0.5
+	var pos = Vector2(xTile, yTile) * tileSize + viewportSize/2
 	#print(xTile, " ", yTile)
-	print(get_viewport().size)
+	set_position(pos)
