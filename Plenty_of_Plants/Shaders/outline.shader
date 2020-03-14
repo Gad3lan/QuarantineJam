@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-varying float width: hint_range(0.0, 30.0);
+uniform float width: hint_range(0.0, 30.0);
 uniform vec4 outline_color: hint_color;
 
 
