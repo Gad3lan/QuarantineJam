@@ -1,10 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://TileSets/plants.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/Tile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Map.gd" type="Script" id=2]
 
-[node name="TileMap" type="TileMap"]
-mode = 1
-tile_set = ExtResource( 1 )
-cell_size = Vector2( 2560, 1280 )
-format = 1
-tile_data = PoolIntArray( -65536, 0, 0 )
+[node name="Map" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Tile" parent="." instance=ExtResource( 1 )]
+position = Vector2( -282.291, -72.9169 )
