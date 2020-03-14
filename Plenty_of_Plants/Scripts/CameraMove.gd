@@ -68,7 +68,6 @@ func _input(event):
 func _process(delta):
 	if (rightClick && rightClicking()):
 		moveCamera(delta)
-	print(zoomTarget, zoomPos)
 	if (zoomTarget != zoomPos):
 		zoom(zoomTarget - zoomPos)
 

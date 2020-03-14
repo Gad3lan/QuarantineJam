@@ -33,6 +33,5 @@ __meta__ = {
 [node name="Plant" type="Sprite" parent="."]
 
 [node name="Building" type="Sprite" parent="."]
-[connection signal="input_event" from="." to="." method="_on_Tile_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_Tile_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_Tile_mouse_exited"]
