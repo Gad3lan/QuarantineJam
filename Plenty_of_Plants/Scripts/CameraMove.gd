@@ -14,8 +14,7 @@ func moveCamera(delta):
 	position = sensibility*(get_global_mouse_position() - lastPos)
 
 func _input(event):
-	print(event.type)
-	if event.type == InputEventMouseButton:
+	if event is InputEventKey:
 		print(event.get_button_index())
 
 
