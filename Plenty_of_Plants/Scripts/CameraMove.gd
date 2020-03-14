@@ -33,10 +33,10 @@ func moveCamera(delta):
 # Controle le zoom de camera
 func zoom(direcrion):
 	if direcrion > 0:
-		camera.zoom *= 1.0 + zoomStep
+		camera.zoom *= (1.0 + zoomStep)
 		zoomPos += 1
 	else:
-		camera.zoom *= 1.0 - zoomStep
+		camera.zoom *= (1.0 - zoomStep)
 		zoomPos -= 1
 
 func _input(event):
