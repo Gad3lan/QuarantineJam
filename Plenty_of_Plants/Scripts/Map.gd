@@ -11,6 +11,10 @@ var tilesWithPlants : Array
 
 
 export var tileSpacing = Vector2(180.0,90.0)
+
+onready var pollen = preload("res://Scenes/BioMasse.tscn")
+
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -44,14 +48,17 @@ func tests():
 			assert(tile == allTiles[indexArray.x][indexArray.y])
 			var neighbors = neighborsIndexes(indexArray)
 			for neighIndexes in neighbors:
-				assert(neighIndexes.x >= 0)
-				assert(neighIndexes.y >= 0)
-				assert(neighIndexes.x < tileCountA)
-				assert(neighIndexes.y < tileCountB)
+				assert(checkInBounds(neighIndexes))
+
+func checkInBounds(vectorIndex):
+	return  vectorIndex.x >= 0 && vectorIndex.y >= 0 && vectorIndex.x < tileCountA && vectorIndex.y < tileCountB
 
 func _ready():
 	initTiles()
 	tests()
+	spawnPollen(Vector2(0,0))
+	spawnPollen(Vector2(2,2))
+	spawnPollen(Vector2(tileCountA-1,tileCountB-1))
 	pass # Replace with function body.
 
 func neighborsIndexes(centerPos):
@@ -74,8 +81,16 @@ func neighborsIndexes(centerPos):
 		otherPos.push_back(Vector2(centerPos.x, centerPos.y - 1))
 	return otherPos
 
-func can_place_on(this):
+func can_place_on(thisTile):
 	pass
+
+func spawnPollen(tileIndex):
+	if (not checkInBounds(tileIndex)):
+		print("Warning, tile not in bound : ",tileIndex," bounds =",tileCountA,tileCountB)
+		return
+	var pollenInstance = pollen.instance()
+	pollenInstance.position = allTiles[tileIndex.x][tileIndex.y].position
+	call_deferred("add_child",pollenInstance)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
