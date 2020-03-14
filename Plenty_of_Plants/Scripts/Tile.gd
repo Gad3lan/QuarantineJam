@@ -28,6 +28,21 @@ func getBulding():
 		BuildingType.ROAD:
 			return "ROAD"
 
+func setPlant(type : String):
+	match type:
+		"NONE":
+			PType = PlantType.NONE
+		"CHAMPIGNON":
+			PType = PlantType.CHAMPIGNON
+		"LIERE":
+			PType = PlantType.LIERE
+		"EUCALYPTUS":
+			PType = PlantType.EUCALYPTUS
+		"SECOIA":
+			PType = PlantType.SECOIA
+		"RONCE":
+			PType = PlantType.RONCE
+
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
