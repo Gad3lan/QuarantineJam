@@ -15,8 +15,6 @@ export var tileSpacing = Vector2(180.0,90.0)
 # var a = 2
 # var b = "text"
 
-
-
 func initTiles():
 	var rowB : Array = []
 	var idx = 0
@@ -31,19 +29,8 @@ func initTiles():
 		arrayPosition.x = floor((tile.position.x - firstTilePos.x)/(tileSpacing.x))
 		arrayPosition.y = floor((tile.position.y - firstTilePos.y)/(tileSpacing.y))
 		#on passe dans un repère basé sur la taille des losanges
-		for rows in allTiles:
-			for t in rows:
-				if t == tile:
-					print("error, already exists")
-					print(arrayPosition.x,", ",arrayPosition.y)
-					break
-				
 		allTiles[(arrayPosition.x+arrayPosition.y)*0.5][(-arrayPosition.x+arrayPosition.y)*0.5] = tile
 		#on tourne de 45 degrees
-	print(allTiles)
-	assert(allTiles.size() == tileCountA)
-	assert(allTiles[-1].size() == tileCountB)
-	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	initTiles()
