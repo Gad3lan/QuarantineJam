@@ -1,43 +1,43 @@
 extends Area2D
 
-enum PlantType {NONE, CHAMPIGNON, LIERE}
+enum PlantType {NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE}
+enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD}
 
-var PType = PlantType.CHAMPIGNON
+var PType = PlantType.NONE
+var BType = BuildingType.NONE
 
 export var startTile = false
-
-var hasPlant = false
-var hasBuilding : bool = false
-
 
 onready var plant : Sprite = get_node("Plant")
 onready var building : Sprite = get_node("Building")
 
-var canPlacePlant = false
-
-func toggle_plantability(toggle):
-	canPlacePlant = toggle
-
-#func plant(toPlant):
-#	hasPlant = true
-#	plant.texture = toPlant
+#return True si il y a une plante
+func hasPlant():
+	return PType != PlantType.NONE
+	
+func getBulding():
+	match BType:
+		BuildingType.NONE:
+			return "NONE"
+		BuildingType.PARCKING:
+			return "PARCKING"
+		BuildingType.USINE:
+			return "USINE"
+		BuildingType.HOTEL:
+			return "HOTEL"
+		BuildingType.ROAD:
+			return "ROAD"
 
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
 			if event.button_index == BUTTON_LEFT:
 				print("c")
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("Tiles")
 	$BackGround.material.set_shader_param("width", 0.0)
-
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
