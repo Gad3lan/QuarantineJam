@@ -1,5 +1,9 @@
 extends Area2D
 
+enum PlantType {NONE, CHAMPIGNON, LIERE}
+
+var PType = PlantType.CHAMPIGNON
+
 export var startTile = false
 
 var hasPlant = false
@@ -14,9 +18,9 @@ var canPlacePlant = false
 func toggle_plantability(toggle):
 	canPlacePlant = toggle
 
-func plant(toPlant):
-	hasPlant = true
-	plant.texture = toPlant
+#func plant(toPlant):
+#	hasPlant = true
+#	plant.texture = toPlant
 
 func _input(event):
 	if event is InputEventMouseButton:
