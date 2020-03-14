@@ -2,7 +2,7 @@ extends Node2D
 
 export (float) var minSensibilityRadius = 30
 export (float) var  sensibilityRadius = 300
-export (float) var maxSpeed = 30
+export (float) var maxSpeed = 1000
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -25,7 +25,7 @@ func moveCamera(delta):
 	vectorToMove *= sensibility
 	if vectorToMove.length() > 1:
 		vectorToMove = vectorToMove/vectorToMove.length()
-	position += maxSpeed * vectorToMove
+	position += maxSpeed * vectorToMove*delta
 
 func _input(event):
 	if event is InputEventMouse:

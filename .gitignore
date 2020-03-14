@@ -1,5 +1,5 @@
 /Plenty_of_Plants/.import/
 logs/
-Plenty_of_Plants/*.import
+*.import
 Plenty_of_Plants/export/*
 !Plenty_of_Plants/export/.gitkeep 
