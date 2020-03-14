@@ -36,7 +36,8 @@ func initTiles():
 				if t == tile:
 					print("error, already exists")
 					print(arrayPosition.x,", ",arrayPosition.y)
-		
+					break
+		print("no error")
 		allTiles[(arrayPosition.x+arrayPosition.y)*0.5][(-arrayPosition.x+arrayPosition.y)*0.5] = tile
 		#on tourne de 45 degrees
 	print(allTiles)
