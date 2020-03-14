@@ -15,6 +15,12 @@ export var tileSpacing = Vector2(180.0,90.0)
 # var a = 2
 # var b = "text"
 
+func tilePositionToIndexes(pos):
+	var arrayPosition = Vector2(0,0)
+	arrayPosition.x = floor((pos.x - firstTilePos.x)/(tileSpacing.x))
+	arrayPosition.y = floor((pos.y - firstTilePos.y)/(tileSpacing.y))
+	return Vector2((arrayPosition.x+arrayPosition.y)*0.5, (-arrayPosition.x+arrayPosition.y)*0.5)
+
 func initTiles():
 	var rowB : Array = []
 	var idx = 0
@@ -32,10 +38,23 @@ func initTiles():
 		allTiles[(arrayPosition.x+arrayPosition.y)*0.5][(-arrayPosition.x+arrayPosition.y)*0.5] = tile
 		#on tourne de 45 degrees
 # Called when the node enters the scene tree for the first time.
+func tests():
+	for row in allTiles:
+		for tile in row:
+			var indexArray = tilePositionToIndexes(tile.position)
+			assert(tile == allTiles[indexArray.y][indexArray.x])
+
 func _ready():
 	initTiles()
+	tests()
 	pass # Replace with function body.
 
+func neighbors(center):
+	
+	pass
+
+func can_place_on(this):
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
