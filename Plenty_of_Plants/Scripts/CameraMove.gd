@@ -29,13 +29,14 @@ func rightClicking():
 # Move the camera
 func moveCamera(delta):
 	var vectorToMove = get_local_mouse_position() - lastMousePos
+	lastMousePos = get_local_mouse_position()
 	var length = vectorToMove.length()
 	if length < minSensibilityRadius:
 		return
-	vectorToMove *= sensibility
+	#vectorToMove *= sensibility
 	if vectorToMove.length() > 1.0:
 		vectorToMove = vectorToMove/vectorToMove.length()
-	position += maxSpeed * -vectorToMove * delta
+	position += maxSpeed * -vectorToMove * delta * camera.zoom
 	
 # Controle le zoom de camera
 func zoom(direcrion):
