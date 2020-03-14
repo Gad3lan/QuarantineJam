@@ -20,16 +20,6 @@ texture = ExtResource( 2 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 0.00820923, -88.3135, -178.866, 0.901711, 0.895317, 88.7231, 178.597, 0.901779 )
 
-[node name="Highlight" type="ColorRect" parent="."]
-margin_left = -20.64
-margin_top = -19.3084
-margin_right = 19.36
-margin_bottom = 20.6916
-color = Color( 0, 0.811765, 0.12549, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Plant" type="Sprite" parent="."]
 
 [node name="Building" type="Sprite" parent="."]

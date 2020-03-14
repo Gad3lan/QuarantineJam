@@ -35,7 +35,7 @@ func moveCamera(delta):
 	vectorToMove *= sensibility
 	if vectorToMove.length() > 1.0:
 		vectorToMove = vectorToMove/vectorToMove.length()
-	position += maxSpeed * vectorToMove * delta
+	position += maxSpeed * -vectorToMove * delta
 	
 # Controle le zoom de camera
 func zoom(direcrion):
