@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/ecMEjgkcn.jpeg" type="Texture" id=1]
+[ext_resource path="res://Scripts/plantPlacement.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/vector-autumn-tree-12.png" type="Texture" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+scale = Vector2( 1.77007, 1.77007 )
+texture = ExtResource( 1 )
+
+[node name="Object" type="Node2D" parent="."]
+script = ExtResource( 2 )
+xTilesNumber = 21
+yTilesNumber = 21
+
+[node name="Sprite" type="Sprite" parent="Object"]
+position = Vector2( 154.346, 177.714 )
+scale = Vector2( 0.0836114, 0.0836114 )
+texture = ExtResource( 3 )
