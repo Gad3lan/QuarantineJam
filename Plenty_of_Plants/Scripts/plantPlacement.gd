@@ -1,7 +1,7 @@
 extends Node
 
-export (int) var xTilesNumber
-export (int) var yTilesNumber
+export (int) var xTilesNumber = 21
+export (int) var yTilesNumber = 21
 var tileSize = Vector2()
 
 func _ready():
