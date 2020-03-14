@@ -2,4 +2,4 @@
 logs/
 Plenty_of_Plants/*.import
 Plenty_of_Plants/export/*
-
+!Plenty_of_Plants/export/.gitkeep 
