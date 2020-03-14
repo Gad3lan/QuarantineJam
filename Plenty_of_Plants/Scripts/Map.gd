@@ -23,7 +23,6 @@ func tilePositionToIndexes(pos):
 
 func initTiles():
 	var rowB : Array = []
-	var idx = 0
 	for b in range(tileCountA):
 		rowB = []
 		for a in range(tileCountB):
@@ -42,7 +41,7 @@ func tests():
 	for row in allTiles:
 		for tile in row:
 			var indexArray = tilePositionToIndexes(tile.position)
-			assert(tile == allTiles[indexArray.y][indexArray.x])
+			assert(tile == allTiles[indexArray.x][indexArray.y])
 
 func _ready():
 	initTiles()
