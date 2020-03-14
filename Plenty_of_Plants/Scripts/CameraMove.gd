@@ -10,7 +10,7 @@ onready var camera = get_node("Camera2D")
 onready var ui = get_node("Ui")
 
 var lastMousePos
-var rightClicking = false
+var rightClick = false
 var sensibility
 var zoomTarget = zoomPos
 
@@ -19,6 +19,12 @@ func _ready():
 	sensibility = 1.0/sensibilityRadius
 	lastMousePos = Vector2(0.0,0.0)
 	pass # Replace with function body.
+
+func rightClicking():
+	if Input.is_mouse_button_pressed(2):
+		return true
+	rightClick = false
+	return false
 
 # Move the camera
 func moveCamera(delta):
@@ -46,7 +52,7 @@ func _input(event):
 	if event is InputEventMouse:
 		if event.is_pressed():
 			if event.button_index == 2:
-				rightClicking = !rightClicking
+				rightClick = true
 				lastMousePos = get_local_mouse_position()
 			if event.button_index == BUTTON_WHEEL_UP: # zoom in
 				zoomTarget += 10
@@ -54,7 +60,7 @@ func _input(event):
 				zoomTarget -= 10
 
 func _process(delta):
-	if (rightClicking):
+	if (rightClick && rightClicking()):
 		moveCamera(delta)
 	if (zoomTarget != zoomPos):
 		zoom(zoomTarget - zoomPos)

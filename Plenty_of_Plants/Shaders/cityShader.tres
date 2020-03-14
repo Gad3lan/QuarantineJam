@@ -3,13 +3,26 @@
 [ext_resource path="res://Shaders/city.shader" type="Shader" id=1]
 [ext_resource path="res://Sprites/cityGraph.PNG" type="Texture" id=2]
 
-[sub_resource type="OpenSimplexNoise" id=4]
+[sub_resource type="OpenSimplexNoise" id=1]
 
-[sub_resource type="NoiseTexture" id=3]
+[sub_resource type="NoiseTexture" id=2]
 seamless = true
-noise = SubResource( 4 )
+noise = SubResource( 1 )
 
+<<<<<<< HEAD:Plenty_of_Plants/Shaders/cityShader.tres
 [resource]
 shader = ExtResource( 1 )
 shader_param/city = ExtResource( 2 )
 shader_param/noise = SubResource( 3 )
+=======
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 1 )
+shader_param/city = ExtResource( 2 )
+shader_param/noise = SubResource( 2 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 3 )
+texture = ExtResource( 3 )
+>>>>>>> origin/master:Plenty_of_Plants/Scenes/testShaderCity.tscn
