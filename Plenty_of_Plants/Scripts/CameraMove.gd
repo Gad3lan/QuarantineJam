@@ -31,7 +31,6 @@ func moveCamera(delta):
 func _input(event):
 	if event is InputEventMouse:
 		if event.is_pressed() && event.button_index == 2:
-			print("rightClick")
 			rightClicking = !rightClicking
 			lastMousePos = get_local_mouse_position()
 
