@@ -3,7 +3,7 @@ extends Node2D
 export (float) var minSensibilityRadius = 30.0
 export (float) var  sensibilityRadius = 300.0
 export (float) var maxSpeed = 1000.0
-export (int) var zoomPos = 0
+export (int) var zoomPos = 0.0
 export (float) var zoomStep = 0.05
 
 onready var camera = get_node("Camera2D")
@@ -49,6 +49,12 @@ func zoom(direcrion):
 		zoomPos -= 1
 
 func _input(event):
+	if event is InputEventPanGesture:
+		#zoomTarget += int(2*event.delta.y)
+		if (event.delta.y > 0.01):
+			zoomTarget += 1
+		elif (event.delta.y < -0.01):
+			zoomTarget -= 1
 	if event is InputEventMouse:
 		if event.is_pressed():
 			if event.button_index == 2:
@@ -62,6 +68,7 @@ func _input(event):
 func _process(delta):
 	if (rightClick && rightClicking()):
 		moveCamera(delta)
+	print(zoomTarget, zoomPos)
 	if (zoomTarget != zoomPos):
 		zoom(zoomTarget - zoomPos)
 
