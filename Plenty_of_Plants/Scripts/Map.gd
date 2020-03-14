@@ -48,8 +48,8 @@ func _ready():
 	tests()
 	pass # Replace with function body.
 
-func neighbors(center):
-	
+func neighbors(centerPos):
+	otherPos = 
 	pass
 
 func can_place_on(this):
