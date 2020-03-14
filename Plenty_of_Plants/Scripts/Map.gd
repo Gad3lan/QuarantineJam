@@ -42,15 +42,37 @@ func tests():
 		for tile in row:
 			var indexArray = tilePositionToIndexes(tile.position)
 			assert(tile == allTiles[indexArray.x][indexArray.y])
+			var neighbors = neighborsIndexes(indexArray)
+			for neighIndexes in neighbors:
+				assert(neighIndexes.x >= 0)
+				assert(neighIndexes.y >= 0)
+				assert(neighIndexes.x < tileCountA)
+				assert(neighIndexes.y < tileCountB)
 
 func _ready():
 	initTiles()
 	tests()
 	pass # Replace with function body.
 
-func neighbors(centerPos):
+func neighborsIndexes(centerPos):
 	var otherPos:Array = []
-	pass
+	if centerPos.x >0:
+		if centerPos.y >0:
+			otherPos.push_back(Vector2(centerPos.x - 1, centerPos.y - 1))
+		otherPos.push_back(Vector2(centerPos.x-1,centerPos.y))
+		if centerPos.y < tileCountB - 1:
+			otherPos.push_back(Vector2(centerPos.x - 1, centerPos.y + 1))
+	if centerPos.x < tileCountA - 1:
+		if centerPos.y >0:
+			otherPos.push_back(Vector2(centerPos.x + 1, centerPos.y - 1))
+		otherPos.push_back(Vector2(centerPos.x+1,centerPos.y))
+		if centerPos.y < tileCountB - 1:
+			otherPos.push_back(Vector2(centerPos.x + 1, centerPos.y + 1))
+	if centerPos.y < tileCountB - 1:
+		otherPos.push_back(Vector2(centerPos.x, centerPos.y +1))
+	if centerPos.y > 0:
+		otherPos.push_back(Vector2(centerPos.x, centerPos.y - 1))
+	return otherPos
 
 func can_place_on(this):
 	pass

@@ -12,3 +12,4 @@ sensibilityRadius = 100.0
 current = true
 
 [node name="Ui" parent="." instance=ExtResource( 2 )]
+z_index = 2
