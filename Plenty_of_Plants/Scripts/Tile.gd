@@ -39,6 +39,8 @@ func _ready():
 
 func _on_Tile_mouse_entered():
 	$BackGround.material.set_shader_param("width", 4.0)
+	self.z_index = 1
 
 func _on_Tile_mouse_exited():
 	$BackGround.material.set_shader_param("width", 0.0)
+	self.z_index = 0
