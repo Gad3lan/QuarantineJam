@@ -18,10 +18,11 @@ func plant(toPlant):
 	hasPlant = true
 	plant.texture = toPlant
 
-func _on_Tile_input_event (viewport, event, shape_idx):
-	if event is InputEventMouseButton &&  event.button_index == BUTTON_LEFT and event.pressed :
-		print("c")
-	pass
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			if event.button_index == BUTTON_LEFT:
+				print("c")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
