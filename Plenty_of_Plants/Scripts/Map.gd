@@ -90,7 +90,9 @@ func spawnPollen(tileIndex):
 		return
 	var pollenInstance = pollen.instance()
 	pollenInstance.position = allTiles[tileIndex.x][tileIndex.y].position
+	print(pollenInstance.position)
 	call_deferred("add_child",pollenInstance)
+	print(pollenInstance.z_index)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

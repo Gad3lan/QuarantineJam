@@ -11,3 +11,6 @@
 position = Vector2( 558.079, 306.814 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
+timeToDelete = 10.0
+
+[node name="Timer" type="Timer" parent="Sprite"]

@@ -1,10 +1,10 @@
-extends Area2D
+extends Sprite
 
 
 
 # Declare member variables here. Examples:
 var add_Value = 0
-var timeToDelete = 3
+export (float) var timeToDelete = 3
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Timer.set_one_shot(true)
@@ -18,9 +18,9 @@ func _process(delta):
 	print($Timer.time_left/timeToDelete)
 	# juste un test en cartion pour rendre la piece transparente avant qu'elle disparaisse
 	var ratio = 0.5+$Timer.time_left/timeToDelete
-	$Sprite.modulate = Color(1,1,1,ratio)
+	self.modulate = Color(1,1,1,ratio)
 	if $Timer.time_left == 0 :
-		self.queue_free()
+		self.get_parent().queue_free()
 
 func _input(event):
 
@@ -30,6 +30,6 @@ func _input(event):
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	print($Timer.time_left)
 	if event is InputEventMouseButton &&  event.button_index == BUTTON_LEFT and event.pressed :
-		self.queue_free()
+		self.get_parent().queue_free()
 		 # Je supprime l'objet directement au lieu de juste le cacher comme en bas
 		#$Sprite.visible=false
