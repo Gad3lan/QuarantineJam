@@ -41,22 +41,20 @@ onready var building : Sprite = get_node("Building")
 
 #Fonction de l'outil
 func selectBuilding(buildingType):
-	#Necessaire pour le fonctionnement
-	if (Engine.is_editor_hint()):
-		#Assignation de BType ici car elle ne se fait plus à l'export
-		BType = buildingType
-		if buildingType == BuildingType.HOTEL:
-			#Chargement de la texture
-			$Building.texture = preload("res://Sprites/TileSprite/Building/Hôtel.png")
-			#offset = -[taille sprite y]/ 2 + 90
-			$Building.offset.y = -284
-		elif buildingType == BuildingType.PARCKING:
-			$Building.texture = preload("res://Sprites/TileSprite/Building/parcking.png")
-			$Building.offset.y = -102
-		else:
-			#Texture vide
-			$Building.texture = null
-			$Building.offset.y = 0
+	#Necessaire pour le fonctionnementt
+	BType = buildingType
+	if buildingType == BuildingType.HOTEL:
+		#Chargement de la texture
+		$Building.texture = preload("res://Sprites/TileSprite/Building/Hôtel.png")
+		#offset = -[taille sprite y]/ 2 + 90
+		$Building.offset.y = -284
+	elif buildingType == BuildingType.PARCKING:
+		$Building.texture = preload("res://Sprites/TileSprite/Building/parcking.png")
+		$Building.offset.y = -102
+	else:
+		#Texture vide
+		$Building.texture = null
+		$Building.offset.y = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
