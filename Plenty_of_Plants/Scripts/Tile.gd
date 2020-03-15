@@ -50,25 +50,10 @@ func setPlant(type):
 func getBuilding():
 	return BType
 
-func setPlant(type : String):
-	match type:
-		"NONE":
-			PType = PlantType.NONE
-		"CHAMPIGNON":
-			PType = PlantType.CHAMPIGNON
-		"LIERE":
-			PType = PlantType.LIERE
-		"EUCALYPTUS":
-			PType = PlantType.EUCALYPTUS
-		"SECOIA":
-			PType = PlantType.SECOIA
-		"RONCE":
-			PType = PlantType.RONCE
 
 func _input(event):
 	if mouseIsIn and event is InputEventMouseButton:
-		if event.is_pressed():
-			if event.button_index == BUTTON_LEFT:
+		if event.is_pressed() and event.button_index == BUTTON_LEFT:
 				if map.can_place(PlantType.SECOIA,self):
 					print("can place")
 					setPlant(PlantType.SECOIA)
