@@ -66,7 +66,9 @@ func checkInBounds(vectorIndex):
 	return  vectorIndex.x >= 0 && vectorIndex.y >= 0 && vectorIndex.x < tileCountA && vectorIndex.y < tileCountB
 
 func _ready():
+	
 	initTiles()
+	allTiles[0][0].setPlant(PlantType.SECOIA)
 	tests()
 	spawnPollen(Vector2(0,0))
 	spawnPollen(Vector2(2,2))
