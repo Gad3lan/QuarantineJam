@@ -4,6 +4,7 @@ extends Area2D
 onready var map = self.get_parent()
 
 var mouseIsIn:bool = false
+var baseZIndex
 
 enum PlantType {NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE}
 enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD}
@@ -98,10 +99,11 @@ func _input(event):
 
 func _on_Tile_mouse_entered():
 	mouseIsIn = true
+	baseZIndex = self.z_index
 	$BackGround.material.set_shader_param("width", 4.0)
 	self.z_index = 1
 
 func _on_Tile_mouse_exited():
 	mouseIsIn = false
 	$BackGround.material.set_shader_param("width", 0.0)
-	self.z_index = 0
+	self.z_index = baseZIndex
