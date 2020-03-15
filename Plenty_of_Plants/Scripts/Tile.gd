@@ -26,12 +26,14 @@ onready var plantPaths = {
 	PlantType.SECOIA : preload("res://Scenes/Prefabs/Sequoia.tscn")
 }
 
+var ROADPLACEHOLDER = -1
+
 var plantBuildingcompatibleDict = {
 	PlantType.NONE:[BuildingType.NONE],
-	PlantType.CHAMPIGNON:[BuildingType.NONE, BuildingType.PARCKING, BuildingType.ROAD0],
-	PlantType.SECOIA:[BuildingType.NONE, BuildingType.PARCKING, BuildingType.ROAD0],
-	PlantType.EUCALYPTUS:[BuildingType.NONE, BuildingType.PARCKING, BuildingType.ROAD0],
-	PlantType.CHAMPIGNON:[BuildingType.NONE, BuildingType.PARCKING, BuildingType.ROAD0,BuildingType.HOTEL],
+	PlantType.CHAMPIGNON:[BuildingType.NONE, BuildingType.PARCKING, ROADPLACEHOLDER],
+	PlantType.SECOIA:[BuildingType.NONE, BuildingType.PARCKING, ROADPLACEHOLDER],
+	PlantType.EUCALYPTUS:[BuildingType.NONE, BuildingType.PARCKING, ROADPLACEHOLDER],
+	PlantType.CHAMPIGNON:[BuildingType.NONE, BuildingType.PARCKING, ROADPLACEHOLDER,BuildingType.HOTEL],
 	PlantType.LIERE:[BuildingType.HOTEL, BuildingType.USINE],
 	PlantType.RONCE:[BuildingType.HOTEL, BuildingType.USINE]
 }
@@ -41,8 +43,11 @@ export var startTile = false
 onready var plant : Sprite = get_node("Plant")
 onready var building : Sprite = get_node("Building")
 
+
+
 #Fonction de l'outil
 func selectBuilding(buildingType):
+	
 	BType = buildingType
 	if coordOnTexture != Vector2(0,0):
 		
@@ -98,9 +103,19 @@ func selectBuilding(buildingType):
 			$Building.texture = null
 			$Building.offset.y = 0
 
+
+var roads = [BuildingType.ROAD0, BuildingType.ROAD1, BuildingType.ROAD2, BuildingType.ROAD3, BuildingType.ROAD4, BuildingType.ROAD5, BuildingType.ROAD6]
+func replacePlaceHolderOnDict():
+	for key in plantBuildingcompatibleDict.keys():
+		if plantBuildingcompatibleDict[key].has(ROADPLACEHOLDER):
+			plantBuildingcompatibleDict[key].pop_back()
+			for road in roads:
+				plantBuildingcompatibleDict[key].push_back(road)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("Tiles")
+	replacePlaceHolderOnDict()
 
 
 #return True si il y a une plante

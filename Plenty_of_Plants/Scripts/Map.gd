@@ -17,7 +17,7 @@ export var tileSpacing = Vector2(180.0,90.0)
 
 onready var pollen = preload("res://Scenes/BioMasse.tscn")
 
-enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD}
+enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, BUILDING, CENTRALE}
 enum PlantType {NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE}
 
 var plantCost ={
@@ -34,7 +34,7 @@ enum toTransmit {Z_INDEX, B_TYPE}
 var toDoForBuilding ={
 	BuildingType.HOTEL : Vector2(2,2),
 	BuildingType.PARCKING : Vector2(2,2),
-	BuildingType.USINE : Vector2(4,4),
+	BuildingType.USINE : Vector2(4,4)
 }
 
 export var biomasseNow : int = 500
