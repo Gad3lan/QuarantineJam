@@ -7,7 +7,7 @@ var mouseIsIn:bool = false
 var baseZIndex
 
 enum PlantType {NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE}
-enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD}
+enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, BUILDING, CENTRALE}
 
 export (PlantType) var PType = PlantType.NONE
 export (BuildingType) var BType setget selectBuilding
@@ -26,10 +26,10 @@ onready var plantPaths = {
 
 var plantBuildingcompatibleDict = {
 	PlantType.NONE:[BuildingType.NONE],
-	PlantType.CHAMPIGNON:[BuildingType.NONE, BuildingType.PARCKING, BuildingType.ROAD],
-	PlantType.SECOIA:[BuildingType.NONE, BuildingType.PARCKING, BuildingType.ROAD],
-	PlantType.EUCALYPTUS:[BuildingType.NONE, BuildingType.PARCKING, BuildingType.ROAD],
-	PlantType.CHAMPIGNON:[BuildingType.NONE, BuildingType.PARCKING, BuildingType.ROAD,BuildingType.HOTEL],
+	PlantType.CHAMPIGNON:[BuildingType.NONE, BuildingType.PARCKING, BuildingType.ROAD0],
+	PlantType.SECOIA:[BuildingType.NONE, BuildingType.PARCKING, BuildingType.ROAD0],
+	PlantType.EUCALYPTUS:[BuildingType.NONE, BuildingType.PARCKING, BuildingType.ROAD0],
+	PlantType.CHAMPIGNON:[BuildingType.NONE, BuildingType.PARCKING, BuildingType.ROAD0,BuildingType.HOTEL],
 	PlantType.LIERE:[BuildingType.HOTEL, BuildingType.USINE],
 	PlantType.RONCE:[BuildingType.HOTEL, BuildingType.USINE]
 }
@@ -43,18 +43,55 @@ onready var building : Sprite = get_node("Building")
 func selectBuilding(buildingType):
 	#Necessaire pour le fonctionnementt
 	BType = buildingType
-	if buildingType == BuildingType.HOTEL:
-		#Chargement de la texture
-		$Building.texture = preload("res://Sprites/TileSprite/Building/Hôtel.png")
-		#offset = -[taille sprite y]/ 2 + 90
-		$Building.offset.y = -284
-	elif buildingType == BuildingType.PARCKING:
-		$Building.texture = preload("res://Sprites/TileSprite/Building/parcking.png")
-		$Building.offset.y = -102
-	else:
-		#Texture vide
-		$Building.texture = null
-		$Building.offset.y = 0
+	match buildingType:
+		BuildingType.HOTEL:
+			#Chargement de la texture
+			$Building.texture = preload("res://Sprites/TileSprite/Building/Hôtel.png")
+			#offset = -[taille sprite y]/ 2 + 90
+			$Building.offset.y = -284
+		BuildingType.PARCKING:
+			$Building.texture = preload("res://Sprites/TileSprite/Building/parcking.png")
+			$Building.offset.y = -102
+		BuildingType.USINE:
+			$Building.texture = preload("res://Sprites/TileSprite/Building/usine.png")
+			$Building.offset.y = -485
+		BuildingType.BUILDING:
+			$Building.texture = preload("res://Sprites/TileSprite/Building/building.png")
+			$Building.offset.y = -832
+		BuildingType.CENTRALE:
+			$Building.texture = preload("res://Sprites/TileSprite/Building/centrale electric.png")
+			$Building.offset.y = -532
+		BuildingType.HLM:
+			$Building.texture = preload("res://Sprites/TileSprite/Building/HLM.png")
+			$Building.offset.y = -565
+		BuildingType.IMMEUBLE:
+			$Building.texture = preload("res://Sprites/TileSprite/Building/immeuble.png")
+			$Building.offset.y = -332.5
+		BuildingType.ROAD0:
+			$Building.texture = preload("res://Sprites/TileSprite/Building/angle 1.png")
+			$Building.offset.y = 0
+		BuildingType.ROAD1:
+			$Building.texture = preload("res://Sprites/TileSprite/Building/angle 2.png")
+			$Building.offset.y = 0
+		BuildingType.ROAD2:
+			$Building.texture = preload("res://Sprites/TileSprite/Building/carrefour.png")
+			$Building.offset.y = 0
+		BuildingType.ROAD3:
+			$Building.texture = preload("res://Sprites/TileSprite/Building/coin 2.png")
+			$Building.offset.y = 0
+		BuildingType.ROAD4:
+			$Building.texture = preload("res://Sprites/TileSprite/Building/coin.png")
+			$Building.offset.y = 0
+		BuildingType.ROAD5:
+			$Building.texture = preload("res://Sprites/TileSprite/Building/route 1.png")
+			$Building.offset.y = 0
+		BuildingType.ROAD6:
+			$Building.texture = preload("res://Sprites/TileSprite/Building/route 2.png")
+			$Building.offset.y = 0
+		_:
+			#Texture vide
+			$Building.texture = null
+			$Building.offset.y = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
