@@ -43,17 +43,14 @@ func moveCamera(delta):
 func zoom(direcrion):
 	if direcrion > 0:
 		camera.zoom *= (1.0 + zoomStep)
-		ui.scale *= (1.0 + zoomStep)
 		zoomPos += 1
 	else:
 		camera.zoom *= (1.0 - zoomStep)
-		ui.scale *= (1.0 - zoomStep)
 		zoomPos -= 1
 
 func _input(event):
 	if event is InputEventPanGesture:
 		camera.zoom *= (1.0 + event.delta.y / 10)
-		ui.scale *= (1.0 + event.delta.y / 10)
 	if event is InputEventMouse:
 		if event.is_pressed():
 			if event.button_index == 2:
