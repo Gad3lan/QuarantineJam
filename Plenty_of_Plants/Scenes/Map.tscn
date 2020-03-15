@@ -1638,6 +1638,7 @@ position = Vector2( 5, 365 )
 
 [node name="Tile127" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 455 )
+BType = 1
 
 [node name="Tile173" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 545 )
