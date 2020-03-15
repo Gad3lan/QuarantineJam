@@ -46,6 +46,7 @@ func _ready():
 
 #return True si il y a une plante
 func hasPlant():
+	print(PType)
 	return PType != PlantType.NONE
 	
 
@@ -63,6 +64,7 @@ func instancePlant(type):
 func setPlant(type):
 	if not plantCanBePlaced(type):
 		return false
+	PType = type
 	instancePlant(type)
 	return true
 

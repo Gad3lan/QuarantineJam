@@ -105,7 +105,6 @@ func hasNeighbors(thisTile):
 			break
 	print("______________________________")
 	return canPlace
-	pass
 
 func pickUpPollen():
 	biomasseNow += 3
