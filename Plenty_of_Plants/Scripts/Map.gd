@@ -17,7 +17,7 @@ export var tileSpacing = Vector2(180.0,90.0)
 
 onready var pollen = preload("res://Scenes/BioMasse.tscn")
 
-enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD}
+enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, BUILDING, CENTRALE}
 enum PlantType {NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE}
 
 var plantCost ={
@@ -34,7 +34,7 @@ enum toTransmit {Z_INDEX, B_TYPE}
 var toDoForBuilding ={
 	BuildingType.HOTEL : Vector2(2,2),
 	BuildingType.PARCKING : Vector2(2,2),
-	BuildingType.USINE : Vector2(4,4),
+	BuildingType.USINE : Vector2(4,4)
 }
 
 export var biomasseNow : int = 500
@@ -82,13 +82,7 @@ func getRectIndexFrom(index,sizeA,sizeB):
 	return rectIndexes
 
 
-"""			if tile.BType == BuildingType.HOTEL:
-				var indexVec = tilePositionToIndexes(tile.position)
-				print("base tile position",tilePositionToIndexes(tile.position),", type = ",tile.BType," Hotel")
-				for indexToTransferTo in getRectIndexFrom(tilePositionToIndexes(tile.position),2,2):
-					print("neighbor : ",indexToTransferTo.x,", ",indexToTransferTo.y," to ",(indexVec-indexToTransferTo).x,", ",(indexVec-indexToTransferTo).y)
-					allTiles[indexToTransferTo.x][indexToTransferTo.y].coordOnTexture = indexVec-indexToTransferTo
-					allTiles[indexToTransferTo.x][indexToTransferTo.y].BType = tile.BType"""
+
 func propageTypeAndZ():
 	print("propagate type and Z")
 	for row in allTiles:
@@ -99,6 +93,7 @@ func propageTypeAndZ():
 				for indexToTransferTo in getRectIndexFrom(indexVec,dimensions.x,dimensions.y):
 					allTiles[indexToTransferTo.x][indexToTransferTo.y].coordOnTexture = indexVec-indexToTransferTo
 					allTiles[indexToTransferTo.x][indexToTransferTo.y].BType = tile.BType
+					allTiles[indexToTransferTo.x][indexToTransferTo.y].z_index = tile.z_index
 					
 
 
