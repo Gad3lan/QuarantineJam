@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/TileSprite/Building/sol neutre.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/prefabTile.gd" type="Script" id=5]
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+load_path = "res://.import/building.png-286b147df14485cd062c19d0f9b8a36b.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/Lierre droit.PNG-4353614897490475b5df24c069c5ffea.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/Lierre gauche .PNG-a4a4200568d9fb2a44671b3dae800f61.stex"
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 517.839, 344.653 )
+script = ExtResource( 5 )
+
+[node name="toDelete" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="toDelete"]
+position = Vector2( 0.0418396, 2.20062 )
+texture = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="toDelete"]
+position = Vector2( -177.172, 89.3787 )
+texture = ExtResource( 4 )
+
+[node name="Sprite4" type="Sprite" parent="toDelete"]
+position = Vector2( 3.24042, 177.407 )
+texture = ExtResource( 4 )
+
+[node name="Sprite5" type="Sprite" parent="toDelete"]
+position = Vector2( 182.199, 89.3255 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="toDelete"]
+position = Vector2( -1.47931, -191.543 )
+scale = Vector2( 0.5, 0.5 )
+texture = SubResource( 4 )
+
+[node name="toKeep" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="toKeep"]
+position = Vector2( 153.021, -221.138 )
+scale = Vector2( 0.846357, 0.738883 )
+texture = SubResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="toKeep"]
+position = Vector2( -144.332, -221.424 )
+scale = Vector2( 0.875709, 0.755749 )
+texture = SubResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="toKeep"]
+visible = false
+position = Vector2( -156.736, -225.799 )
+scale = Vector2( 0.904766, 0.780825 )
+texture = SubResource( 3 )

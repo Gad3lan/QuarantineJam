@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/TileSprite/Building/sol neutre.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/prefabTile.gd" type="Script" id=5]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/centrale electric.png-0a1c5be4cb251f6084a955fab7ae2a87.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/Lierre droit.PNG-4353614897490475b5df24c069c5ffea.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/Lierre gauche .PNG-a4a4200568d9fb2a44671b3dae800f61.stex"
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 517.839, 344.653 )
+script = ExtResource( 5 )
+
+[node name="toDelete" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="toDelete"]
+position = Vector2( 0.0418396, 2.20062 )
+texture = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="toDelete"]
+position = Vector2( -177.172, 89.3787 )
+texture = ExtResource( 4 )
+
+[node name="Sprite4" type="Sprite" parent="toDelete"]
+position = Vector2( 3.24042, 177.407 )
+texture = ExtResource( 4 )
+
+[node name="Sprite5" type="Sprite" parent="toDelete"]
+position = Vector2( 182.199, 89.3255 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="toDelete"]
+position = Vector2( 1.18427, -44.6032 )
+scale = Vector2( 0.5, 0.5 )
+texture = SubResource( 1 )
+
+[node name="toKeep" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="toKeep"]
+position = Vector2( 15.5886, -97.6536 )
+scale = Vector2( 0.316695, 0.276479 )
+texture = SubResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="toKeep"]
+position = Vector2( -80.738, -55.5551 )
+scale = Vector2( 0.31414, 0.271301 )
+texture = SubResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="toKeep"]
+position = Vector2( -189.326, -56.6194 )
+scale = Vector2( 0.290362, 0.239415 )
+texture = SubResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="toKeep"]
+visible = false
+position = Vector2( -156.736, -225.799 )
+scale = Vector2( 0.904766, 0.780825 )
+texture = SubResource( 3 )
