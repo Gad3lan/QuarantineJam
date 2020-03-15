@@ -131,7 +131,21 @@ func spawnPollen(tileIndex):
 	call_deferred("add_child",pollenInstance)
 
 
-
+func _input(event):
+	if event is InputEventKey:
+		print(event.get_scancode_with_modifiers())
+		if event is InputEventKey && event.get_scancode_with_modifiers() == 78:
+			for t in allTiles[-1]:
+				t.queue_free()
+			allTiles.pop_back()
+		if event is InputEventKey && event.get_scancode_with_modifiers() == 75:
+			print(allTiles.size(),", ",allTiles[-1].size())
+			if allTiles[-1].size() > 0:
+				allTiles[-1][-1].queue_free()
+				allTiles[-1].pop_back()
+			else:
+				allTiles.pop_back()
+				allTiles[-1][-1].queue_free()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
