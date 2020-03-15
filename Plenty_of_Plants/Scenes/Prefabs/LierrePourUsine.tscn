@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/TileSprite/Building/sol neutre.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/prefabTile.gd" type="Script" id=5]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/usine.png-ba7b0f93673146106f3a7940ea9ba256.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/Lierre droit.PNG-4353614897490475b5df24c069c5ffea.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/Lierre gauche .PNG-a4a4200568d9fb2a44671b3dae800f61.stex"
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 517.839, 344.653 )
+script = ExtResource( 5 )
+
+[node name="toDelete" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="toDelete"]
+position = Vector2( 0.0418396, 2.20062 )
+texture = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="toDelete"]
+position = Vector2( -177.172, 89.3787 )
+texture = ExtResource( 4 )
+
+[node name="Sprite4" type="Sprite" parent="toDelete"]
+position = Vector2( 3.24042, 177.407 )
+texture = ExtResource( 4 )
+
+[node name="Sprite5" type="Sprite" parent="toDelete"]
+position = Vector2( 182.199, 89.3255 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="toDelete"]
+position = Vector2( 3.97162, -17.83 )
+scale = Vector2( 0.5, 0.5 )
+texture = SubResource( 1 )
+
+[node name="toKeep" type="Node2D" parent="."]
+position = Vector2( 7.35095, 26.4633 )
+
+[node name="Sprite" type="Sprite" parent="toKeep"]
+position = Vector2( 177.426, -118.657 )
+scale = Vector2( 0.499962, 0.436475 )
+texture = SubResource( 2 )
+
+[node name="Sprite5" type="Sprite" parent="toKeep"]
+position = Vector2( 18.5973, -52.6818 )
+scale = Vector2( 0.499962, 0.436475 )
+texture = SubResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="toKeep"]
+position = Vector2( -194.342, -81.8624 )
+scale = Vector2( 0.281959, 0.243335 )
+texture = SubResource( 3 )
+
+[node name="Sprite7" type="Sprite" parent="toKeep"]
+position = Vector2( -302.479, -6.43157 )
+scale = Vector2( 0.345744, 0.199396 )
+texture = SubResource( 3 )
+
+[node name="Sprite6" type="Sprite" parent="toKeep"]
+position = Vector2( -156.875, -48.1219 )
+scale = Vector2( 0.481061, 0.415163 )
+texture = SubResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="toKeep"]
+visible = false
+position = Vector2( -156.736, -225.799 )
+scale = Vector2( 0.904766, 0.780825 )
+texture = SubResource( 3 )
