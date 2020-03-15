@@ -82,13 +82,7 @@ func getRectIndexFrom(index,sizeA,sizeB):
 	return rectIndexes
 
 
-"""			if tile.BType == BuildingType.HOTEL:
-				var indexVec = tilePositionToIndexes(tile.position)
-				print("base tile position",tilePositionToIndexes(tile.position),", type = ",tile.BType," Hotel")
-				for indexToTransferTo in getRectIndexFrom(tilePositionToIndexes(tile.position),2,2):
-					print("neighbor : ",indexToTransferTo.x,", ",indexToTransferTo.y," to ",(indexVec-indexToTransferTo).x,", ",(indexVec-indexToTransferTo).y)
-					allTiles[indexToTransferTo.x][indexToTransferTo.y].coordOnTexture = indexVec-indexToTransferTo
-					allTiles[indexToTransferTo.x][indexToTransferTo.y].BType = tile.BType"""
+
 func propageTypeAndZ():
 	print("propagate type and Z")
 	for row in allTiles:
@@ -99,6 +93,7 @@ func propageTypeAndZ():
 				for indexToTransferTo in getRectIndexFrom(indexVec,dimensions.x,dimensions.y):
 					allTiles[indexToTransferTo.x][indexToTransferTo.y].coordOnTexture = indexVec-indexToTransferTo
 					allTiles[indexToTransferTo.x][indexToTransferTo.y].BType = tile.BType
+					allTiles[indexToTransferTo.x][indexToTransferTo.y].z_index = tile.z_index
 					
 
 
