@@ -103,13 +103,16 @@ func hasNeighbors(thisTile):
 	return canPlace
 	pass
 
-
+func pickUpPollen():
+	biomasseNow += 3
+	print(biomasseNow)
 
 func buy(toPlant):
 	var canPlant = biomasseNow > plantCost[toPlant]
 	biomasseNow -= plantCost[toPlant] if canPlant else 0
+	print(biomasseNow)
 	return canPlant
-		
+
 
 func can_place(toPlant,thisTile):
 	return (true||hasNeighbors(thisTile))  && buy(toPlant)
@@ -123,6 +126,7 @@ func spawnPollen(tileIndex):
 	var pollenInstance = pollen.instance()
 	pollenInstance.position = allTiles[tileIndex.x][tileIndex.y].position
 	call_deferred("add_child",pollenInstance)
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

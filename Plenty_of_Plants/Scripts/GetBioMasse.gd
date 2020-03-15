@@ -5,6 +5,7 @@ extends Area2D
 # Declare member variables here. Examples:
 var add_Value = 0
 var timeToDelete = 6
+var map
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Timer.set_one_shot(true)
@@ -30,6 +31,8 @@ func _input(event):
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	#print($Timer.time_left)
 	if event is InputEventMouseButton &&  event.button_index == BUTTON_LEFT and event.pressed :
+		if get_parent() != null:
+			get_parent().get_parent().pickUpPollen()
 		self.queue_free()
 		 # Je supprime l'objet directement au lieu de juste le cacher comme en bas
 		#$Sprite.visible=false
