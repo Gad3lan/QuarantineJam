@@ -8,8 +8,8 @@ script = ExtResource( 1 )
 minSensibilityRadius = 10.0
 sensibilityRadius = 100.0
 
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-
 [node name="Ui" parent="." instance=ExtResource( 2 )]
 z_index = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true

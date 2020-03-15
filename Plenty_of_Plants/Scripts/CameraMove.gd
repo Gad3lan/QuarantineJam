@@ -18,7 +18,7 @@ var zoomTarget = zoomPos
 func _ready():
 	sensibility = 1.0/sensibilityRadius
 	lastMousePos = Vector2(0.0,0.0)
-	pass # Replace with function body.
+
 
 func rightClicking():
 	if Input.is_mouse_button_pressed(2):
@@ -36,7 +36,8 @@ func moveCamera(delta):
 	#vectorToMove *= sensibility
 	if vectorToMove.length() > 1.0:
 		vectorToMove = vectorToMove/vectorToMove.length()
-	position += maxSpeed * -vectorToMove * delta * camera.zoom
+	#position += maxSpeed * -vectorToMove * delta * camera.zoom
+	self.translate(maxSpeed * -vectorToMove * delta * camera.zoom)
 	
 # Controle le zoom de camera
 func zoom(direcrion):
