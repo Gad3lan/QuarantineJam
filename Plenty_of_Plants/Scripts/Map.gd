@@ -59,10 +59,26 @@ func initTiles(hasToInit):
 		arrayPosition.y = floor((tile.position.y - firstTilePos.y)/(tileSpacing.y))
 		#on passe dans un repère basé sur la taille des losanges
 		allTiles[(arrayPosition.x+arrayPosition.y)*0.5][(-arrayPosition.x+arrayPosition.y)*0.5] = tile
-		tile.z_index = -max(tileCountA,tileCountB)-floor(tile.position.y/firstTilePos.y)
-		
 		#on tourne de 45 degrees
+		tile.z_index = -max(tileCountA,tileCountB)-floor(tile.position.y/firstTilePos.y)
+	propageTypeAndZ()
+	
 
+func getRectIndexFrom(index,sizeA,sizeB):
+	var rectIndexes = []
+	for a in range(index.x,sizeA):
+		for b in range(index.y,sizeB):
+			print("a:b = ",a,":",b)
+			rectIndexes.push_back(a,b)
+	return rectIndexes
+
+func propageTypeAndZ():
+	for row in allTiles:
+		for tile in row:
+			if tile.BType == BuildingType.PARCKING:
+				for tiles in getRectIndexFrom(tilePositionToIndexes(tile.position),2,2):
+					print("base tile position",tile.position)
+					tiles.z_index = tile.z_index
 
 
 func checkInBounds(vectorIndex):
@@ -114,7 +130,7 @@ func buy(toPlant):
 
 
 func can_place(toPlant,thisTile):
-	print("z_index : ",thisTile.z_index)
+	print("z_index : ",thisTile.baseZIndex)
 	return hasPlantNeighbors(thisTile) && buy(toPlant)
 
 
