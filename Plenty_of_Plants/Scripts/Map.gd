@@ -29,6 +29,14 @@ var plantCost ={
 	PlantType.NONE : 0
 }
 
+enum toTransmit {Z_INDEX, B_TYPE}
+
+var toDoForBuilding ={
+	BuildingType.HOTEL : Vector2(2,2),
+	BuildingType.PARCKING : Vector2(2,2),
+	BuildingType.USINE : Vector2(4,4),
+}
+
 export var biomasseNow : int = 500
 # Declare member variables here. Examples:
 # var a = 2
@@ -73,14 +81,28 @@ func getRectIndexFrom(index,sizeA,sizeB):
 			rectIndexes.push_back(Vector2(a,b))
 	return rectIndexes
 
+
+"""			if tile.BType == BuildingType.HOTEL:
+				var indexVec = tilePositionToIndexes(tile.position)
+				print("base tile position",tilePositionToIndexes(tile.position),", type = ",tile.BType," Hotel")
+				for indexToTransferTo in getRectIndexFrom(tilePositionToIndexes(tile.position),2,2):
+					print("neighbor : ",indexToTransferTo.x,", ",indexToTransferTo.y," to ",(indexVec-indexToTransferTo).x,", ",(indexVec-indexToTransferTo).y)
+					allTiles[indexToTransferTo.x][indexToTransferTo.y].coordOnTexture = indexVec-indexToTransferTo
+					allTiles[indexToTransferTo.x][indexToTransferTo.y].BType = tile.BType"""
 func propageTypeAndZ():
 	print("propagate type and Z")
 	for row in allTiles:
 		for tile in row:
-			if tile.BType == BuildingType.PARCKING:
-				print("base tile position",tilePositionToIndexes(tile.position),", type = ",tile.BType," parking")
-				for indexToTransferTo in getRectIndexFrom(tilePositionToIndexes(tile.position),2,2):
-					allTiles[indexToTransferTo.x][indexToTransferTo.y].z_index = tile.z_index
+			if toDoForBuilding.has(tile.BType):
+				var dimensions = toDoForBuilding[tile.BType]
+				var indexVec = tilePositionToIndexes(tile.position)
+				for indexToTransferTo in getRectIndexFrom(indexVec,dimensions.x,dimensions.y):
+					allTiles[indexToTransferTo.x][indexToTransferTo.y].coordOnTexture = indexVec-indexToTransferTo
+					allTiles[indexToTransferTo.x][indexToTransferTo.y].BType = tile.BType
+					
+
+
+
 
 
 func checkInBounds(vectorIndex):

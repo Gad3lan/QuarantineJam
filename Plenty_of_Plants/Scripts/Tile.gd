@@ -9,6 +9,8 @@ var baseZIndex
 enum PlantType {NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE}
 enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, BUILDING, CENTRALE}
 
+var coordOnTexture = Vector2(0,0)
+
 export (PlantType) var PType = PlantType.NONE
 export (BuildingType) var BType setget selectBuilding
 export (int) var texturePart = 0
@@ -41,8 +43,11 @@ onready var building : Sprite = get_node("Building")
 
 #Fonction de l'outil
 func selectBuilding(buildingType):
-	#Necessaire pour le fonctionnementt
 	BType = buildingType
+	if coordOnTexture != Vector2(0,0):
+		
+		return
+	#Necessaire pour le fonctionnementt
 	match buildingType:
 		BuildingType.HOTEL:
 			#Chargement de la texture
@@ -105,6 +110,8 @@ func hasPlant():
 	
 
 func plantCanBePlaced(plant):
+	if PType == PlantType.NONE:
+		print (plantBuildingcompatibleDict[plant], ", BType ",BType)
 	return PType == PlantType.NONE and plantBuildingcompatibleDict[plant].has(BType)
 
 func instancePlant(type):
