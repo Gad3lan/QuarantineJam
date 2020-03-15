@@ -7,13 +7,20 @@ var mouseIsIn:bool = false
 enum PlantType {NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE}
 enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD}
 
+export (PlantType) var PType = PlantType.NONE
+export (BuildingType) var BType = BuildingType.NONE
+export (int) var texturePart = 0
 
 onready var placeHolderPath = preload("res://Scenes/Prefabs/PlaceHolder.tscn")
+
+onready var buildPaths = {
+	BuildingType.NONE : preload("res://Scenes/Prefabs/NoBuilding.tscn"),
+	BuildingType.PARCKING : preload("res://Scenes/Prefabs/Parcking.tscn")
+}
 
 onready var plantPaths = {
 	PlantType.SECOIA : preload("res://Scenes/Prefabs/Sequoia.tscn")
 }
-
 
 var plantBuildingcompatibleDict = {
 	PlantType.NONE:[BuildingType.NONE],
@@ -25,9 +32,6 @@ var plantBuildingcompatibleDict = {
 	PlantType.RONCE:[BuildingType.HOTEL, BuildingType.USINE]
 }
 
-var PType = PlantType.NONE
-var BType = BuildingType.NONE
-
 export var startTile = false
 
 onready var plant : Sprite = get_node("Plant")
@@ -37,7 +41,8 @@ onready var building : Sprite = get_node("Building")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("Tiles")
-	$BackGround.material.set_shader_param("width", 0.0)
+	var buildingInstance = buildPaths[BType].instance()
+	call_deferred("add_child", buildingInstance)
 
 #return True si il y a une plante
 func hasPlant():
@@ -61,22 +66,15 @@ func setPlant(type):
 	instancePlant(type)
 	return true
 
-
 func getBuilding():
 	return BType
 
-
 func _input(event):
-	
 	if mouseIsIn and event is InputEventMouseButton:
 		if event.is_pressed() and event.button_index == BUTTON_LEFT:
 				if map.can_place(PlantType.SECOIA,self):
 					print("can place")
 					setPlant(PlantType.SECOIA)
-
-
-
-
 
 func _on_Tile_mouse_entered():
 	mouseIsIn = true

@@ -1,5 +1,6 @@
 extends Node2D
 
+export (int) var texturePart = 0
 
 # Declare member variables here. Examples:
 # var a = 2

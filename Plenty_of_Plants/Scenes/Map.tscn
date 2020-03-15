@@ -9,6 +9,7 @@ script = ExtResource( 1 )
 
 [node name="Tile" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, -85 )
+BType = 1
 
 [node name="Tile84" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 5 )
@@ -555,6 +556,7 @@ position = Vector2( -175, 95 )
 
 [node name="Tile98" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 185 )
+BType = 1
 
 [node name="Tile142" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 275 )
