@@ -9,7 +9,8 @@ var baseZIndex
 enum PlantType {NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE}
 enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, BUILDING, CENTRALE}
 
-var coordOnTexture = Vector2(0,0)
+export var coordOnTexture = Vector2(0,0)
+export var root = false
 
 export (PlantType) var PType = PlantType.NONE
 export (BuildingType) var BType setget selectBuilding
@@ -49,8 +50,7 @@ onready var building : Sprite = get_node("Building")
 func selectBuilding(buildingType):
 	
 	BType = buildingType
-	if coordOnTexture != Vector2(0,0):
-		
+	if coordOnTexture != Vector2(0,0) || not root:
 		return
 	#Necessaire pour le fonctionnementt
 	match buildingType:

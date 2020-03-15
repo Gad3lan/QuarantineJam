@@ -1114,7 +1114,6 @@ z_index = -17
 [node name="Tile282" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 1175 )
 z_index = -16
-BType = 8
 
 [node name="Tile320" parent="." instance=ExtResource( 2 )]
 position = Vector2( -715, 1265 )
@@ -1447,15 +1446,17 @@ z_index = -27
 
 [node name="Tile94" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 275 )
-z_index = -24
+z_index = -26
 
 [node name="Tile126" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 365 )
-z_index = -24
+z_index = -25
 
 [node name="Tile172" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 455 )
 z_index = -24
+root = true
+BType = 1
 
 [node name="Tile198" parent="." instance=ExtResource( 2 )]
 position = Vector2( -715, 545 )
@@ -2161,12 +2162,11 @@ z_index = -26
 
 [node name="Tile93" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, 365 )
-z_index = -24
+z_index = -25
 
 [node name="Tile127" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 455 )
 z_index = -24
-BType = 1
 
 [node name="Tile173" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 545 )
@@ -2183,7 +2183,6 @@ z_index = -21
 [node name="Tile263" parent="." instance=ExtResource( 2 )]
 position = Vector2( -895, 815 )
 z_index = -20
-BType = 3
 
 [node name="Tile284" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1075, 905 )
@@ -3243,7 +3242,6 @@ z_index = -18
 [node name="Tile171" parent="." instance=ExtResource( 2 )]
 position = Vector2( 725, 1085 )
 z_index = -17
-BType = 2
 
 [node name="Tile208" parent="." instance=ExtResource( 2 )]
 position = Vector2( 545, 1175 )
