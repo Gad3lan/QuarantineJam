@@ -96,12 +96,14 @@ func neighborsIndexes(centerPos):
 	return otherPos
 
 func hasNeighbors(thisTile):
-	var neighs = neighborsIndexes(thisTile.pos)
+	var neighs = neighborsIndexes(tilePositionToIndexes(thisTile.position))
 	var canPlace = false
 	for neighPos in neighs:
 		canPlace = allTiles[neighPos.y][neighPos.x].hasPlant()
+		print("indexes :",neighPos,"; position : ",allTiles[neighPos.y][neighPos.x].position)
 		if canPlace:
 			break
+	print("______________________________")
 	return canPlace
 	pass
 
@@ -117,7 +119,7 @@ func buy(toPlant):
 
 
 func can_place(toPlant,thisTile):
-	return (true||hasNeighbors(thisTile))  && buy(toPlant)
+	return hasNeighbors(thisTile)  && buy(toPlant)
 
 
 
