@@ -248,6 +248,7 @@ texture = ExtResource( 6 )
 [connection signal="mouse_entered" from="VBoxContainer/MenuPrincipale/Biomasse" to="." method="_on_Biomasse_mouse_entered"]
 [connection signal="mouse_entered" from="VBoxContainer/MenuPrincipale/Soutien" to="." method="_on_Soutien_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/MenuContainer/Attaque" to="." method="_on_Attaque_mouse_exited"]
+[connection signal="gui_input" from="VBoxContainer/MenuContainer/Attaque/VBoxContainer/Champignon" to="." method="_on_Champignon_gui_input"]
 [connection signal="mouse_exited" from="VBoxContainer/MenuContainer/Auxilliaire" to="." method="_on_Auxilliaire_mouse_exited"]
 [connection signal="mouse_exited" from="VBoxContainer/MenuContainer/Biomasse" to="." method="_on_Biomasse_mouse_exited"]
 [connection signal="mouse_exited" from="VBoxContainer/MenuContainer/Soutien" to="." method="_on_Soutien_mouse_exited"]

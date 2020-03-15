@@ -49,3 +49,8 @@ func _on_Biomasse_mouse_exited():
 
 func _on_Soutien_mouse_exited():
 	soutiensMenu.hide()
+
+func _on_Champignon_gui_input(event):
+	if event.is_pressed():
+		print("CHAAAAAAAAAAAAAAAAAAAAAAAAMPIIIIIIIIIIIIIIII")
+		print(event.as_text())
