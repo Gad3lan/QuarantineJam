@@ -14,7 +14,19 @@ export var tileSpacing = Vector2(180.0,90.0)
 
 onready var pollen = preload("res://Scenes/BioMasse.tscn")
 
+enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD}
+enum PlantType {NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE}
 
+var plantCost ={
+	PlantType.CHAMPIGNON : 3,
+	PlantType.LIERE : 3,
+	PlantType.RONCE : 4,
+	PlantType.EUCALYPTUS : 9,
+	PlantType.SECOIA : 6,
+	PlantType.NONE : 0
+}
+
+export var biomasseNow : int = 10
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -81,8 +93,29 @@ func neighborsIndexes(centerPos):
 		otherPos.push_back(Vector2(centerPos.x, centerPos.y - 1))
 	return otherPos
 
-func can_place_on(thisTile):
+func hasNeighbors(thisTile):
+	var neighs = neighborsIndexes(thisTile.pos)
+	var canPlace = false
+	for neighPos in neighs:
+		canPlace = allTiles[neighPos.y][neighPos.x].hasPlant()
+		if canPlace:
+			break
+	return canPlace
 	pass
+
+
+
+func buy(toPlant):
+	var canPlant = biomasseNow > plantCost[toPlant]
+	biomasseNow -= plantCost[toPlant] if canPlant else 0
+	return canPlant
+		
+
+func can_place(toPlant,thisTile):
+	print("in can place")
+	return (true||hasNeighbors(thisTile))  && buy(toPlant)
+
+
 
 func spawnPollen(tileIndex):
 	if (not checkInBounds(tileIndex)):
@@ -90,9 +123,8 @@ func spawnPollen(tileIndex):
 		return
 	var pollenInstance = pollen.instance()
 	pollenInstance.position = allTiles[tileIndex.x][tileIndex.y].position
-	print(pollenInstance.position)
 	call_deferred("add_child",pollenInstance)
-	print(pollenInstance.z_index)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

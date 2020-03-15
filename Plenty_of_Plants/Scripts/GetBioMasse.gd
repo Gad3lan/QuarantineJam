@@ -15,7 +15,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print($Timer.time_left/timeToDelete)
 	# juste un test en cartion pour rendre la piece transparente avant qu'elle disparaisse
 	var ratio = 0.5+$Timer.time_left/timeToDelete
 	self.modulate = Color(1,1,1,ratio)
