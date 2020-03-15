@@ -5,6 +5,7 @@ var allTiles : Array
 export var tileCountA : int = 30 # sur le vecteur (1,1)
 export var tileCountB : int = 30 # sur le vecteur (-1,1)
 export (bool) var assignTiles = false setget initTiles
+export (bool) var reset = false setget resetTiles
 
 export var firstTilePos = Vector2(-175.0,-85)
 
@@ -48,6 +49,37 @@ func tilePositionToIndexes(pos):
 	arrayPosition.y = floor((pos.y - firstTilePos.y)/(tileSpacing.y))
 	return Vector2((arrayPosition.x+arrayPosition.y)*0.5, (-arrayPosition.x+arrayPosition.y)*0.5)
 
+func resetTiles(boolean):
+	print("initTiles")
+	assignTiles = false
+	var rowB : Array = []
+	for b in range(tileCountA):
+		rowB = []
+		for a in range(tileCountB):
+			rowB.push_back(null)
+		allTiles.push_back(rowB.duplicate())
+		rowB.empty()
+	for tile in get_children():
+		var arrayPosition = Vector2(0,0)
+		arrayPosition.x = floor((tile.position.x - firstTilePos.x)/(tileSpacing.x))
+		arrayPosition.y = floor((tile.position.y - firstTilePos.y)/(tileSpacing.y))
+		#on passe dans un repère basé sur la taille des losanges
+		allTiles[(arrayPosition.x+arrayPosition.y)*0.5][(-arrayPosition.x+arrayPosition.y)*0.5] = tile
+		#on tourne de 45 degrees
+		tile.z_index = -max(tileCountA,tileCountB)-floor(tile.position.y/firstTilePos.y)
+	
+	print("hey")
+	print("allTiles")
+	for tile in get_children():
+		print(tile)
+		tile.coordOnTexture = Vector2(0,0)
+		tile.root = true
+		tile.BType = BuildingType.NONE
+		tile.root = false
+		reset = false
+
+
+
 func initTiles(hasToInit):
 	print("initTiles")
 	if not hasToInit:
@@ -85,16 +117,15 @@ func getRectIndexFrom(index,sizeA,sizeB):
 
 func propageTypeAndZ():
 	print("propagate type and Z")
-	for row in allTiles:
-		for tile in row:
-			if toDoForBuilding.has(tile.BType):
-				var dimensions = toDoForBuilding[tile.BType]
-				var indexVec = tilePositionToIndexes(tile.position)
-				for indexToTransferTo in getRectIndexFrom(indexVec,dimensions.x,dimensions.y):
-					allTiles[indexToTransferTo.x][indexToTransferTo.y].coordOnTexture = indexVec-indexToTransferTo
-					allTiles[indexToTransferTo.x][indexToTransferTo.y].BType = tile.BType
-					allTiles[indexToTransferTo.x][indexToTransferTo.y].z_index = tile.z_index
-					
+	for tile in get_children():
+		if toDoForBuilding.has(tile.BType):
+			var dimensions = toDoForBuilding[tile.BType]
+			var indexVec = tilePositionToIndexes(tile.position)
+			for indexToTransferTo in getRectIndexFrom(indexVec,dimensions.x,dimensions.y):
+				allTiles[indexToTransferTo.x][indexToTransferTo.y].coordOnTexture = indexVec-indexToTransferTo
+				allTiles[indexToTransferTo.x][indexToTransferTo.y].BType = tile.BType
+				allTiles[indexToTransferTo.x][indexToTransferTo.y].z_index = tile.z_index
+
 
 
 

@@ -8,9 +8,3 @@
 [node name="CameraNode" parent="." instance=ExtResource( 1 )]
 
 [node name="Map" parent="." instance=ExtResource( 3 )]
-tileCountA = 30
-tileCountB = 30
-assignTiles = false
-firstTilePos = Vector2( -175, -85 )
-tileSpacing = Vector2( 180, 90 )
-biomasseNow = 500
