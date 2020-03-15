@@ -46,7 +46,7 @@ texture = SubResource( 1 )
 position = Vector2( 7.35095, 26.4633 )
 
 [node name="Sprite" type="Sprite" parent="toKeep"]
-position = Vector2( 177.426, -118.657 )
+position = Vector2( 150.286, -99.2717 )
 scale = Vector2( 0.499962, 0.436475 )
 texture = SubResource( 2 )
 
@@ -56,6 +56,7 @@ scale = Vector2( 0.499962, 0.436475 )
 texture = SubResource( 2 )
 
 [node name="Sprite3" type="Sprite" parent="toKeep"]
+visible = false
 position = Vector2( -194.342, -81.8624 )
 scale = Vector2( 0.281959, 0.243335 )
 texture = SubResource( 3 )
@@ -68,10 +69,4 @@ texture = SubResource( 3 )
 [node name="Sprite6" type="Sprite" parent="toKeep"]
 position = Vector2( -156.875, -48.1219 )
 scale = Vector2( 0.481061, 0.415163 )
-texture = SubResource( 3 )
-
-[node name="Sprite4" type="Sprite" parent="toKeep"]
-visible = false
-position = Vector2( -156.736, -225.799 )
-scale = Vector2( 0.904766, 0.780825 )
 texture = SubResource( 3 )
