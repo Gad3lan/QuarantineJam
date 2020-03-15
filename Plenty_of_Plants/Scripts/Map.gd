@@ -26,7 +26,7 @@ var plantCost ={
 	PlantType.NONE : 0
 }
 
-export var biomasseNow : int = 10
+export var biomasseNow : int = 500
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

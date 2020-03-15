@@ -21,6 +21,7 @@ texture = ExtResource( 3 )
 polygon = PoolVector2Array( 0.00820923, -88.3135, -178.866, 0.901711, 0.895317, 88.7231, 178.597, 0.901779 )
 
 [node name="Plant" type="Sprite" parent="."]
+position = Vector2( 3.68323, -174.339 )
 
 [node name="Building" type="Sprite" parent="."]
 [connection signal="mouse_entered" from="." to="." method="_on_Tile_mouse_entered"]
