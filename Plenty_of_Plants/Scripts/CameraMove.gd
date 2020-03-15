@@ -57,9 +57,9 @@ func _input(event):
 				rightClick = true
 				lastMousePos = get_local_mouse_position()
 			if event.button_index == BUTTON_WHEEL_UP: # zoom in
-				zoomTarget += 10
-			if event.button_index == BUTTON_WHEEL_DOWN: # zoom out
 				zoomTarget -= 10
+			if event.button_index == BUTTON_WHEEL_DOWN: # zoom out
+				zoomTarget += 10
 
 func _process(delta):
 	if (rightClick && rightClicking()):
