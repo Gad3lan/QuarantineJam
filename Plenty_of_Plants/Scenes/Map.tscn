@@ -736,11 +736,15 @@ z_index = -27
 
 [node name="Tile142" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 275 )
-z_index = -26
+z_index = -24
+coordOnTexture = Vector2( 1, 1 )
+BType = 1
 
 [node name="Tile175" parent="." instance=ExtResource( 2 )]
 position = Vector2( -715, 365 )
-z_index = -25
+z_index = -24
+coordOnTexture = Vector2( 1, 0 )
+BType = 1
 
 [node name="Tile196" parent="." instance=ExtResource( 2 )]
 position = Vector2( -895, 455 )
@@ -1450,7 +1454,9 @@ z_index = -26
 
 [node name="Tile126" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 365 )
-z_index = -25
+z_index = -24
+coordOnTexture = Vector2( 0, 1 )
+BType = 1
 
 [node name="Tile172" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 455 )
