@@ -5,9 +5,10 @@ onready var map = self.get_parent()
 
 var mouseIsIn:bool = false
 var baseZIndex
+onready var pollen = preload("res://Scenes/BioMasse.tscn")
 
 enum PlantType {NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE}
-enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, BUILDING, CENTRALE}
+enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, IMMEUBLE2, BUILDING, CENTRALE, TERRAIN}
 
 export var coordOnTexture = Vector2(0,0)
 export var root = false
@@ -98,6 +99,12 @@ func selectBuilding(buildingType):
 		BuildingType.ROAD6:
 			$Building.texture = preload("res://Sprites/TileSprite/Building/route 2.png")
 			$Building.offset.y = 0
+		BuildingType.IMMEUBLE2:
+			$Building.texture = preload("res://Sprites/TileSprite/Building/immeuble 2.png")
+			$Building.offset.y = -332.5
+		BuildingType.TERRAIN:
+			$Building.texture = preload("res://Sprites/TileSprite/Building/terrain vague.png")
+			$Building.offset.y = -307.5
 		_:
 			#Texture vide
 			$Building.texture = null
@@ -165,3 +172,9 @@ func _on_Tile_mouse_exited():
 	mouseIsIn = false
 	$BackGround.material.set_shader_param("width", 0.0)
 	self.z_index = baseZIndex
+
+
+func spawnPollen():
+	var pollenInstance = pollen.instance()
+	pollenInstance.z_index = 2
+	call_deferred("add_child",pollenInstance)

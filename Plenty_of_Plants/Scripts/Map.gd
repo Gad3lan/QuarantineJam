@@ -16,7 +16,7 @@ var tilesWithPlants : Array
 
 export var tileSpacing = Vector2(180.0,90.0)
 
-onready var pollen = preload("res://Scenes/BioMasse.tscn")
+
 
 enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, BUILDING, CENTRALE}
 enum PlantType {NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE}
@@ -184,32 +184,31 @@ func can_place(toPlant,thisTile):
 	return hasPlantNeighbors(thisTile) && buy(toPlant)
 
 
-func spawnPollen(tileIndex):
-	if (not checkInBounds(tileIndex)):
-		print("Warning, tile not in bound : ",tileIndex," bounds =",tileCountA,tileCountB)
-		return
-	var pollenInstance = pollen.instance()
-	pollenInstance.position = allTiles[floor(tileIndex.x)][floor(tileIndex.y)].position
-	call_deferred("add_child",pollenInstance)
+
 	
 #A PARTIR DE LA,FONCTIONS DE TEST
 #////////////////////////////////////////////////////////////////////////////////////////////////////////
 func flourishNeighbors(pos:Vector2):
+	print("flourish")
 	for tilePos in neighborsIndexes(pos):
-		spawnPollen(tilePos)
+		allTiles[tilePos.x][tilePos.y].spawnPollen()
 
 var idxToAddTo = Vector2(0,0)
+"""
 func _input(event):
-	"""if event == InputEventKey:
+	if event is InputEventKey:
+		print(idxToAddTo)
 		if (idxToAddTo.x == tileCountB):
 			idxToAddTo.y += 1
 			idxToAddTo.x = 0
+		else:
+			idxToAddTo.x +=1
 		if event.get_scancode_with_modifiers() == KEY_A:
-			print(allTiles[idxToAddTo.x][idxToAddTo.y].z_index)"""
+			flourishNeighbors(idxToAddTo)
 		
 		
 	pass
-
+"""
 func tests():
 	flourishNeighbors(Vector2(4,2))
 	for row in allTiles:
