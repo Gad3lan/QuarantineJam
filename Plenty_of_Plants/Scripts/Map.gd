@@ -41,9 +41,11 @@ func tilePositionToIndexes(pos):
 	return Vector2((arrayPosition.x+arrayPosition.y)*0.5, (-arrayPosition.x+arrayPosition.y)*0.5)
 
 func initTiles(hasToInit):
+	print("initTiles")
 	if not hasToInit:
 		return
 	hasToInit = false
+	assignTiles = false
 	var rowB : Array = []
 	for b in range(tileCountA):
 		rowB = []
