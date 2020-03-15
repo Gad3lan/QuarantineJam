@@ -58,10 +58,9 @@ func selectBuilding(buildingType):
 			$Building.offset.y = 0
 
 # Called when the node enters the scene tree for the first time.
-#func _ready():
-	#add_to_group("Tiles")
-	#var buildingInstance = buildPaths[BType].instance()
-	#call_deferred("add_child", buildingInstance)
+func _ready():
+	add_to_group("Tiles")
+
 
 #return True si il y a une plante
 func hasPlant():

@@ -8,10 +8,10 @@ position = Vector2( 175, 85 )
 script = ExtResource( 1 )
 
 [node name="Tile" parent="." instance=ExtResource( 2 )]
-position = Vector2( -174.25, -81.8703 )
+position = Vector2( -175, -85 )
 
 [node name="Tile84" parent="." instance=ExtResource( 2 )]
-position = Vector2( -355.75, 4.24985 )
+position = Vector2( -355, 5 )
 
 [node name="Tile97" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 95 )
@@ -282,8 +282,6 @@ position = Vector2( 725, 365 )
 
 [node name="Tile79" parent="." instance=ExtResource( 2 )]
 position = Vector2( 545, 455 )
-z_index = 1
-BType = 3
 
 [node name="Tile111" parent="." instance=ExtResource( 2 )]
 position = Vector2( 365, 545 )
@@ -296,7 +294,6 @@ position = Vector2( 5, 725 )
 
 [node name="Tile188" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 815 )
-BType = 1
 
 [node name="Tile211" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 905 )
@@ -554,11 +551,10 @@ position = Vector2( -895, 4775 )
 position = Vector2( 5, 5 )
 
 [node name="Tile83" parent="." instance=ExtResource( 2 )]
-position = Vector2( -171.87, 95.7502 )
-BType = 1
+position = Vector2( -175, 95 )
 
 [node name="Tile98" parent="." instance=ExtResource( 2 )]
-position = Vector2( -355, 184.25 )
+position = Vector2( -355, 185 )
 
 [node name="Tile142" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 275 )
@@ -832,7 +828,6 @@ position = Vector2( 545, 635 )
 
 [node name="Tile145" parent="." instance=ExtResource( 2 )]
 position = Vector2( 365, 725 )
-BType = 1
 
 [node name="Tile163" parent="." instance=ExtResource( 2 )]
 position = Vector2( 185, 815 )
@@ -1637,7 +1632,6 @@ position = Vector2( 365, 185 )
 
 [node name="Tile75" parent="." instance=ExtResource( 2 )]
 position = Vector2( 185, 275 )
-BType = 3
 
 [node name="Tile93" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, 365 )
@@ -1650,7 +1644,6 @@ position = Vector2( -355, 545 )
 
 [node name="Tile199" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 635 )
-BType = 1
 
 [node name="Tile237" parent="." instance=ExtResource( 2 )]
 position = Vector2( -715, 725 )
@@ -2185,7 +2178,6 @@ position = Vector2( 185, 455 )
 
 [node name="Tile134" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, 545 )
-BType = 1
 
 [node name="Tile154" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 635 )
