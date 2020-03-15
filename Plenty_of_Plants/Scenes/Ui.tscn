@@ -24,9 +24,6 @@ font_data = ExtResource( 8 )
 
 [node name="Ui" type="MarginContainer"]
 script = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="NinePatchRect" type="Panel" parent="."]
 margin_right = 1092.0

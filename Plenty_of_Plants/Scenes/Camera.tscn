@@ -11,9 +11,11 @@ sensibilityRadius = 100.0
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="Ui" parent="." instance=ExtResource( 2 )]
-margin_left = -497.9
-margin_top = -286.867
-margin_right = 594.1
-margin_bottom = 359.133
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Ui" parent="CanvasLayer" instance=ExtResource( 2 )]
+margin_left = 25.2
+margin_top = 27.3
+margin_right = 1117.2
+margin_bottom = 673.3
 rect_scale = Vector2( 0.3, 0.3 )

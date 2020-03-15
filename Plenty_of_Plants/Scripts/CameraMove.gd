@@ -7,7 +7,7 @@ export (int) var zoomPos = 0
 export (float) var zoomStep = 0.05
 
 onready var camera = get_node("Camera2D")
-onready var ui = get_node("Ui")
+#onready var ui = get_node("Ui")
 
 var lastMousePos
 var rightClick = false
@@ -43,11 +43,11 @@ func moveCamera(delta):
 func zoom(direcrion):
 	if direcrion > 0:
 		camera.zoom *= (1.0 + zoomStep)
-		ui.rect_scale *= (1.0 + zoomStep)
+		#ui.rect_scale *= (1.0 + zoomStep)
 		zoomPos += 1
 	else:
 		camera.zoom *= (1.0 - zoomStep)
-		ui.rect_scale *= (1.0 - zoomStep)
+		#ui.rect_scale *= (1.0 - zoomStep)
 		zoomPos -= 1
 
 func _input(event):
