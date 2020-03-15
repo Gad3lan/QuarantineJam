@@ -51,7 +51,7 @@ func initTiles(hasToInit):
 			rowB.push_back(null)
 		allTiles.push_back(rowB.duplicate())
 		rowB.empty()
-	for tile in get_tree().get_nodes_in_group("Tiles"):
+	for tile in get_children():
 		var arrayPosition = Vector2(0,0)
 		arrayPosition.x = floor((tile.position.x - firstTilePos.x)/(tileSpacing.x))
 		arrayPosition.y = floor((tile.position.y - firstTilePos.y)/(tileSpacing.y))
