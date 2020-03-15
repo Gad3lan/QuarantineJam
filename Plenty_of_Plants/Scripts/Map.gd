@@ -112,7 +112,6 @@ func buy(toPlant):
 		
 
 func can_place(toPlant,thisTile):
-	print("in can place")
 	return (true||hasNeighbors(thisTile))  && buy(toPlant)
 
 

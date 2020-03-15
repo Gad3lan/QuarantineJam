@@ -36,10 +36,8 @@ func plantCanBePlaced(plant):
 func setPlant(type):
 	if not plantCanBePlaced(type):
 		return false
-	print("before match")
 	match type:
 		PlantType.SECOIA:
-			print("SECOIA")
 			plant.texture = load("res://Sprites/TileSprite/Plants/Séquoia.PNG")
 			PType = type
 		_:
