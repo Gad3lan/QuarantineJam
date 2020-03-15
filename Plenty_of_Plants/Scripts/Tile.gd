@@ -76,6 +76,7 @@ func instancePlant(type):
 		plantInstance = plantPaths[type].instance()
 	else:
 		plantInstance = placeHolderPath.instance()
+	plantInstance.z_index = self.z_index + 1
 	call_deferred("add_child",plantInstance)
 
 func setPlant(type):

@@ -66,19 +66,21 @@ func initTiles(hasToInit):
 
 func getRectIndexFrom(index,sizeA,sizeB):
 	var rectIndexes = []
-	for a in range(index.x,sizeA):
-		for b in range(index.y,sizeB):
+	print(range(index.x - sizeA+1,index.x+1))
+	for a in range(index.x - sizeA+1,index.x+1):
+		for b in range(index.y - sizeB+1,index.y+1):
 			print("a:b = ",a,":",b)
-			rectIndexes.push_back(a,b)
+			rectIndexes.push_back(Vector2(a,b))
 	return rectIndexes
 
 func propageTypeAndZ():
+	print("propagate type and Z")
 	for row in allTiles:
 		for tile in row:
 			if tile.BType == BuildingType.PARCKING:
-				for tiles in getRectIndexFrom(tilePositionToIndexes(tile.position),2,2):
-					print("base tile position",tile.position)
-					tiles.z_index = tile.z_index
+				print("base tile position",tilePositionToIndexes(tile.position),", type = ",tile.BType," parking")
+				for indexToTransferTo in getRectIndexFrom(tilePositionToIndexes(tile.position),2,2):
+					allTiles[indexToTransferTo.x][indexToTransferTo.y].z_index = tile.z_index
 
 
 func checkInBounds(vectorIndex):
