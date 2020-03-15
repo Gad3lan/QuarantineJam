@@ -43,9 +43,11 @@ func moveCamera(delta):
 func zoom(direcrion):
 	if direcrion > 0:
 		camera.zoom *= (1.0 + zoomStep)
+		ui.rect_scale *= (1.0 + zoomStep)
 		zoomPos += 1
 	else:
 		camera.zoom *= (1.0 - zoomStep)
+		ui.rect_scale *= (1.0 - zoomStep)
 		zoomPos -= 1
 
 func _input(event):

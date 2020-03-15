@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Sprites/UiSprite/graines/Attaque/seed_lierre.PNG" type="Texture" id=1]
 [ext_resource path="res://Sprites/UiSprite/graines/Attaque/seed_mushroom.PNG" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Sprites/UiSprite/graines/Soutien/seed_ronces.PNG" type="Texture" id=6]
 [ext_resource path="res://Sprites/UiSprite/graines/Biomasse/seed_eucalyptus.PNG" type="Texture" id=7]
 [ext_resource path="res://Font/GretaGrotesk.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Scripts/Ui.gd" type="Script" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -21,20 +22,25 @@ font_data = ExtResource( 8 )
 size = 70
 font_data = ExtResource( 8 )
 
-[node name="Ui" type="CanvasLayer"]
-scale = Vector2( 0.3, 0.3 )
-transform = Transform2D( 0.3, 0, 0, 0.3, 0, 0 )
+[node name="Ui" type="MarginContainer"]
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="NinePatchRect" type="Panel" parent="."]
 margin_right = 1092.0
-margin_bottom = 639.0
+margin_bottom = 646.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 1092.0
-margin_bottom = 709.0
+margin_bottom = 646.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MenuPrincipale" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 1092.0
@@ -220,3 +226,7 @@ margin_top = 7.0
 margin_right = 263.0
 margin_bottom = 263.0
 texture = ExtResource( 6 )
+[connection signal="mouse_entered" from="VBoxContainer/MenuPrincipale/Attaque" to="." method="_on_Attaque_mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/MenuPrincipale/Auxiliaire" to="." method="_on_Auxiliaire_mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/MenuPrincipale/Biomasse" to="." method="_on_Biomasse_mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/MenuPrincipale/Soutien" to="." method="_on_Soutien_mouse_entered"]
