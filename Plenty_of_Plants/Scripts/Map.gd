@@ -53,26 +53,15 @@ func initTiles():
 		allTiles[(arrayPosition.x+arrayPosition.y)*0.5][(-arrayPosition.x+arrayPosition.y)*0.5] = tile
 		#on tourne de 45 degrees
 # Called when the node enters the scene tree for the first time.
-func tests():
-	for row in allTiles:
-		for tile in row:
-			var indexArray = tilePositionToIndexes(tile.position)
-			assert(tile == allTiles[indexArray.x][indexArray.y])
-			var neighbors = neighborsIndexes(indexArray)
-			for neighIndexes in neighbors:
-				assert(checkInBounds(neighIndexes))
+
 
 func checkInBounds(vectorIndex):
 	return  vectorIndex.x >= 0 && vectorIndex.y >= 0 && vectorIndex.x < tileCountA && vectorIndex.y < tileCountB
 
 func _ready():
-	
 	initTiles()
 	allTiles[0][0].setPlant(PlantType.SECOIA)
 	tests()
-	spawnPollen(Vector2(0,0))
-	spawnPollen(Vector2(2,2))
-	spawnPollen(Vector2(tileCountA-1,tileCountB-1))
 	pass # Replace with function body.
 
 func neighborsIndexes(centerPos):
@@ -95,31 +84,26 @@ func neighborsIndexes(centerPos):
 		otherPos.push_back(Vector2(centerPos.x, centerPos.y - 1))
 	return otherPos
 
-func hasNeighbors(thisTile):
+func hasPlantNeighbors(thisTile):
 	var neighs = neighborsIndexes(tilePositionToIndexes(thisTile.position))
 	var canPlace = false
 	for neighPos in neighs:
-		canPlace = allTiles[neighPos.y][neighPos.x].hasPlant()
-		print("indexes :",neighPos,"; position : ",allTiles[neighPos.y][neighPos.x].position)
+		canPlace = canPlace || allTiles[neighPos.x][neighPos.y].hasPlant()
 		if canPlace:
-			break
-	print("______________________________")
+			return true
 	return canPlace
 
 func pickUpPollen():
 	biomasseNow += 3
-	print(biomasseNow)
 
 func buy(toPlant):
 	var canPlant = biomasseNow > plantCost[toPlant]
 	biomasseNow -= plantCost[toPlant] if canPlant else 0
-	print(biomasseNow)
 	return canPlant
 
 
 func can_place(toPlant,thisTile):
-	return hasNeighbors(thisTile)  && buy(toPlant)
-
+	return hasPlantNeighbors(thisTile) && buy(toPlant)
 
 
 func spawnPollen(tileIndex):
@@ -127,25 +111,27 @@ func spawnPollen(tileIndex):
 		print("Warning, tile not in bound : ",tileIndex," bounds =",tileCountA,tileCountB)
 		return
 	var pollenInstance = pollen.instance()
-	pollenInstance.position = allTiles[tileIndex.x][tileIndex.y].position
+	pollenInstance.position = allTiles[floor(tileIndex.x)][floor(tileIndex.y)].position
 	call_deferred("add_child",pollenInstance)
-
-
+	
+#A PARTIR DE LA,FONCTIONS DE TEST
+#////////////////////////////////////////////////////////////////////////////////////////////////////////
+func flourishNeighbors(pos:Vector2):
+	for tilePos in neighborsIndexes(pos):
+		spawnPollen(tilePos)
+var idxToAddTo = Vector2(0,0)
 func _input(event):
-	if event is InputEventKey:
-		print(event.get_scancode_with_modifiers())
-		if event is InputEventKey && event.get_scancode_with_modifiers() == 78:
-			for t in allTiles[-1]:
-				t.queue_free()
-			allTiles.pop_back()
-		if event is InputEventKey && event.get_scancode_with_modifiers() == 75:
-			print(allTiles.size(),", ",allTiles[-1].size())
-			if allTiles[-1].size() > 0:
-				allTiles[-1][-1].queue_free()
-				allTiles[-1].pop_back()
-			else:
-				allTiles.pop_back()
-				allTiles[-1][-1].queue_free()
+	pass
+
+func tests():
+	flourishNeighbors(Vector2(4,2))
+	for row in allTiles:
+		for tile in row:
+			var indexArray = tilePositionToIndexes(tile.position)
+			assert(tile == allTiles[indexArray.x][indexArray.y])
+			var neighbors = neighborsIndexes(indexArray)
+			for neighIndexes in neighbors:
+				assert(checkInBounds(neighIndexes))
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

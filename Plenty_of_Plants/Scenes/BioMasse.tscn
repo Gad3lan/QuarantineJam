@@ -6,10 +6,10 @@
 [node name="BioMasse" type="Node2D"]
 
 [node name="Button" type="Button" parent="."]
-margin_left = 430.1
-margin_top = 240.05
-margin_right = 608.1
-margin_bottom = 412.05
+margin_left = -90.7387
+margin_top = -81.8857
+margin_right = 87.2612
+margin_bottom = 90.1143
 action_mode = 0
 flat = true
 script = ExtResource( 2 )
