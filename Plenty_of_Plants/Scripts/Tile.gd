@@ -1,3 +1,4 @@
+tool
 extends Area2D
 
 onready var map = self.get_parent()
@@ -8,7 +9,7 @@ enum PlantType {NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE}
 enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD}
 
 export (PlantType) var PType = PlantType.NONE
-export (BuildingType) var BType = BuildingType.NONE
+export (BuildingType) var BType setget selectBuilding
 export (int) var texturePart = 0
 
 onready var placeHolderPath = preload("res://Scenes/Prefabs/PlaceHolder.tscn")
@@ -37,12 +38,30 @@ export var startTile = false
 onready var plant : Sprite = get_node("Plant")
 onready var building : Sprite = get_node("Building")
 
+#Fonction de l'outil
+func selectBuilding(buildingType):
+	#Necessaire pour le fonctionnement
+	if (Engine.is_editor_hint()):
+		#Assignation de BType ici car elle ne se fait plus à l'export
+		BType = buildingType
+		if buildingType == BuildingType.HOTEL:
+			#Chargement de la texture
+			$Building.texture = preload("res://Sprites/TileSprite/Building/Hôtel.png")
+			#offset = -[taille sprite y]/ 2 + 90
+			$Building.offset.y = -284
+		elif buildingType == BuildingType.PARCKING:
+			$Building.texture = preload("res://Sprites/TileSprite/Building/parcking.png")
+			$Building.offset.y = -102
+		else:
+			#Texture vide
+			$Building.texture = null
+			$Building.offset.y = 0
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	add_to_group("Tiles")
-	var buildingInstance = buildPaths[BType].instance()
-	call_deferred("add_child", buildingInstance)
+#func _ready():
+	#add_to_group("Tiles")
+	#var buildingInstance = buildPaths[BType].instance()
+	#call_deferred("add_child", buildingInstance)
 
 #return True si il y a une plante
 func hasPlant():
