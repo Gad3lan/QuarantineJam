@@ -1,8 +1,11 @@
+tool
 extends Node2D
 
 var allTiles : Array
 export var tileCountA : int = 30 # sur le vecteur (1,1)
 export var tileCountB : int = 30 # sur le vecteur (-1,1)
+export (bool) var assignTiles = false setget initTiles
+
 export var firstTilePos = Vector2(-175.0,-85)
 
 
@@ -37,7 +40,12 @@ func tilePositionToIndexes(pos):
 	arrayPosition.y = floor((pos.y - firstTilePos.y)/(tileSpacing.y))
 	return Vector2((arrayPosition.x+arrayPosition.y)*0.5, (-arrayPosition.x+arrayPosition.y)*0.5)
 
-func initTiles():
+func initTiles(hasToInit):
+	print("initTiles")
+	if not hasToInit:
+		return
+	hasToInit = false
+	assignTiles = false
 	var rowB : Array = []
 	for b in range(tileCountA):
 		rowB = []
@@ -45,21 +53,24 @@ func initTiles():
 			rowB.push_back(null)
 		allTiles.push_back(rowB.duplicate())
 		rowB.empty()
-	for tile in get_tree().get_nodes_in_group("Tiles"):
+	for tile in get_children():
 		var arrayPosition = Vector2(0,0)
 		arrayPosition.x = floor((tile.position.x - firstTilePos.x)/(tileSpacing.x))
 		arrayPosition.y = floor((tile.position.y - firstTilePos.y)/(tileSpacing.y))
 		#on passe dans un repère basé sur la taille des losanges
 		allTiles[(arrayPosition.x+arrayPosition.y)*0.5][(-arrayPosition.x+arrayPosition.y)*0.5] = tile
+		tile.z_index = -max(tileCountA,tileCountB)-floor(tile.position.y/firstTilePos.y)
+		
 		#on tourne de 45 degrees
-# Called when the node enters the scene tree for the first time.
+
 
 
 func checkInBounds(vectorIndex):
 	return  vectorIndex.x >= 0 && vectorIndex.y >= 0 && vectorIndex.x < tileCountA && vectorIndex.y < tileCountB
 
 func _ready():
-	initTiles()
+	assignTiles = true
+	initTiles(true)
 	allTiles[0][0].setPlant(PlantType.SECOIA)
 	tests()
 	pass # Replace with function body.
@@ -103,6 +114,7 @@ func buy(toPlant):
 
 
 func can_place(toPlant,thisTile):
+	print("z_index : ",thisTile.z_index)
 	return hasPlantNeighbors(thisTile) && buy(toPlant)
 
 
@@ -119,8 +131,17 @@ func spawnPollen(tileIndex):
 func flourishNeighbors(pos:Vector2):
 	for tilePos in neighborsIndexes(pos):
 		spawnPollen(tilePos)
+
 var idxToAddTo = Vector2(0,0)
 func _input(event):
+	"""if event == InputEventKey:
+		if (idxToAddTo.x == tileCountB):
+			idxToAddTo.y += 1
+			idxToAddTo.x = 0
+		if event.get_scancode_with_modifiers() == KEY_A:
+			print(allTiles[idxToAddTo.x][idxToAddTo.y].z_index)"""
+		
+		
 	pass
 
 func tests():
