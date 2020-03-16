@@ -194,6 +194,7 @@ func replacePlaceHolderOnDict():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Fire.hide()
 	add_to_group("Tiles")
 	replacePlaceHolderOnDict()
 	baseZIndex = self.z_index
@@ -412,6 +413,8 @@ func setPlant(type):
 		plantLifeTimer.start()
 	pLife = plantLife.get(type)
 	print(pLife, ", ", buildingDamage)
+	if ((not root and not parent.destroyed) or not destroyed):
+		$Fire.show()
 	instancePlant(type)
 	return true
 
@@ -477,10 +480,14 @@ func _on_plantLife_timeout():
 	print("pLife : ", pLife)
 	if ((not root and parent.destroyed) or destroyed):
 		plantLifeTimer.stop()
+		timer.stop()
+		$Fire.hide()
 	else:
 		activeSoutien(PType)
 		pLife -= buildingDamage
 		if pLife <= 0:
 			plantLifeTimer.stop()
+			timer.stop()
+			$Fire.hide()
 			$Node2D.queue_free()
 			PType = PlantType.NONE
