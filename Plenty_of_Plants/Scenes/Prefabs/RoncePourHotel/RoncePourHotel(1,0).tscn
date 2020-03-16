@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Sprites/TileSprite/Building/sol neutre.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/prefabTile.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/TileSprite/Plants/Soutien/IMG_6603.PNG" type="Texture" id=4]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/Hôtel.png-e447f8b636963f7b97331dec743fd626.stex"
+
+[sub_resource type="StreamTexture" id=5]
+flags = 4
+load_path = "res://.import/IMG_6615.PNG-927af590d57c26c43d26dacf0603e8a6.stex"
+
+[sub_resource type="StreamTexture" id=6]
+flags = 4
+load_path = "res://.import/Ronce haute 2 gauche.PNG-9f77c2d8895a92dce930a225d57d056a.stex"
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 180.049, 89.1672 )
+script = ExtResource( 3 )
+
+[node name="toDelete" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="toDelete"]
+position = Vector2( 0.554779, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="toDelete"]
+position = Vector2( 181.576, -90.2488 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="toDelete"]
+position = Vector2( -179.261, -90.5262 )
+texture = ExtResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="toDelete"]
+position = Vector2( 2.46143, -179.848 )
+texture = ExtResource( 2 )
+
+[node name="Sprite5" type="Sprite" parent="toDelete"]
+position = Vector2( 0.477968, -287.316 )
+texture = SubResource( 1 )
+
+[node name="toKeep" type="Node2D" parent="."]
+
+[node name="(1,0)" type="Sprite" parent="."]
+position = Vector2( -216.276, -23.2198 )
+scale = Vector2( 0.596, 0.596 )
+texture = ExtResource( 4 )
+
+[node name="Gauche4" type="Sprite" parent="(1,0)"]
+position = Vector2( 73.4662, -30.0544 )
+texture = ExtResource( 4 )
+
+[node name="Gauche5" type="Sprite" parent="(1,0)"]
+position = Vector2( 41.1856, -16.6969 )
+texture = ExtResource( 4 )
+
+[node name="Gauche2" type="Sprite" parent="(1,0)"]
+position = Vector2( 41.1856, -217.059 )
+texture = SubResource( 5 )
+
+[node name="Gauche3" type="Sprite" parent="(1,0)"]
+position = Vector2( -26.715, -404.064 )
+rotation = -2.7143
+texture = SubResource( 6 )
