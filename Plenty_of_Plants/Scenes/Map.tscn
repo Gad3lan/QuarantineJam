@@ -9,51 +9,51 @@ script = ExtResource( 1 )
 
 [node name="Tile" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, -85 )
-z_index = -61
+z_index = -55
 coordOnTexture = Vector2( 3, 3 )
 PType = 4
 BType = 14
 
 [node name="Tile84" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 5 )
-z_index = -60
+z_index = -55
 coordOnTexture = Vector2( 3, 2 )
 BType = 14
 
 [node name="Tile97" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 95 )
-z_index = -59
+z_index = -55
 coordOnTexture = Vector2( 3, 1 )
 BType = 14
 
 [node name="Tile124" parent="." instance=ExtResource( 2 )]
 position = Vector2( -715, 185 )
-z_index = -58
+z_index = -55
 coordOnTexture = Vector2( 3, 0 )
 BType = 14
 
 [node name="Tile168" parent="." instance=ExtResource( 2 )]
 position = Vector2( -895, 275 )
-z_index = -57
+z_index = -55
 coordOnTexture = Vector2( 1, 1 )
 root = true
 BType = 12
 
 [node name="Tile194" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1075, 365 )
-z_index = -56
+z_index = -55
 coordOnTexture = Vector2( 1, 0 )
 BType = 12
 
 [node name="Tile223" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1255, 455 )
-z_index = -55
+z_index = -53
 coordOnTexture = Vector2( 1, 1 )
 BType = 12
 
 [node name="Tile248" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1435, 545 )
-z_index = -54
+z_index = -53
 coordOnTexture = Vector2( 1, 0 )
 BType = 12
 
@@ -65,25 +65,25 @@ BType = 9
 
 [node name="Tile316" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1795, 725 )
-z_index = -51
+z_index = -45
 coordOnTexture = Vector2( 3, 3 )
 BType = 14
 
 [node name="Tile336" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1975, 815 )
-z_index = -50
+z_index = -45
 coordOnTexture = Vector2( 3, 2 )
 BType = 14
 
 [node name="Tile370" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2155, 905 )
-z_index = -49
+z_index = -45
 coordOnTexture = Vector2( 3, 1 )
 BType = 14
 
 [node name="Tile393" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2335, 995 )
-z_index = -48
+z_index = -45
 coordOnTexture = Vector2( 3, 0 )
 BType = 14
 
@@ -167,49 +167,49 @@ BType = 6
 
 [node name="Tile812" parent="." instance=ExtResource( 2 )]
 position = Vector2( -4855, 2255 )
-z_index = -33
+z_index = -27
 coordOnTexture = Vector2( 3, 3 )
 BType = 16
 
 [node name="Tile848" parent="." instance=ExtResource( 2 )]
 position = Vector2( -5035, 2345 )
-z_index = -32
+z_index = -27
 coordOnTexture = Vector2( 3, 2 )
 BType = 16
 
 [node name="Tile882" parent="." instance=ExtResource( 2 )]
 position = Vector2( -5215, 2435 )
-z_index = -31
+z_index = -27
 coordOnTexture = Vector2( 3, 1 )
 BType = 16
 
 [node name="Tile925" parent="." instance=ExtResource( 2 )]
 position = Vector2( -5395, 2525 )
-z_index = -30
+z_index = -27
 coordOnTexture = Vector2( 3, 0 )
 BType = 16
 
 [node name="Tile11" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1625, 815 )
-z_index = -50
+z_index = -48
 coordOnTexture = Vector2( 1, 1 )
 BType = 3
 
 [node name="Tile88" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1445, 905 )
-z_index = -49
+z_index = -48
 coordOnTexture = Vector2( 1, 0 )
 BType = 3
 
 [node name="Tile106" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1265, 995 )
-z_index = -48
+z_index = -46
 coordOnTexture = Vector2( 1, 1 )
 BType = 1
 
 [node name="Tile146" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1085, 1085 )
-z_index = -47
+z_index = -46
 coordOnTexture = Vector2( 1, 0 )
 BType = 1
 
@@ -221,31 +221,31 @@ BType = 9
 
 [node name="Tile204" parent="." instance=ExtResource( 2 )]
 position = Vector2( 725, 1265 )
-z_index = -45
+z_index = -40
 coordOnTexture = Vector2( 2, 3 )
 BType = 16
 
 [node name="Tile216" parent="." instance=ExtResource( 2 )]
 position = Vector2( 545, 1355 )
-z_index = -44
+z_index = -40
 coordOnTexture = Vector2( 2, 2 )
 BType = 16
 
 [node name="Tile270" parent="." instance=ExtResource( 2 )]
 position = Vector2( 365, 1445 )
-z_index = -43
+z_index = -40
 coordOnTexture = Vector2( 2, 1 )
 BType = 16
 
 [node name="Tile271" parent="." instance=ExtResource( 2 )]
 position = Vector2( 185, 1535 )
-z_index = -42
+z_index = -40
 coordOnTexture = Vector2( 2, 0 )
 BType = 16
 
 [node name="Tile330" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, 1625 )
-z_index = -41
+z_index = -40
 coordOnTexture = Vector2( 0, 1 )
 BType = 3
 
@@ -257,7 +257,7 @@ BType = 3
 
 [node name="Tile361" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 1805 )
-z_index = -39
+z_index = -38
 coordOnTexture = Vector2( 0, 1 )
 BType = 12
 
@@ -323,7 +323,7 @@ BType = 6
 
 [node name="Tile717" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2335, 2795 )
-z_index = -27
+z_index = -26
 coordOnTexture = Vector2( 0, 1 )
 BType = 3
 
@@ -341,25 +341,25 @@ BType = 9
 
 [node name="Tile807" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2875, 3065 )
-z_index = -24
+z_index = -19
 coordOnTexture = Vector2( 2, 3 )
 BType = 2
 
 [node name="Tile829" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3055, 3155 )
-z_index = -23
+z_index = -19
 coordOnTexture = Vector2( 2, 2 )
 BType = 2
 
 [node name="Tile855" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3235, 3245 )
-z_index = -22
+z_index = -19
 coordOnTexture = Vector2( 2, 1 )
 BType = 2
 
 [node name="Tile895" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3415, 3335 )
-z_index = -21
+z_index = -19
 coordOnTexture = Vector2( 2, 0 )
 BType = 2
 
@@ -371,7 +371,7 @@ BType = 9
 
 [node name="Tile21" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3425, 1715 )
-z_index = -40
+z_index = -39
 coordOnTexture = Vector2( 0, 1 )
 BType = 13
 
@@ -389,37 +389,37 @@ BType = 9
 
 [node name="Tile144" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2885, 1985 )
-z_index = -37
+z_index = -35
 coordOnTexture = Vector2( 1, 1 )
 BType = 1
 
 [node name="Tile174" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2705, 2075 )
-z_index = -36
+z_index = -35
 coordOnTexture = Vector2( 1, 0 )
 BType = 1
 
 [node name="Tile185" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2525, 2165 )
-z_index = -35
+z_index = -30
 coordOnTexture = Vector2( 1, 3 )
 BType = 11
 
 [node name="Tile234" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2345, 2255 )
-z_index = -33
+z_index = -30
 coordOnTexture = Vector2( 1, 2 )
 BType = 11
 
 [node name="Tile254" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2165, 2345 )
-z_index = -32
+z_index = -30
 coordOnTexture = Vector2( 1, 1 )
 BType = 11
 
 [node name="Tile295" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1985, 2435 )
-z_index = -31
+z_index = -30
 coordOnTexture = Vector2( 1, 0 )
 BType = 11
 
@@ -431,13 +431,13 @@ BType = 9
 
 [node name="Tile355" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1625, 2615 )
-z_index = -29
+z_index = -27
 coordOnTexture = Vector2( 1, 1 )
 BType = 3
 
 [node name="Tile363" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1445, 2705 )
-z_index = -28
+z_index = -27
 coordOnTexture = Vector2( 1, 0 )
 BType = 3
 
@@ -449,7 +449,7 @@ BType = 9
 
 [node name="Tile430" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1085, 2885 )
-z_index = -26
+z_index = -25
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -461,7 +461,7 @@ BType = 1
 
 [node name="Tile499" parent="." instance=ExtResource( 2 )]
 position = Vector2( 725, 3065 )
-z_index = -24
+z_index = -23
 coordOnTexture = Vector2( 0, 1 )
 BType = 13
 
@@ -479,7 +479,7 @@ BType = 9
 
 [node name="Tile588" parent="." instance=ExtResource( 2 )]
 position = Vector2( 185, 3335 )
-z_index = -21
+z_index = -20
 coordOnTexture = Vector2( 0, 1 )
 BType = 12
 
@@ -491,7 +491,7 @@ BType = 12
 
 [node name="Tile640" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 3515 )
-z_index = -19
+z_index = -18
 coordOnTexture = Vector2( 0, 1 )
 BType = 3
 
@@ -539,37 +539,37 @@ BType = 4
 
 [node name="Tile871" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1615, 4235 )
-z_index = -10
+z_index = -8
 coordOnTexture = Vector2( 1, 1 )
 BType = 1
 
 [node name="Tile910" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1795, 4325 )
-z_index = -9
+z_index = -8
 coordOnTexture = Vector2( 1, 0 )
 BType = 1
 
 [node name="Tile6" parent="." instance=ExtResource( 2 )]
 position = Vector2( 725, 365 )
-z_index = -56
+z_index = -49
 coordOnTexture = Vector2( 3, 3 )
 BType = 11
 
 [node name="Tile79" parent="." instance=ExtResource( 2 )]
 position = Vector2( 545, 455 )
-z_index = -55
+z_index = -49
 coordOnTexture = Vector2( 3, 2 )
 BType = 11
 
 [node name="Tile111" parent="." instance=ExtResource( 2 )]
 position = Vector2( 365, 545 )
-z_index = -54
+z_index = -49
 coordOnTexture = Vector2( 3, 1 )
 BType = 11
 
 [node name="Tile148" parent="." instance=ExtResource( 2 )]
 position = Vector2( 185, 635 )
-z_index = -53
+z_index = -49
 coordOnTexture = Vector2( 3, 0 )
 BType = 11
 
@@ -581,49 +581,49 @@ BType = 9
 
 [node name="Tile188" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 815 )
-z_index = -50
+z_index = -44
 coordOnTexture = Vector2( 3, 3 )
 BType = 2
 
 [node name="Tile211" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 905 )
-z_index = -49
+z_index = -44
 coordOnTexture = Vector2( 3, 2 )
 BType = 2
 
 [node name="Tile243" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 995 )
-z_index = -48
+z_index = -44
 coordOnTexture = Vector2( 3, 1 )
 BType = 2
 
 [node name="Tile288" parent="." instance=ExtResource( 2 )]
 position = Vector2( -715, 1085 )
-z_index = -47
+z_index = -44
 coordOnTexture = Vector2( 3, 0 )
 BType = 2
 
 [node name="Tile311" parent="." instance=ExtResource( 2 )]
 position = Vector2( -895, 1175 )
-z_index = -46
+z_index = -40
 coordOnTexture = Vector2( 3, 3 )
 BType = 16
 
 [node name="Tile335" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1075, 1265 )
-z_index = -45
+z_index = -40
 coordOnTexture = Vector2( 3, 2 )
 BType = 16
 
 [node name="Tile384" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1255, 1355 )
-z_index = -44
+z_index = -40
 coordOnTexture = Vector2( 3, 1 )
 BType = 16
 
 [node name="Tile408" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1435, 1445 )
-z_index = -43
+z_index = -40
 coordOnTexture = Vector2( 3, 0 )
 BType = 16
 
@@ -683,31 +683,31 @@ BType = 6
 
 [node name="Tile703" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3235, 2345 )
-z_index = -32
+z_index = -27
 coordOnTexture = Vector2( 2, 3 )
 BType = 11
 
 [node name="Tile734" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3415, 2435 )
-z_index = -31
+z_index = -27
 coordOnTexture = Vector2( 2, 2 )
 BType = 11
 
 [node name="Tile779" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3595, 2525 )
-z_index = -30
+z_index = -27
 coordOnTexture = Vector2( 2, 1 )
 BType = 11
 
 [node name="Tile782" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3775, 2615 )
-z_index = -29
+z_index = -27
 coordOnTexture = Vector2( 2, 0 )
 BType = 11
 
 [node name="Tile820" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3955, 2705 )
-z_index = -28
+z_index = -27
 coordOnTexture = Vector2( 0, 1 )
 BType = 13
 
@@ -719,7 +719,7 @@ BType = 13
 
 [node name="Tile876" parent="." instance=ExtResource( 2 )]
 position = Vector2( -4315, 2885 )
-z_index = -26
+z_index = -25
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -731,7 +731,7 @@ BType = 1
 
 [node name="Tile14" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2525, 1265 )
-z_index = -45
+z_index = -44
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -749,37 +749,37 @@ BType = 9
 
 [node name="Tile150" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1985, 1535 )
-z_index = -42
+z_index = -40
 coordOnTexture = Vector2( 1, 1 )
 BType = 3
 
 [node name="Tile162" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1805, 1625 )
-z_index = -41
+z_index = -40
 coordOnTexture = Vector2( 1, 0 )
 BType = 3
 
 [node name="Tile206" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1625, 1715 )
-z_index = -40
+z_index = -35
 coordOnTexture = Vector2( 2, 3 )
 BType = 15
 
 [node name="Tile226" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1445, 1805 )
-z_index = -39
+z_index = -35
 coordOnTexture = Vector2( 2, 2 )
 BType = 15
 
 [node name="Tile251" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1265, 1895 )
-z_index = -38
+z_index = -35
 coordOnTexture = Vector2( 2, 1 )
 BType = 15
 
 [node name="Tile289" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1085, 1985 )
-z_index = -37
+z_index = -35
 coordOnTexture = Vector2( 2, 0 )
 BType = 15
 
@@ -791,7 +791,7 @@ BType = 9
 
 [node name="Tile353" parent="." instance=ExtResource( 2 )]
 position = Vector2( 725, 2165 )
-z_index = -35
+z_index = -33
 coordOnTexture = Vector2( 0, 1 )
 BType = 13
 
@@ -809,31 +809,31 @@ BType = 9
 
 [node name="Tile436" parent="." instance=ExtResource( 2 )]
 position = Vector2( 185, 2435 )
-z_index = -31
+z_index = -26
 coordOnTexture = Vector2( 2, 3 )
 BType = 11
 
 [node name="Tile452" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, 2525 )
-z_index = -30
+z_index = -26
 coordOnTexture = Vector2( 2, 2 )
 BType = 11
 
 [node name="Tile483" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 2615 )
-z_index = -29
+z_index = -26
 coordOnTexture = Vector2( 2, 1 )
 BType = 11
 
 [node name="Tile532" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 2705 )
-z_index = -28
+z_index = -26
 coordOnTexture = Vector2( 2, 0 )
 BType = 11
 
 [node name="Tile559" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 2795 )
-z_index = -27
+z_index = -26
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -845,7 +845,7 @@ BType = 1
 
 [node name="Tile620" parent="." instance=ExtResource( 2 )]
 position = Vector2( -895, 2975 )
-z_index = -25
+z_index = -24
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -881,25 +881,25 @@ BType = 6
 
 [node name="Tile783" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1975, 3515 )
-z_index = -19
+z_index = -14
 coordOnTexture = Vector2( 1, 3 )
 BType = 16
 
 [node name="Tile816" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2155, 3605 )
-z_index = -18
+z_index = -14
 coordOnTexture = Vector2( 1, 2 )
 BType = 16
 
 [node name="Tile865" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2335, 3695 )
-z_index = -17
+z_index = -14
 coordOnTexture = Vector2( 1, 1 )
 BType = 16
 
 [node name="Tile875" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2515, 3785 )
-z_index = -15
+z_index = -14
 coordOnTexture = Vector2( 1, 0 )
 BType = 16
 
@@ -917,19 +917,19 @@ BType = 9
 
 [node name="Tile85" parent="." instance=ExtResource( 2 )]
 position = Vector2( 4145, 2255 )
-z_index = -33
+z_index = -30
 coordOnTexture = Vector2( 0, 3 )
 BType = 2
 
 [node name="Tile99" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3965, 2345 )
-z_index = -32
+z_index = -30
 coordOnTexture = Vector2( 0, 2 )
 BType = 2
 
 [node name="Tile143" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3785, 2435 )
-z_index = -31
+z_index = -30
 coordOnTexture = Vector2( 0, 1 )
 BType = 2
 
@@ -941,7 +941,7 @@ BType = 2
 
 [node name="Tile200" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3425, 2615 )
-z_index = -29
+z_index = -28
 coordOnTexture = Vector2( 0, 1 )
 BType = 3
 
@@ -959,31 +959,31 @@ BType = 9
 
 [node name="Tile296" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2885, 2885 )
-z_index = -26
+z_index = -24
 coordOnTexture = Vector2( 1, 1 )
 BType = 13
 
 [node name="Tile302" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2705, 2975 )
-z_index = -25
+z_index = -24
 coordOnTexture = Vector2( 1, 0 )
 BType = 13
 
 [node name="Tile350" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2525, 3065 )
-z_index = -24
+z_index = -21
 coordOnTexture = Vector2( 0, 3 )
 BType = 16
 
 [node name="Tile382" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2345, 3155 )
-z_index = -23
+z_index = -21
 coordOnTexture = Vector2( 0, 2 )
 BType = 16
 
 [node name="Tile400" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2165, 3245 )
-z_index = -22
+z_index = -21
 coordOnTexture = Vector2( 0, 1 )
 BType = 16
 
@@ -1001,25 +1001,25 @@ BType = 9
 
 [node name="Tile503" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1625, 3515 )
-z_index = -19
+z_index = -13
 coordOnTexture = Vector2( 2, 3 )
 BType = 15
 
 [node name="Tile531" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1445, 3605 )
-z_index = -18
+z_index = -13
 coordOnTexture = Vector2( 2, 2 )
 BType = 15
 
 [node name="Tile564" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1265, 3695 )
-z_index = -17
+z_index = -13
 coordOnTexture = Vector2( 2, 1 )
 BType = 15
 
 [node name="Tile600" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1085, 3785 )
-z_index = -15
+z_index = -13
 coordOnTexture = Vector2( 2, 0 )
 BType = 15
 
@@ -1031,7 +1031,7 @@ BType = 9
 
 [node name="Tile637" parent="." instance=ExtResource( 2 )]
 position = Vector2( 725, 3965 )
-z_index = -13
+z_index = -12
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -1079,62 +1079,64 @@ BType = 6
 
 [node name="Tile886" parent="." instance=ExtResource( 2 )]
 position = Vector2( -715, 4685 )
-z_index = -5
+z_index = -3
 coordOnTexture = Vector2( 1, 1 )
 BType = 1
 
 [node name="Tile905" parent="." instance=ExtResource( 2 )]
 position = Vector2( -895, 4775 )
-z_index = -4
+z_index = -3
 coordOnTexture = Vector2( 1, 0 )
 BType = 1
 
 [node name="Tile2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, 5 )
-z_index = -60
+z_index = -55
 coordOnTexture = Vector2( 2, 3 )
 BType = 14
 
 [node name="Tile83" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 95 )
-z_index = -59
+z_index = -55
 coordOnTexture = Vector2( 2, 2 )
 BType = 14
 
 [node name="Tile98" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 185 )
-z_index = -58
+z_index = -55
 coordOnTexture = Vector2( 2, 1 )
 BType = 14
 
 [node name="Tile142" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 275 )
-z_index = -57
+z_index = -55
 coordOnTexture = Vector2( 2, 0 )
 BType = 14
 
 [node name="Tile175" parent="." instance=ExtResource( 2 )]
 position = Vector2( -715, 365 )
-z_index = -56
-coordOnTexture = Vector2( 0, 1 )
+z_index = -54
+coordOnTexture = Vector2( 1, 1 )
 root = true
 BType = 12
 
 [node name="Tile196" parent="." instance=ExtResource( 2 )]
 position = Vector2( -895, 455 )
-z_index = -55
+z_index = -53
+coordOnTexture = Vector2( 1, 1 )
 root = true
 BType = 12
 
 [node name="Tile229" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1075, 545 )
-z_index = -54
-coordOnTexture = Vector2( 0, 1 )
+z_index = -51
+coordOnTexture = Vector2( 1, 1 )
 BType = 12
 
 [node name="Tile258" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1255, 635 )
-z_index = -53
+z_index = -51
+coordOnTexture = Vector2( 1, 0 )
 root = true
 BType = 12
 
@@ -1146,25 +1148,25 @@ BType = 9
 
 [node name="Tile327" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1615, 815 )
-z_index = -50
+z_index = -45
 coordOnTexture = Vector2( 2, 3 )
 BType = 14
 
 [node name="Tile359" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1795, 905 )
-z_index = -49
+z_index = -45
 coordOnTexture = Vector2( 2, 2 )
 BType = 14
 
 [node name="Tile376" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1975, 995 )
-z_index = -48
+z_index = -45
 coordOnTexture = Vector2( 2, 1 )
 BType = 14
 
 [node name="Tile395" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2155, 1085 )
-z_index = -47
+z_index = -45
 coordOnTexture = Vector2( 2, 0 )
 BType = 14
 
@@ -1176,25 +1178,25 @@ BType = 9
 
 [node name="Tile467" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2515, 1265 )
-z_index = -45
+z_index = -39
 coordOnTexture = Vector2( 3, 3 )
 BType = 15
 
 [node name="Tile502" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2695, 1355 )
-z_index = -44
+z_index = -39
 coordOnTexture = Vector2( 3, 2 )
 BType = 15
 
 [node name="Tile526" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2875, 1445 )
-z_index = -43
+z_index = -39
 coordOnTexture = Vector2( 3, 1 )
 BType = 15
 
 [node name="Tile563" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3055, 1535 )
-z_index = -42
+z_index = -39
 coordOnTexture = Vector2( 3, 0 )
 BType = 15
 
@@ -1206,37 +1208,37 @@ BType = 9
 
 [node name="Tile621" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3415, 1715 )
-z_index = -40
+z_index = -38
 coordOnTexture = Vector2( 1, 1 )
 BType = 13
 
 [node name="Tile658" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3595, 1805 )
-z_index = -39
+z_index = -38
 coordOnTexture = Vector2( 1, 0 )
 BType = 13
 
 [node name="Tile689" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3775, 1895 )
-z_index = -38
+z_index = -36
 coordOnTexture = Vector2( 1, 1 )
 BType = 12
 
 [node name="Tile707" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3955, 1985 )
-z_index = -37
+z_index = -36
 coordOnTexture = Vector2( 1, 0 )
 BType = 12
 
 [node name="Tile732" parent="." instance=ExtResource( 2 )]
 position = Vector2( -4135, 2075 )
-z_index = -36
+z_index = -33
 coordOnTexture = Vector2( 1, 1 )
 BType = 12
 
 [node name="Tile775" parent="." instance=ExtResource( 2 )]
 position = Vector2( -4315, 2165 )
-z_index = -35
+z_index = -33
 coordOnTexture = Vector2( 1, 0 )
 BType = 12
 
@@ -1248,31 +1250,31 @@ BType = 9
 
 [node name="Tile833" parent="." instance=ExtResource( 2 )]
 position = Vector2( -4675, 2345 )
-z_index = -32
+z_index = -27
 coordOnTexture = Vector2( 2, 3 )
 BType = 16
 
 [node name="Tile853" parent="." instance=ExtResource( 2 )]
 position = Vector2( -4855, 2435 )
-z_index = -31
+z_index = -27
 coordOnTexture = Vector2( 2, 2 )
 BType = 16
 
 [node name="Tile891" parent="." instance=ExtResource( 2 )]
 position = Vector2( -5035, 2525 )
-z_index = -30
+z_index = -27
 coordOnTexture = Vector2( 2, 1 )
 BType = 16
 
 [node name="Tile927" parent="." instance=ExtResource( 2 )]
 position = Vector2( -5215, 2615 )
-z_index = -29
+z_index = -27
 coordOnTexture = Vector2( 2, 0 )
 BType = 16
 
 [node name="Tile13" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1805, 905 )
-z_index = -49
+z_index = -48
 coordOnTexture = Vector2( 0, 1 )
 BType = 3
 
@@ -1284,7 +1286,7 @@ BType = 3
 
 [node name="Tile110" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1445, 1085 )
-z_index = -47
+z_index = -46
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -1302,49 +1304,49 @@ BType = 9
 
 [node name="Tile197" parent="." instance=ExtResource( 2 )]
 position = Vector2( 905, 1355 )
-z_index = -44
+z_index = -40
 coordOnTexture = Vector2( 1, 3 )
 BType = 16
 
 [node name="Tile228" parent="." instance=ExtResource( 2 )]
 position = Vector2( 725, 1445 )
-z_index = -43
+z_index = -40
 coordOnTexture = Vector2( 1, 2 )
 BType = 16
 
 [node name="Tile252" parent="." instance=ExtResource( 2 )]
 position = Vector2( 545, 1535 )
-z_index = -42
+z_index = -40
 coordOnTexture = Vector2( 1, 1 )
 BType = 16
 
 [node name="Tile280" parent="." instance=ExtResource( 2 )]
 position = Vector2( 365, 1625 )
-z_index = -41
+z_index = -40
 coordOnTexture = Vector2( 1, 0 )
 BType = 16
 
 [node name="Tile315" parent="." instance=ExtResource( 2 )]
 position = Vector2( 185, 1715 )
-z_index = -40
+z_index = -38
 coordOnTexture = Vector2( 1, 1 )
 BType = 13
 
 [node name="Tile337" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, 1805 )
-z_index = -39
+z_index = -38
 coordOnTexture = Vector2( 1, 0 )
 BType = 13
 
 [node name="Tile385" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 1895 )
-z_index = -38
+z_index = -36
 coordOnTexture = Vector2( 1, 1 )
 BType = 1
 
 [node name="Tile401" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 1985 )
-z_index = -37
+z_index = -36
 coordOnTexture = Vector2( 1, 0 )
 BType = 1
 
@@ -1356,25 +1358,25 @@ BType = 9
 
 [node name="Tile470" parent="." instance=ExtResource( 2 )]
 position = Vector2( -715, 2165 )
-z_index = -35
+z_index = -32
 coordOnTexture = Vector2( 1, 1 )
 BType = 3
 
 [node name="Tile509" parent="." instance=ExtResource( 2 )]
 position = Vector2( -895, 2255 )
-z_index = -33
+z_index = -32
 coordOnTexture = Vector2( 1, 0 )
 BType = 3
 
 [node name="Tile538" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1075, 2345 )
-z_index = -32
+z_index = -30
 coordOnTexture = Vector2( 1, 1 )
 BType = 3
 
 [node name="Tile553" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1255, 2435 )
-z_index = -31
+z_index = -30
 coordOnTexture = Vector2( 1, 0 )
 BType = 3
 
@@ -1386,13 +1388,13 @@ BType = 9
 
 [node name="Tile616" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1615, 2615 )
-z_index = -29
+z_index = -27
 coordOnTexture = Vector2( 1, 1 )
 BType = 13
 
 [node name="Tile656" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1795, 2705 )
-z_index = -28
+z_index = -27
 coordOnTexture = Vector2( 1, 0 )
 BType = 13
 
@@ -1404,13 +1406,13 @@ BType = 9
 
 [node name="Tile698" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2155, 2885 )
-z_index = -26
+z_index = -24
 coordOnTexture = Vector2( 1, 1 )
 BType = 12
 
 [node name="Tile738" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2335, 2975 )
-z_index = -25
+z_index = -24
 coordOnTexture = Vector2( 1, 0 )
 BType = 12
 
@@ -1422,25 +1424,25 @@ BType = 9
 
 [node name="Tile789" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2695, 3155 )
-z_index = -23
+z_index = -19
 coordOnTexture = Vector2( 1, 3 )
 BType = 2
 
 [node name="Tile824" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2875, 3245 )
-z_index = -22
+z_index = -19
 coordOnTexture = Vector2( 1, 2 )
 BType = 2
 
 [node name="Tile857" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3055, 3335 )
-z_index = -21
+z_index = -19
 coordOnTexture = Vector2( 1, 1 )
 BType = 2
 
 [node name="Tile897" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3235, 3425 )
-z_index = -20
+z_index = -19
 coordOnTexture = Vector2( 1, 0 )
 BType = 2
 
@@ -1470,7 +1472,7 @@ BType = 6
 
 [node name="Tile128" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3065, 2075 )
-z_index = -36
+z_index = -35
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -1482,19 +1484,19 @@ BType = 1
 
 [node name="Tile205" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2705, 2255 )
-z_index = -33
+z_index = -30
 coordOnTexture = Vector2( 0, 3 )
 BType = 11
 
 [node name="Tile218" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2525, 2345 )
-z_index = -32
+z_index = -30
 coordOnTexture = Vector2( 0, 2 )
 BType = 11
 
 [node name="Tile267" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2345, 2435 )
-z_index = -31
+z_index = -30
 coordOnTexture = Vector2( 0, 1 )
 BType = 11
 
@@ -1512,7 +1514,7 @@ BType = 9
 
 [node name="Tile351" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1805, 2705 )
-z_index = -28
+z_index = -27
 coordOnTexture = Vector2( 0, 1 )
 BType = 3
 
@@ -1542,13 +1544,13 @@ BType = 4
 
 [node name="Tile493" parent="." instance=ExtResource( 2 )]
 position = Vector2( 905, 3155 )
-z_index = -23
+z_index = -21
 coordOnTexture = Vector2( 1, 1 )
 BType = 13
 
 [node name="Tile536" parent="." instance=ExtResource( 2 )]
 position = Vector2( 725, 3245 )
-z_index = -22
+z_index = -21
 coordOnTexture = Vector2( 1, 0 )
 BType = 13
 
@@ -1560,13 +1562,13 @@ BType = 9
 
 [node name="Tile586" parent="." instance=ExtResource( 2 )]
 position = Vector2( 365, 3425 )
-z_index = -20
+z_index = -18
 coordOnTexture = Vector2( 1, 1 )
 BType = 1
 
 [node name="Tile617" parent="." instance=ExtResource( 2 )]
 position = Vector2( 185, 3515 )
-z_index = -19
+z_index = -18
 coordOnTexture = Vector2( 1, 0 )
 BType = 1
 
@@ -1590,25 +1592,25 @@ BType = 7
 
 [node name="Tile731" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 3875 )
-z_index = -14
+z_index = -8
 coordOnTexture = Vector2( 3, 3 )
 BType = 16
 
 [node name="Tile770" parent="." instance=ExtResource( 2 )]
 position = Vector2( -715, 3965 )
-z_index = -13
+z_index = -8
 coordOnTexture = Vector2( 3, 2 )
 BType = 16
 
 [node name="Tile784" parent="." instance=ExtResource( 2 )]
 position = Vector2( -895, 4055 )
-z_index = -12
+z_index = -8
 coordOnTexture = Vector2( 3, 1 )
 BType = 16
 
 [node name="Tile819" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1075, 4145 )
-z_index = -11
+z_index = -8
 coordOnTexture = Vector2( 3, 0 )
 BType = 16
 
@@ -1620,7 +1622,7 @@ BType = 9
 
 [node name="Tile879" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1435, 4325 )
-z_index = -9
+z_index = -8
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -1632,25 +1634,25 @@ BType = 1
 
 [node name="Tile7" parent="." instance=ExtResource( 2 )]
 position = Vector2( 905, 455 )
-z_index = -55
+z_index = -49
 coordOnTexture = Vector2( 2, 3 )
 BType = 11
 
 [node name="Tile82" parent="." instance=ExtResource( 2 )]
 position = Vector2( 725, 545 )
-z_index = -54
+z_index = -49
 coordOnTexture = Vector2( 2, 2 )
 BType = 11
 
 [node name="Tile103" parent="." instance=ExtResource( 2 )]
 position = Vector2( 545, 635 )
-z_index = -53
+z_index = -49
 coordOnTexture = Vector2( 2, 1 )
 BType = 11
 
 [node name="Tile145" parent="." instance=ExtResource( 2 )]
 position = Vector2( 365, 725 )
-z_index = -51
+z_index = -49
 coordOnTexture = Vector2( 2, 0 )
 BType = 11
 
@@ -1662,49 +1664,49 @@ BType = 9
 
 [node name="Tile189" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, 905 )
-z_index = -49
+z_index = -44
 coordOnTexture = Vector2( 2, 3 )
 BType = 2
 
 [node name="Tile221" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 995 )
-z_index = -48
+z_index = -44
 coordOnTexture = Vector2( 2, 2 )
 BType = 2
 
 [node name="Tile255" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 1085 )
-z_index = -47
+z_index = -44
 coordOnTexture = Vector2( 2, 1 )
 BType = 2
 
 [node name="Tile282" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 1175 )
-z_index = -46
+z_index = -44
 coordOnTexture = Vector2( 2, 0 )
 BType = 2
 
 [node name="Tile320" parent="." instance=ExtResource( 2 )]
 position = Vector2( -715, 1265 )
-z_index = -45
+z_index = -40
 coordOnTexture = Vector2( 2, 3 )
 BType = 16
 
 [node name="Tile333" parent="." instance=ExtResource( 2 )]
 position = Vector2( -895, 1355 )
-z_index = -44
+z_index = -40
 coordOnTexture = Vector2( 2, 2 )
 BType = 16
 
 [node name="Tile383" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1075, 1445 )
-z_index = -43
+z_index = -40
 coordOnTexture = Vector2( 2, 1 )
 BType = 16
 
 [node name="Tile406" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1255, 1535 )
-z_index = -42
+z_index = -40
 coordOnTexture = Vector2( 2, 0 )
 BType = 16
 
@@ -1716,13 +1718,13 @@ BType = 9
 
 [node name="Tile474" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1615, 1715 )
-z_index = -40
+z_index = -38
 coordOnTexture = Vector2( 1, 1 )
 BType = 3
 
 [node name="Tile490" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1795, 1805 )
-z_index = -39
+z_index = -38
 coordOnTexture = Vector2( 1, 0 )
 BType = 3
 
@@ -1734,25 +1736,25 @@ BType = 9
 
 [node name="Tile560" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2155, 1985 )
-z_index = -37
+z_index = -30
 coordOnTexture = Vector2( 3, 3 )
 BType = 14
 
 [node name="Tile598" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2335, 2075 )
-z_index = -36
+z_index = -30
 coordOnTexture = Vector2( 3, 2 )
 BType = 14
 
 [node name="Tile608" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2515, 2165 )
-z_index = -35
+z_index = -30
 coordOnTexture = Vector2( 3, 1 )
 BType = 14
 
 [node name="Tile653" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2695, 2255 )
-z_index = -33
+z_index = -30
 coordOnTexture = Vector2( 3, 0 )
 BType = 14
 
@@ -1764,49 +1766,49 @@ BType = 9
 
 [node name="Tile710" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3055, 2435 )
-z_index = -31
+z_index = -27
 coordOnTexture = Vector2( 1, 3 )
 BType = 11
 
 [node name="Tile725" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3235, 2525 )
-z_index = -30
+z_index = -27
 coordOnTexture = Vector2( 1, 2 )
 BType = 11
 
 [node name="Tile772" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3415, 2615 )
-z_index = -29
+z_index = -27
 coordOnTexture = Vector2( 1, 1 )
 BType = 11
 
 [node name="Tile803" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3595, 2705 )
-z_index = -28
+z_index = -27
 coordOnTexture = Vector2( 1, 0 )
 BType = 11
 
 [node name="Tile835" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3775, 2795 )
-z_index = -27
+z_index = -25
 coordOnTexture = Vector2( 1, 1 )
 BType = 13
 
 [node name="Tile862" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3955, 2885 )
-z_index = -26
+z_index = -25
 coordOnTexture = Vector2( 1, 0 )
 BType = 13
 
 [node name="Tile898" parent="." instance=ExtResource( 2 )]
 position = Vector2( -4135, 2975 )
-z_index = -25
+z_index = -23
 coordOnTexture = Vector2( 1, 1 )
 BType = 1
 
 [node name="Tile906" parent="." instance=ExtResource( 2 )]
 position = Vector2( -4315, 3065 )
-z_index = -24
+z_index = -23
 coordOnTexture = Vector2( 1, 0 )
 BType = 1
 
@@ -1830,7 +1832,7 @@ BType = 6
 
 [node name="Tile141" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2165, 1625 )
-z_index = -41
+z_index = -40
 coordOnTexture = Vector2( 0, 1 )
 BType = 3
 
@@ -1842,25 +1844,25 @@ BType = 3
 
 [node name="Tile190" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1805, 1805 )
-z_index = -39
+z_index = -35
 coordOnTexture = Vector2( 1, 3 )
 BType = 15
 
 [node name="Tile235" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1625, 1895 )
-z_index = -38
+z_index = -35
 coordOnTexture = Vector2( 1, 2 )
 BType = 15
 
 [node name="Tile261" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1445, 1985 )
-z_index = -37
+z_index = -35
 coordOnTexture = Vector2( 1, 1 )
 BType = 15
 
 [node name="Tile285" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1265, 2075 )
-z_index = -36
+z_index = -35
 coordOnTexture = Vector2( 1, 0 )
 BType = 15
 
@@ -1872,13 +1874,13 @@ BType = 9
 
 [node name="Tile334" parent="." instance=ExtResource( 2 )]
 position = Vector2( 905, 2255 )
-z_index = -33
+z_index = -31
 coordOnTexture = Vector2( 1, 1 )
 BType = 13
 
 [node name="Tile371" parent="." instance=ExtResource( 2 )]
 position = Vector2( 725, 2345 )
-z_index = -32
+z_index = -31
 coordOnTexture = Vector2( 1, 0 )
 BType = 13
 
@@ -1890,25 +1892,25 @@ BType = 9
 
 [node name="Tile429" parent="." instance=ExtResource( 2 )]
 position = Vector2( 365, 2525 )
-z_index = -30
+z_index = -26
 coordOnTexture = Vector2( 1, 3 )
 BType = 11
 
 [node name="Tile451" parent="." instance=ExtResource( 2 )]
 position = Vector2( 185, 2615 )
-z_index = -29
+z_index = -26
 coordOnTexture = Vector2( 1, 2 )
 BType = 11
 
 [node name="Tile491" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, 2705 )
-z_index = -28
+z_index = -26
 coordOnTexture = Vector2( 1, 1 )
 BType = 11
 
 [node name="Tile534" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 2795 )
-z_index = -27
+z_index = -26
 coordOnTexture = Vector2( 1, 0 )
 BType = 11
 
@@ -1944,13 +1946,13 @@ BType = 7
 
 [node name="Tile720" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1255, 3335 )
-z_index = -21
+z_index = -19
 coordOnTexture = Vector2( 1, 1 )
 BType = 12
 
 [node name="Tile748" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1435, 3425 )
-z_index = -20
+z_index = -19
 coordOnTexture = Vector2( 1, 0 )
 BType = 12
 
@@ -1962,19 +1964,19 @@ BType = 9
 
 [node name="Tile788" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1795, 3605 )
-z_index = -18
+z_index = -14
 coordOnTexture = Vector2( 0, 3 )
 BType = 16
 
 [node name="Tile823" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1975, 3695 )
-z_index = -17
+z_index = -14
 coordOnTexture = Vector2( 0, 2 )
 BType = 16
 
 [node name="Tile866" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2155, 3785 )
-z_index = -15
+z_index = -14
 coordOnTexture = Vector2( 0, 1 )
 BType = 16
 
@@ -2040,7 +2042,7 @@ BType = 7
 
 [node name="Tile299" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3065, 2975 )
-z_index = -25
+z_index = -24
 coordOnTexture = Vector2( 0, 1 )
 BType = 13
 
@@ -2052,25 +2054,25 @@ BType = 13
 
 [node name="Tile332" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2705, 3155 )
-z_index = -23
+z_index = -17
 coordOnTexture = Vector2( 3, 3 )
 BType = 14
 
 [node name="Tile380" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2525, 3245 )
-z_index = -22
+z_index = -17
 coordOnTexture = Vector2( 3, 2 )
 BType = 14
 
 [node name="Tile398" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2345, 3335 )
-z_index = -21
+z_index = -17
 coordOnTexture = Vector2( 3, 1 )
 BType = 14
 
 [node name="Tile433" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2165, 3425 )
-z_index = -20
+z_index = -17
 coordOnTexture = Vector2( 3, 0 )
 BType = 14
 
@@ -2082,25 +2084,25 @@ BType = 9
 
 [node name="Tile507" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1805, 3605 )
-z_index = -18
+z_index = -13
 coordOnTexture = Vector2( 1, 3 )
 BType = 15
 
 [node name="Tile512" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1625, 3695 )
-z_index = -17
+z_index = -13
 coordOnTexture = Vector2( 1, 2 )
 BType = 15
 
 [node name="Tile547" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1445, 3785 )
-z_index = -15
+z_index = -13
 coordOnTexture = Vector2( 1, 1 )
 BType = 15
 
 [node name="Tile591" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1265, 3875 )
-z_index = -14
+z_index = -13
 coordOnTexture = Vector2( 1, 0 )
 BType = 15
 
@@ -2112,25 +2114,25 @@ BType = 9
 
 [node name="Tile659" parent="." instance=ExtResource( 2 )]
 position = Vector2( 905, 4055 )
-z_index = -12
+z_index = -10
 coordOnTexture = Vector2( 1, 1 )
 BType = 13
 
 [node name="Tile674" parent="." instance=ExtResource( 2 )]
 position = Vector2( 725, 4145 )
-z_index = -11
+z_index = -10
 coordOnTexture = Vector2( 1, 0 )
 BType = 13
 
 [node name="Tile701" parent="." instance=ExtResource( 2 )]
 position = Vector2( 545, 4235 )
-z_index = -10
+z_index = -8
 coordOnTexture = Vector2( 1, 1 )
 BType = 12
 
 [node name="Tile724" parent="." instance=ExtResource( 2 )]
 position = Vector2( 365, 4325 )
-z_index = -9
+z_index = -8
 coordOnTexture = Vector2( 1, 0 )
 BType = 12
 
@@ -2142,13 +2144,13 @@ BType = 9
 
 [node name="Tile781" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, 4505 )
-z_index = -7
+z_index = -5
 coordOnTexture = Vector2( 1, 1 )
 BType = 1
 
 [node name="Tile821" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 4595 )
-z_index = -6
+z_index = -5
 coordOnTexture = Vector2( 1, 0 )
 BType = 1
 
@@ -2160,7 +2162,7 @@ BType = 9
 
 [node name="Tile892" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 4775 )
-z_index = -4
+z_index = -3
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -2172,52 +2174,52 @@ BType = 1
 
 [node name="Tile3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 185, 95 )
-z_index = -59
+z_index = -55
 coordOnTexture = Vector2( 1, 3 )
 BType = 14
 
 [node name="Tile90" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, 185 )
-z_index = -58
+z_index = -55
 coordOnTexture = Vector2( 1, 2 )
 BType = 14
 
 [node name="Tile94" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 275 )
-z_index = -57
+z_index = -55
 coordOnTexture = Vector2( 1, 1 )
 BType = 14
 
 [node name="Tile126" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 365 )
-z_index = -56
-coordOnTexture = Vector2( 1, 0 )
+z_index = -54
+coordOnTexture = Vector2( 1, 1 )
 BType = 14
 
 [node name="Tile172" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 455 )
-z_index = -55
+z_index = -53
 coordOnTexture = Vector2( 1, 1 )
 root = true
 BType = 1
 
 [node name="Tile198" parent="." instance=ExtResource( 2 )]
 position = Vector2( -715, 545 )
-z_index = -54
+z_index = -53
 coordOnTexture = Vector2( 1, 0 )
 root = true
 BType = 1
 
 [node name="Tile220" parent="." instance=ExtResource( 2 )]
 position = Vector2( -895, 635 )
-z_index = -53
+z_index = -50
 coordOnTexture = Vector2( 1, 1 )
 root = true
 BType = 1
 
 [node name="Tile266" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1075, 725 )
-z_index = -51
+z_index = -50
 coordOnTexture = Vector2( 1, 0 )
 root = true
 BType = 1
@@ -2230,25 +2232,25 @@ BType = 9
 
 [node name="Tile310" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1435, 905 )
-z_index = -49
+z_index = -45
 coordOnTexture = Vector2( 1, 3 )
 BType = 14
 
 [node name="Tile352" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1615, 995 )
-z_index = -48
+z_index = -45
 coordOnTexture = Vector2( 1, 2 )
 BType = 14
 
 [node name="Tile377" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1795, 1085 )
-z_index = -47
+z_index = -45
 coordOnTexture = Vector2( 1, 1 )
 BType = 14
 
 [node name="Tile397" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1975, 1175 )
-z_index = -46
+z_index = -45
 coordOnTexture = Vector2( 1, 0 )
 BType = 14
 
@@ -2260,25 +2262,25 @@ BType = 9
 
 [node name="Tile471" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2335, 1355 )
-z_index = -44
+z_index = -39
 coordOnTexture = Vector2( 2, 3 )
 BType = 15
 
 [node name="Tile488" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2515, 1445 )
-z_index = -43
+z_index = -39
 coordOnTexture = Vector2( 2, 2 )
 BType = 15
 
 [node name="Tile520" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2695, 1535 )
-z_index = -42
+z_index = -39
 coordOnTexture = Vector2( 2, 1 )
 BType = 15
 
 [node name="Tile541" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2875, 1625 )
-z_index = -41
+z_index = -39
 coordOnTexture = Vector2( 2, 0 )
 BType = 15
 
@@ -2290,7 +2292,7 @@ BType = 9
 
 [node name="Tile601" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3235, 1805 )
-z_index = -39
+z_index = -38
 coordOnTexture = Vector2( 0, 1 )
 BType = 13
 
@@ -2302,7 +2304,7 @@ BType = 13
 
 [node name="Tile680" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3595, 1985 )
-z_index = -37
+z_index = -36
 coordOnTexture = Vector2( 0, 1 )
 BType = 12
 
@@ -2314,7 +2316,7 @@ BType = 12
 
 [node name="Tile730" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3955, 2165 )
-z_index = -35
+z_index = -33
 coordOnTexture = Vector2( 0, 1 )
 BType = 12
 
@@ -2332,49 +2334,49 @@ BType = 9
 
 [node name="Tile834" parent="." instance=ExtResource( 2 )]
 position = Vector2( -4495, 2435 )
-z_index = -31
+z_index = -27
 coordOnTexture = Vector2( 1, 3 )
 BType = 16
 
 [node name="Tile869" parent="." instance=ExtResource( 2 )]
 position = Vector2( -4675, 2525 )
-z_index = -30
+z_index = -27
 coordOnTexture = Vector2( 1, 2 )
 BType = 16
 
 [node name="Tile874" parent="." instance=ExtResource( 2 )]
 position = Vector2( -4855, 2615 )
-z_index = -29
+z_index = -27
 coordOnTexture = Vector2( 1, 1 )
 BType = 16
 
 [node name="Tile909" parent="." instance=ExtResource( 2 )]
 position = Vector2( -5035, 2705 )
-z_index = -28
+z_index = -27
 coordOnTexture = Vector2( 1, 0 )
 BType = 16
 
 [node name="Tile18" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1985, 995 )
-z_index = -48
+z_index = -46
 coordOnTexture = Vector2( 1, 1 )
 BType = 12
 
 [node name="Tile80" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1805, 1085 )
-z_index = -47
+z_index = -46
 coordOnTexture = Vector2( 1, 0 )
 BType = 12
 
 [node name="Tile92" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1625, 1175 )
-z_index = -46
+z_index = -44
 coordOnTexture = Vector2( 1, 1 )
 BType = 13
 
 [node name="Tile139" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1445, 1265 )
-z_index = -45
+z_index = -44
 coordOnTexture = Vector2( 1, 0 )
 BType = 13
 
@@ -2386,19 +2388,19 @@ BType = 9
 
 [node name="Tile209" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1085, 1445 )
-z_index = -43
+z_index = -40
 coordOnTexture = Vector2( 0, 3 )
 BType = 16
 
 [node name="Tile233" parent="." instance=ExtResource( 2 )]
 position = Vector2( 905, 1535 )
-z_index = -42
+z_index = -40
 coordOnTexture = Vector2( 0, 2 )
 BType = 16
 
 [node name="Tile253" parent="." instance=ExtResource( 2 )]
 position = Vector2( 725, 1625 )
-z_index = -41
+z_index = -40
 coordOnTexture = Vector2( 0, 1 )
 BType = 16
 
@@ -2410,7 +2412,7 @@ BType = 16
 
 [node name="Tile322" parent="." instance=ExtResource( 2 )]
 position = Vector2( 365, 1805 )
-z_index = -39
+z_index = -38
 coordOnTexture = Vector2( 0, 1 )
 BType = 13
 
@@ -2422,7 +2424,7 @@ BType = 13
 
 [node name="Tile362" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, 1985 )
-z_index = -37
+z_index = -36
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -2440,7 +2442,7 @@ BType = 9
 
 [node name="Tile473" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 2255 )
-z_index = -33
+z_index = -32
 coordOnTexture = Vector2( 0, 1 )
 BType = 3
 
@@ -2452,7 +2454,7 @@ BType = 3
 
 [node name="Tile519" parent="." instance=ExtResource( 2 )]
 position = Vector2( -895, 2435 )
-z_index = -31
+z_index = -30
 coordOnTexture = Vector2( 0, 1 )
 BType = 3
 
@@ -2470,7 +2472,7 @@ BType = 9
 
 [node name="Tile607" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1435, 2705 )
-z_index = -28
+z_index = -27
 coordOnTexture = Vector2( 0, 1 )
 BType = 13
 
@@ -2488,7 +2490,7 @@ BType = 9
 
 [node name="Tile715" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1975, 2975 )
-z_index = -25
+z_index = -24
 coordOnTexture = Vector2( 0, 1 )
 BType = 12
 
@@ -2506,19 +2508,19 @@ BType = 9
 
 [node name="Tile798" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2515, 3245 )
-z_index = -22
+z_index = -19
 coordOnTexture = Vector2( 0, 3 )
 BType = 2
 
 [node name="Tile827" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2695, 3335 )
-z_index = -21
+z_index = -19
 coordOnTexture = Vector2( 0, 2 )
 BType = 2
 
 [node name="Tile842" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2875, 3425 )
-z_index = -20
+z_index = -19
 coordOnTexture = Vector2( 0, 1 )
 BType = 2
 
@@ -2542,37 +2544,37 @@ BType = 9
 
 [node name="Tile86" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3605, 1985 )
-z_index = -37
+z_index = -30
 coordOnTexture = Vector2( 3, 3 )
 BType = 2
 
 [node name="Tile104" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3425, 2075 )
-z_index = -36
+z_index = -30
 coordOnTexture = Vector2( 3, 2 )
 BType = 2
 
 [node name="Tile130" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3245, 2165 )
-z_index = -35
+z_index = -30
 coordOnTexture = Vector2( 3, 1 )
 BType = 2
 
 [node name="Tile169" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3065, 2255 )
-z_index = -33
+z_index = -30
 coordOnTexture = Vector2( 3, 0 )
 BType = 2
 
 [node name="Tile210" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2885, 2345 )
-z_index = -32
+z_index = -30
 coordOnTexture = Vector2( 1, 1 )
 BType = 1
 
 [node name="Tile240" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2705, 2435 )
-z_index = -31
+z_index = -30
 coordOnTexture = Vector2( 1, 0 )
 BType = 1
 
@@ -2596,25 +2598,25 @@ BType = 7
 
 [node name="Tile347" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1985, 2795 )
-z_index = -27
+z_index = -21
 coordOnTexture = Vector2( 3, 3 )
 BType = 16
 
 [node name="Tile389" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1805, 2885 )
-z_index = -26
+z_index = -21
 coordOnTexture = Vector2( 3, 2 )
 BType = 16
 
 [node name="Tile396" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1625, 2975 )
-z_index = -25
+z_index = -21
 coordOnTexture = Vector2( 3, 1 )
 BType = 16
 
 [node name="Tile427" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1445, 3065 )
-z_index = -24
+z_index = -21
 coordOnTexture = Vector2( 3, 0 )
 BType = 16
 
@@ -2626,7 +2628,7 @@ BType = 9
 
 [node name="Tile496" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1085, 3245 )
-z_index = -22
+z_index = -21
 coordOnTexture = Vector2( 0, 1 )
 BType = 13
 
@@ -2644,7 +2646,7 @@ BType = 9
 
 [node name="Tile575" parent="." instance=ExtResource( 2 )]
 position = Vector2( 545, 3515 )
-z_index = -19
+z_index = -18
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -2662,37 +2664,37 @@ BType = 9
 
 [node name="Tile678" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, 3785 )
-z_index = -15
+z_index = -13
 coordOnTexture = Vector2( 1, 1 )
 BType = 13
 
 [node name="Tile718" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 3875 )
-z_index = -14
+z_index = -13
 coordOnTexture = Vector2( 1, 0 )
 BType = 13
 
 [node name="Tile729" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 3965 )
-z_index = -13
+z_index = -8
 coordOnTexture = Vector2( 2, 3 )
 BType = 16
 
 [node name="Tile777" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 4055 )
-z_index = -12
+z_index = -8
 coordOnTexture = Vector2( 2, 2 )
 BType = 16
 
 [node name="Tile794" parent="." instance=ExtResource( 2 )]
 position = Vector2( -715, 4145 )
-z_index = -11
+z_index = -8
 coordOnTexture = Vector2( 2, 1 )
 BType = 16
 
 [node name="Tile825" parent="." instance=ExtResource( 2 )]
 position = Vector2( -895, 4235 )
-z_index = -10
+z_index = -8
 coordOnTexture = Vector2( 2, 0 )
 BType = 16
 
@@ -2716,25 +2718,25 @@ BType = 10
 
 [node name="Tile9" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1085, 545 )
-z_index = -54
+z_index = -49
 coordOnTexture = Vector2( 1, 3 )
 BType = 11
 
 [node name="Tile89" parent="." instance=ExtResource( 2 )]
 position = Vector2( 905, 635 )
-z_index = -53
+z_index = -49
 coordOnTexture = Vector2( 1, 2 )
 BType = 11
 
 [node name="Tile119" parent="." instance=ExtResource( 2 )]
 position = Vector2( 725, 725 )
-z_index = -51
+z_index = -49
 coordOnTexture = Vector2( 1, 1 )
 BType = 11
 
 [node name="Tile138" parent="." instance=ExtResource( 2 )]
 position = Vector2( 545, 815 )
-z_index = -50
+z_index = -49
 coordOnTexture = Vector2( 1, 0 )
 BType = 11
 
@@ -2746,49 +2748,49 @@ BType = 9
 
 [node name="Tile207" parent="." instance=ExtResource( 2 )]
 position = Vector2( 185, 995 )
-z_index = -48
+z_index = -44
 coordOnTexture = Vector2( 1, 3 )
 BType = 2
 
 [node name="Tile227" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, 1085 )
-z_index = -47
+z_index = -44
 coordOnTexture = Vector2( 1, 2 )
 BType = 2
 
 [node name="Tile247" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 1175 )
-z_index = -46
+z_index = -44
 coordOnTexture = Vector2( 1, 1 )
 BType = 2
 
 [node name="Tile279" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 1265 )
-z_index = -45
+z_index = -44
 coordOnTexture = Vector2( 1, 0 )
 BType = 2
 
 [node name="Tile314" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 1355 )
-z_index = -44
+z_index = -40
 coordOnTexture = Vector2( 1, 3 )
 BType = 16
 
 [node name="Tile341" parent="." instance=ExtResource( 2 )]
 position = Vector2( -715, 1445 )
-z_index = -43
+z_index = -40
 coordOnTexture = Vector2( 1, 2 )
 BType = 16
 
 [node name="Tile387" parent="." instance=ExtResource( 2 )]
 position = Vector2( -895, 1535 )
-z_index = -42
+z_index = -40
 coordOnTexture = Vector2( 1, 1 )
 BType = 16
 
 [node name="Tile409" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1075, 1625 )
-z_index = -41
+z_index = -40
 coordOnTexture = Vector2( 1, 0 )
 BType = 16
 
@@ -2800,7 +2802,7 @@ BType = 9
 
 [node name="Tile456" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1435, 1805 )
-z_index = -39
+z_index = -38
 coordOnTexture = Vector2( 0, 1 )
 BType = 3
 
@@ -2818,25 +2820,25 @@ BType = 9
 
 [node name="Tile551" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1975, 2075 )
-z_index = -36
+z_index = -30
 coordOnTexture = Vector2( 2, 3 )
 BType = 14
 
 [node name="Tile595" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2155, 2165 )
-z_index = -35
+z_index = -30
 coordOnTexture = Vector2( 2, 2 )
 BType = 14
 
 [node name="Tile618" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2335, 2255 )
-z_index = -33
+z_index = -30
 coordOnTexture = Vector2( 2, 1 )
 BType = 14
 
 [node name="Tile657" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2515, 2345 )
-z_index = -32
+z_index = -30
 coordOnTexture = Vector2( 2, 0 )
 BType = 14
 
@@ -2848,19 +2850,19 @@ BType = 9
 
 [node name="Tile706" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2875, 2525 )
-z_index = -30
+z_index = -27
 coordOnTexture = Vector2( 0, 3 )
 BType = 11
 
 [node name="Tile736" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3055, 2615 )
-z_index = -29
+z_index = -27
 coordOnTexture = Vector2( 0, 2 )
 BType = 11
 
 [node name="Tile758" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3235, 2705 )
-z_index = -28
+z_index = -27
 coordOnTexture = Vector2( 0, 1 )
 BType = 11
 
@@ -2872,7 +2874,7 @@ BType = 11
 
 [node name="Tile832" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3595, 2885 )
-z_index = -26
+z_index = -25
 coordOnTexture = Vector2( 0, 1 )
 BType = 13
 
@@ -2884,7 +2886,7 @@ BType = 13
 
 [node name="Tile894" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3955, 3065 )
-z_index = -24
+z_index = -23
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -2896,13 +2898,13 @@ BType = 1
 
 [node name="Tile12" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2885, 1445 )
-z_index = -43
+z_index = -41
 coordOnTexture = Vector2( 1, 1 )
 BType = 13
 
 [node name="Tile77" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2705, 1535 )
-z_index = -42
+z_index = -41
 coordOnTexture = Vector2( 1, 0 )
 BType = 13
 
@@ -2926,19 +2928,19 @@ BType = 10
 
 [node name="Tile195" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1985, 1895 )
-z_index = -38
+z_index = -35
 coordOnTexture = Vector2( 0, 3 )
 BType = 15
 
 [node name="Tile215" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1805, 1985 )
-z_index = -37
+z_index = -35
 coordOnTexture = Vector2( 0, 2 )
 BType = 15
 
 [node name="Tile269" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1625, 2075 )
-z_index = -36
+z_index = -35
 coordOnTexture = Vector2( 0, 1 )
 BType = 15
 
@@ -2956,7 +2958,7 @@ BType = 9
 
 [node name="Tile343" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1085, 2345 )
-z_index = -32
+z_index = -31
 coordOnTexture = Vector2( 0, 1 )
 BType = 13
 
@@ -2974,19 +2976,19 @@ BType = 9
 
 [node name="Tile444" parent="." instance=ExtResource( 2 )]
 position = Vector2( 545, 2615 )
-z_index = -29
+z_index = -26
 coordOnTexture = Vector2( 0, 3 )
 BType = 11
 
 [node name="Tile475" parent="." instance=ExtResource( 2 )]
 position = Vector2( 365, 2705 )
-z_index = -28
+z_index = -26
 coordOnTexture = Vector2( 0, 2 )
 BType = 11
 
 [node name="Tile510" parent="." instance=ExtResource( 2 )]
 position = Vector2( 185, 2795 )
-z_index = -27
+z_index = -26
 coordOnTexture = Vector2( 0, 1 )
 BType = 11
 
@@ -3004,31 +3006,31 @@ BType = 9
 
 [node name="Tile571" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 3065 )
-z_index = -24
+z_index = -22
 coordOnTexture = Vector2( 1, 1 )
 BType = 3
 
 [node name="Tile605" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 3155 )
-z_index = -23
+z_index = -22
 coordOnTexture = Vector2( 1, 0 )
 BType = 3
 
 [node name="Tile634" parent="." instance=ExtResource( 2 )]
 position = Vector2( -715, 3245 )
-z_index = -22
+z_index = -20
 coordOnTexture = Vector2( 1, 1 )
 BType = 13
 
 [node name="Tile662" parent="." instance=ExtResource( 2 )]
 position = Vector2( -895, 3335 )
-z_index = -21
+z_index = -20
 coordOnTexture = Vector2( 1, 0 )
 BType = 13
 
 [node name="Tile693" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1075, 3425 )
-z_index = -20
+z_index = -19
 coordOnTexture = Vector2( 0, 1 )
 BType = 12
 
@@ -3082,25 +3084,25 @@ BType = 9
 
 [node name="Tile66" parent="." instance=ExtResource( 2 )]
 position = Vector2( 4505, 2435 )
-z_index = -31
+z_index = -29
 coordOnTexture = Vector2( 1, 1 )
 BType = 12
 
 [node name="Tile114" parent="." instance=ExtResource( 2 )]
 position = Vector2( 4325, 2525 )
-z_index = -30
+z_index = -29
 coordOnTexture = Vector2( 1, 0 )
 BType = 12
 
 [node name="Tile133" parent="." instance=ExtResource( 2 )]
 position = Vector2( 4145, 2615 )
-z_index = -29
+z_index = -27
 coordOnTexture = Vector2( 1, 1 )
 BType = 13
 
 [node name="Tile155" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3965, 2705 )
-z_index = -28
+z_index = -27
 coordOnTexture = Vector2( 1, 0 )
 BType = 13
 
@@ -3112,49 +3114,49 @@ BType = 9
 
 [node name="Tile239" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3605, 2885 )
-z_index = -26
+z_index = -24
 coordOnTexture = Vector2( 1, 1 )
 BType = 1
 
 [node name="Tile242" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3425, 2975 )
-z_index = -25
+z_index = -24
 coordOnTexture = Vector2( 1, 0 )
 BType = 1
 
 [node name="Tile287" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3245, 3065 )
-z_index = -24
+z_index = -22
 coordOnTexture = Vector2( 1, 1 )
 BType = 1
 
 [node name="Tile307" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3065, 3155 )
-z_index = -23
+z_index = -22
 coordOnTexture = Vector2( 1, 0 )
 BType = 1
 
 [node name="Tile331" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2885, 3245 )
-z_index = -22
+z_index = -17
 coordOnTexture = Vector2( 2, 3 )
 BType = 14
 
 [node name="Tile390" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2705, 3335 )
-z_index = -21
+z_index = -17
 coordOnTexture = Vector2( 2, 2 )
 BType = 14
 
 [node name="Tile394" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2525, 3425 )
-z_index = -20
+z_index = -17
 coordOnTexture = Vector2( 2, 1 )
 BType = 14
 
 [node name="Tile425" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2345, 3515 )
-z_index = -19
+z_index = -17
 coordOnTexture = Vector2( 2, 0 )
 BType = 14
 
@@ -3166,19 +3168,19 @@ BType = 9
 
 [node name="Tile486" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1985, 3695 )
-z_index = -17
+z_index = -13
 coordOnTexture = Vector2( 0, 3 )
 BType = 15
 
 [node name="Tile540" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1805, 3785 )
-z_index = -15
+z_index = -13
 coordOnTexture = Vector2( 0, 2 )
 BType = 15
 
 [node name="Tile566" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1625, 3875 )
-z_index = -14
+z_index = -13
 coordOnTexture = Vector2( 0, 1 )
 BType = 15
 
@@ -3196,7 +3198,7 @@ BType = 9
 
 [node name="Tile649" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1085, 4145 )
-z_index = -11
+z_index = -10
 coordOnTexture = Vector2( 0, 1 )
 BType = 13
 
@@ -3208,7 +3210,7 @@ BType = 13
 
 [node name="Tile697" parent="." instance=ExtResource( 2 )]
 position = Vector2( 725, 4325 )
-z_index = -9
+z_index = -8
 coordOnTexture = Vector2( 0, 1 )
 BType = 12
 
@@ -3226,7 +3228,7 @@ BType = 9
 
 [node name="Tile791" parent="." instance=ExtResource( 2 )]
 position = Vector2( 185, 4595 )
-z_index = -6
+z_index = -5
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -3256,31 +3258,32 @@ BType = 10
 
 [node name="Tile4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 365, 185 )
-z_index = -58
+z_index = -55
 coordOnTexture = Vector2( 0, 3 )
 BType = 14
 
 [node name="Tile75" parent="." instance=ExtResource( 2 )]
 position = Vector2( 185, 275 )
-z_index = -57
+z_index = -55
 coordOnTexture = Vector2( 0, 2 )
 BType = 14
 
 [node name="Tile93" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, 365 )
-z_index = -56
+z_index = -55
 coordOnTexture = Vector2( 0, 1 )
 BType = 14
 
 [node name="Tile127" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 455 )
-z_index = -55
+z_index = -54
+coordOnTexture = Vector2( 0, 1 )
 root = true
 BType = 14
 
 [node name="Tile173" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 545 )
-z_index = -54
+z_index = -53
 coordOnTexture = Vector2( 0, 1 )
 root = true
 BType = 1
@@ -3293,7 +3296,7 @@ BType = 1
 
 [node name="Tile237" parent="." instance=ExtResource( 2 )]
 position = Vector2( -715, 725 )
-z_index = -51
+z_index = -50
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -3311,19 +3314,19 @@ BType = 9
 
 [node name="Tile304" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1255, 995 )
-z_index = -48
+z_index = -45
 coordOnTexture = Vector2( 0, 3 )
 BType = 14
 
 [node name="Tile340" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1435, 1085 )
-z_index = -47
+z_index = -45
 coordOnTexture = Vector2( 0, 2 )
 BType = 14
 
 [node name="Tile369" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1615, 1175 )
-z_index = -46
+z_index = -45
 coordOnTexture = Vector2( 0, 1 )
 BType = 14
 
@@ -3341,25 +3344,25 @@ BType = 9
 
 [node name="Tile461" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2155, 1445 )
-z_index = -43
+z_index = -39
 coordOnTexture = Vector2( 1, 3 )
 BType = 15
 
 [node name="Tile495" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2335, 1535 )
-z_index = -42
+z_index = -39
 coordOnTexture = Vector2( 1, 2 )
 BType = 15
 
 [node name="Tile524" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2515, 1625 )
-z_index = -41
+z_index = -39
 coordOnTexture = Vector2( 1, 1 )
 BType = 15
 
 [node name="Tile562" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2695, 1715 )
-z_index = -40
+z_index = -39
 coordOnTexture = Vector2( 1, 0 )
 BType = 15
 
@@ -3371,13 +3374,13 @@ BType = 9
 
 [node name="Tile630" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3055, 1895 )
-z_index = -38
+z_index = -36
 coordOnTexture = Vector2( 1, 1 )
 BType = 1
 
 [node name="Tile644" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3235, 1985 )
-z_index = -37
+z_index = -36
 coordOnTexture = Vector2( 1, 0 )
 BType = 1
 
@@ -3413,19 +3416,19 @@ BType = 7
 
 [node name="Tile840" parent="." instance=ExtResource( 2 )]
 position = Vector2( -4315, 2525 )
-z_index = -30
+z_index = -27
 coordOnTexture = Vector2( 0, 3 )
 BType = 16
 
 [node name="Tile850" parent="." instance=ExtResource( 2 )]
 position = Vector2( -4495, 2615 )
-z_index = -29
+z_index = -27
 coordOnTexture = Vector2( 0, 2 )
 BType = 16
 
 [node name="Tile884" parent="." instance=ExtResource( 2 )]
 position = Vector2( -4675, 2705 )
-z_index = -28
+z_index = -27
 coordOnTexture = Vector2( 0, 1 )
 BType = 16
 
@@ -3437,7 +3440,7 @@ BType = 16
 
 [node name="Tile16" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2165, 1085 )
-z_index = -47
+z_index = -46
 coordOnTexture = Vector2( 0, 1 )
 BType = 12
 
@@ -3449,7 +3452,7 @@ BType = 12
 
 [node name="Tile120" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1805, 1265 )
-z_index = -45
+z_index = -44
 coordOnTexture = Vector2( 0, 1 )
 BType = 13
 
@@ -3569,13 +3572,13 @@ BType = 6
 
 [node name="Tile696" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1795, 3065 )
-z_index = -24
+z_index = -22
 coordOnTexture = Vector2( 1, 1 )
 BType = 1
 
 [node name="Tile745" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1975, 3155 )
-z_index = -23
+z_index = -22
 coordOnTexture = Vector2( 1, 0 )
 BType = 1
 
@@ -3587,25 +3590,25 @@ BType = 9
 
 [node name="Tile786" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2335, 3335 )
-z_index = -21
+z_index = -14
 coordOnTexture = Vector2( 3, 3 )
 BType = 16
 
 [node name="Tile818" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2515, 3425 )
-z_index = -20
+z_index = -14
 coordOnTexture = Vector2( 3, 2 )
 BType = 16
 
 [node name="Tile849" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2695, 3515 )
-z_index = -19
+z_index = -14
 coordOnTexture = Vector2( 3, 1 )
 BType = 16
 
 [node name="Tile883" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2875, 3605 )
-z_index = -18
+z_index = -14
 coordOnTexture = Vector2( 3, 0 )
 BType = 16
 
@@ -3623,31 +3626,31 @@ BType = 9
 
 [node name="Tile68" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3785, 2075 )
-z_index = -36
+z_index = -30
 coordOnTexture = Vector2( 2, 3 )
 BType = 2
 
 [node name="Tile109" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3605, 2165 )
-z_index = -35
+z_index = -30
 coordOnTexture = Vector2( 2, 2 )
 BType = 2
 
 [node name="Tile132" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3425, 2255 )
-z_index = -33
+z_index = -30
 coordOnTexture = Vector2( 2, 1 )
 BType = 2
 
 [node name="Tile158" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3245, 2345 )
-z_index = -32
+z_index = -30
 coordOnTexture = Vector2( 2, 0 )
 BType = 2
 
 [node name="Tile181" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3065, 2435 )
-z_index = -31
+z_index = -30
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -3665,37 +3668,37 @@ BType = 9
 
 [node name="Tile292" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2525, 2705 )
-z_index = -28
+z_index = -26
 coordOnTexture = Vector2( 1, 1 )
 BType = 12
 
 [node name="Tile301" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2345, 2795 )
-z_index = -27
+z_index = -26
 coordOnTexture = Vector2( 1, 0 )
 BType = 12
 
 [node name="Tile338" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2165, 2885 )
-z_index = -26
+z_index = -21
 coordOnTexture = Vector2( 2, 3 )
 BType = 16
 
 [node name="Tile386" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1985, 2975 )
-z_index = -25
+z_index = -21
 coordOnTexture = Vector2( 2, 2 )
 BType = 16
 
 [node name="Tile402" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1805, 3065 )
-z_index = -24
+z_index = -21
 coordOnTexture = Vector2( 2, 1 )
 BType = 16
 
 [node name="Tile446" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1625, 3155 )
-z_index = -23
+z_index = -21
 coordOnTexture = Vector2( 2, 0 )
 BType = 16
 
@@ -3743,7 +3746,7 @@ BType = 7
 
 [node name="Tile687" parent="." instance=ExtResource( 2 )]
 position = Vector2( 185, 3875 )
-z_index = -14
+z_index = -13
 coordOnTexture = Vector2( 0, 1 )
 BType = 13
 
@@ -3755,25 +3758,25 @@ BType = 13
 
 [node name="Tile740" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 4055 )
-z_index = -12
+z_index = -8
 coordOnTexture = Vector2( 1, 3 )
 BType = 16
 
 [node name="Tile754" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 4145 )
-z_index = -11
+z_index = -8
 coordOnTexture = Vector2( 1, 2 )
 BType = 16
 
 [node name="Tile792" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 4235 )
-z_index = -10
+z_index = -8
 coordOnTexture = Vector2( 1, 1 )
 BType = 16
 
 [node name="Tile831" parent="." instance=ExtResource( 2 )]
 position = Vector2( -715, 4325 )
-z_index = -9
+z_index = -8
 coordOnTexture = Vector2( 1, 0 )
 BType = 16
 
@@ -3785,31 +3788,31 @@ BType = 9
 
 [node name="Tile896" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1075, 4505 )
-z_index = -7
+z_index = -5
 coordOnTexture = Vector2( 1, 1 )
 BType = 12
 
 [node name="Tile930" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1255, 4595 )
-z_index = -6
+z_index = -5
 coordOnTexture = Vector2( 1, 0 )
 BType = 12
 
 [node name="Tile8" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1265, 635 )
-z_index = -53
+z_index = -49
 coordOnTexture = Vector2( 0, 3 )
 BType = 11
 
 [node name="Tile76" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1085, 725 )
-z_index = -51
+z_index = -49
 coordOnTexture = Vector2( 0, 2 )
 BType = 11
 
 [node name="Tile108" parent="." instance=ExtResource( 2 )]
 position = Vector2( 905, 815 )
-z_index = -50
+z_index = -49
 coordOnTexture = Vector2( 0, 1 )
 BType = 11
 
@@ -3827,19 +3830,19 @@ BType = 9
 
 [node name="Tile203" parent="." instance=ExtResource( 2 )]
 position = Vector2( 365, 1085 )
-z_index = -47
+z_index = -44
 coordOnTexture = Vector2( 0, 3 )
 BType = 2
 
 [node name="Tile232" parent="." instance=ExtResource( 2 )]
 position = Vector2( 185, 1175 )
-z_index = -46
+z_index = -44
 coordOnTexture = Vector2( 0, 2 )
 BType = 2
 
 [node name="Tile260" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, 1265 )
-z_index = -45
+z_index = -44
 coordOnTexture = Vector2( 0, 1 )
 BType = 2
 
@@ -3851,19 +3854,19 @@ BType = 2
 
 [node name="Tile324" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 1445 )
-z_index = -43
+z_index = -40
 coordOnTexture = Vector2( 0, 3 )
 BType = 16
 
 [node name="Tile346" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 1535 )
-z_index = -42
+z_index = -40
 coordOnTexture = Vector2( 0, 2 )
 BType = 16
 
 [node name="Tile375" parent="." instance=ExtResource( 2 )]
 position = Vector2( -715, 1625 )
-z_index = -41
+z_index = -40
 coordOnTexture = Vector2( 0, 1 )
 BType = 16
 
@@ -3881,13 +3884,13 @@ BType = 9
 
 [node name="Tile463" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1255, 1895 )
-z_index = -38
+z_index = -36
 coordOnTexture = Vector2( 1, 1 )
 BType = 1
 
 [node name="Tile497" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1435, 1985 )
-z_index = -37
+z_index = -36
 coordOnTexture = Vector2( 1, 0 )
 BType = 1
 
@@ -3899,25 +3902,25 @@ BType = 9
 
 [node name="Tile570" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1795, 2165 )
-z_index = -35
+z_index = -30
 coordOnTexture = Vector2( 1, 3 )
 BType = 14
 
 [node name="Tile581" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1975, 2255 )
-z_index = -33
+z_index = -30
 coordOnTexture = Vector2( 1, 2 )
 BType = 14
 
 [node name="Tile624" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2155, 2345 )
-z_index = -32
+z_index = -30
 coordOnTexture = Vector2( 1, 1 )
 BType = 14
 
 [node name="Tile650" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2335, 2435 )
-z_index = -31
+z_index = -30
 coordOnTexture = Vector2( 1, 0 )
 BType = 14
 
@@ -3977,7 +3980,7 @@ BType = 4
 
 [node name="Tile17" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3065, 1535 )
-z_index = -42
+z_index = -41
 coordOnTexture = Vector2( 0, 1 )
 BType = 13
 
@@ -3995,37 +3998,37 @@ BType = 9
 
 [node name="Tile149" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2525, 1805 )
-z_index = -39
+z_index = -37
 coordOnTexture = Vector2( 1, 1 )
 BType = 1
 
 [node name="Tile153" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2345, 1895 )
-z_index = -38
+z_index = -37
 coordOnTexture = Vector2( 1, 0 )
 BType = 1
 
 [node name="Tile186" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2165, 1985 )
-z_index = -37
+z_index = -30
 coordOnTexture = Vector2( 3, 3 )
 BType = 11
 
 [node name="Tile213" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1985, 2075 )
-z_index = -36
+z_index = -30
 coordOnTexture = Vector2( 3, 2 )
 BType = 11
 
 [node name="Tile268" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1805, 2165 )
-z_index = -35
+z_index = -30
 coordOnTexture = Vector2( 3, 1 )
 BType = 11
 
 [node name="Tile298" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1625, 2255 )
-z_index = -33
+z_index = -30
 coordOnTexture = Vector2( 3, 0 )
 BType = 11
 
@@ -4037,13 +4040,13 @@ BType = 9
 
 [node name="Tile348" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1265, 2435 )
-z_index = -31
+z_index = -29
 coordOnTexture = Vector2( 1, 1 )
 BType = 13
 
 [node name="Tile365" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1085, 2525 )
-z_index = -30
+z_index = -29
 coordOnTexture = Vector2( 1, 0 )
 BType = 13
 
@@ -4085,7 +4088,7 @@ BType = 6
 
 [node name="Tile577" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 3155 )
-z_index = -23
+z_index = -22
 coordOnTexture = Vector2( 0, 1 )
 BType = 3
 
@@ -4097,7 +4100,7 @@ BType = 3
 
 [node name="Tile632" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 3335 )
-z_index = -21
+z_index = -20
 coordOnTexture = Vector2( 0, 1 )
 BType = 13
 
@@ -4109,49 +4112,49 @@ BType = 13
 
 [node name="Tile702" parent="." instance=ExtResource( 2 )]
 position = Vector2( -895, 3515 )
-z_index = -19
+z_index = -17
 coordOnTexture = Vector2( 1, 1 )
 BType = 12
 
 [node name="Tile741" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1075, 3605 )
-z_index = -18
+z_index = -17
 coordOnTexture = Vector2( 1, 0 )
 BType = 12
 
 [node name="Tile752" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1255, 3695 )
-z_index = -17
+z_index = -14
 coordOnTexture = Vector2( 1, 1 )
 BType = 12
 
 [node name="Tile800" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1435, 3785 )
-z_index = -15
+z_index = -14
 coordOnTexture = Vector2( 1, 0 )
 BType = 12
 
 [node name="Tile828" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1615, 3875 )
-z_index = -14
+z_index = -12
 coordOnTexture = Vector2( 1, 1 )
 BType = 12
 
 [node name="Tile870" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1795, 3965 )
-z_index = -13
+z_index = -12
 coordOnTexture = Vector2( 1, 0 )
 BType = 12
 
 [node name="Tile888" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1975, 4055 )
-z_index = -12
+z_index = -10
 coordOnTexture = Vector2( 1, 1 )
 BType = 12
 
 [node name="Tile916" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2155, 4145 )
-z_index = -11
+z_index = -10
 coordOnTexture = Vector2( 1, 0 )
 BType = 12
 
@@ -4163,7 +4166,7 @@ BType = 9
 
 [node name="Tile74" parent="." instance=ExtResource( 2 )]
 position = Vector2( 4685, 2525 )
-z_index = -30
+z_index = -29
 coordOnTexture = Vector2( 0, 1 )
 BType = 12
 
@@ -4175,7 +4178,7 @@ BType = 12
 
 [node name="Tile131" parent="." instance=ExtResource( 2 )]
 position = Vector2( 4325, 2705 )
-z_index = -28
+z_index = -27
 coordOnTexture = Vector2( 0, 1 )
 BType = 13
 
@@ -4193,7 +4196,7 @@ BType = 9
 
 [node name="Tile225" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3785, 2975 )
-z_index = -25
+z_index = -24
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -4205,7 +4208,7 @@ BType = 1
 
 [node name="Tile286" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3425, 3155 )
-z_index = -23
+z_index = -22
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -4217,25 +4220,25 @@ BType = 1
 
 [node name="Tile349" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3065, 3335 )
-z_index = -21
+z_index = -17
 coordOnTexture = Vector2( 1, 3 )
 BType = 14
 
 [node name="Tile379" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2885, 3425 )
-z_index = -20
+z_index = -17
 coordOnTexture = Vector2( 1, 2 )
 BType = 14
 
 [node name="Tile405" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2705, 3515 )
-z_index = -19
+z_index = -17
 coordOnTexture = Vector2( 1, 1 )
 BType = 14
 
 [node name="Tile441" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2525, 3605 )
-z_index = -18
+z_index = -17
 coordOnTexture = Vector2( 1, 0 )
 BType = 14
 
@@ -4247,25 +4250,25 @@ BType = 9
 
 [node name="Tile481" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2165, 3785 )
-z_index = -15
+z_index = -13
 coordOnTexture = Vector2( 1, 1 )
 BType = 3
 
 [node name="Tile515" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1985, 3875 )
-z_index = -14
+z_index = -13
 coordOnTexture = Vector2( 1, 0 )
 BType = 3
 
 [node name="Tile546" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1805, 3965 )
-z_index = -13
+z_index = -11
 coordOnTexture = Vector2( 1, 1 )
 BType = 1
 
 [node name="Tile585" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1625, 4055 )
-z_index = -12
+z_index = -11
 coordOnTexture = Vector2( 1, 0 )
 BType = 1
 
@@ -4277,25 +4280,25 @@ BType = 9
 
 [node name="Tile647" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1265, 4235 )
-z_index = -10
+z_index = -8
 coordOnTexture = Vector2( 1, 1 )
 BType = 13
 
 [node name="Tile663" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1085, 4325 )
-z_index = -9
+z_index = -8
 coordOnTexture = Vector2( 1, 0 )
 BType = 13
 
 [node name="Tile704" parent="." instance=ExtResource( 2 )]
 position = Vector2( 905, 4415 )
-z_index = -8
+z_index = -6
 coordOnTexture = Vector2( 1, 1 )
 BType = 3
 
 [node name="Tile735" parent="." instance=ExtResource( 2 )]
 position = Vector2( 725, 4505 )
-z_index = -7
+z_index = -6
 coordOnTexture = Vector2( 1, 0 )
 BType = 3
 
@@ -4307,13 +4310,13 @@ BType = 9
 
 [node name="Tile793" parent="." instance=ExtResource( 2 )]
 position = Vector2( 365, 4685 )
-z_index = -5
+z_index = -3
 coordOnTexture = Vector2( 1, 1 )
 BType = 13
 
 [node name="Tile814" parent="." instance=ExtResource( 2 )]
 position = Vector2( 185, 4775 )
-z_index = -4
+z_index = -3
 coordOnTexture = Vector2( 1, 0 )
 BType = 13
 
@@ -4325,13 +4328,11 @@ BType = 9
 
 [node name="Tile887" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 4955 )
-z_index = -2
 coordOnTexture = Vector2( 1, 1 )
 BType = 3
 
 [node name="Tile903" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 5045 )
-z_index = -1
 coordOnTexture = Vector2( 1, 0 )
 BType = 3
 
@@ -4421,19 +4422,19 @@ BType = 6
 
 [node name="Tile459" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1975, 1535 )
-z_index = -42
+z_index = -39
 coordOnTexture = Vector2( 0, 3 )
 BType = 15
 
 [node name="Tile494" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2155, 1625 )
-z_index = -41
+z_index = -39
 coordOnTexture = Vector2( 0, 2 )
 BType = 15
 
 [node name="Tile529" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2335, 1715 )
-z_index = -40
+z_index = -39
 coordOnTexture = Vector2( 0, 1 )
 BType = 15
 
@@ -4451,7 +4452,7 @@ BType = 9
 
 [node name="Tile619" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2875, 1985 )
-z_index = -37
+z_index = -36
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -4469,61 +4470,61 @@ BType = 9
 
 [node name="Tile716" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3415, 2255 )
-z_index = -33
+z_index = -27
 coordOnTexture = Vector2( 3, 3 )
 BType = 11
 
 [node name="Tile727" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3595, 2345 )
-z_index = -32
+z_index = -27
 coordOnTexture = Vector2( 3, 2 )
 BType = 11
 
 [node name="Tile757" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3775, 2435 )
-z_index = -31
+z_index = -27
 coordOnTexture = Vector2( 3, 1 )
 BType = 11
 
 [node name="Tile790" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3955, 2525 )
-z_index = -30
+z_index = -27
 coordOnTexture = Vector2( 3, 0 )
 BType = 11
 
 [node name="Tile830" parent="." instance=ExtResource( 2 )]
 position = Vector2( -4135, 2615 )
-z_index = -29
+z_index = -27
 coordOnTexture = Vector2( 1, 1 )
 BType = 13
 
 [node name="Tile868" parent="." instance=ExtResource( 2 )]
 position = Vector2( -4315, 2705 )
-z_index = -28
+z_index = -27
 coordOnTexture = Vector2( 1, 0 )
 BType = 13
 
 [node name="Tile900" parent="." instance=ExtResource( 2 )]
 position = Vector2( -4495, 2795 )
-z_index = -27
+z_index = -25
 coordOnTexture = Vector2( 1, 1 )
 BType = 1
 
 [node name="Tile923" parent="." instance=ExtResource( 2 )]
-position = Vector2( -4675, 2885 )
-z_index = -26
+position = Vector2( -4677.76, 2885 )
+z_index = -25
 coordOnTexture = Vector2( 1, 0 )
 BType = 1
 
 [node name="Tile20" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2345, 1175 )
-z_index = -46
+z_index = -44
 coordOnTexture = Vector2( 1, 1 )
 BType = 1
 
 [node name="Tile65" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2165, 1265 )
-z_index = -45
+z_index = -44
 coordOnTexture = Vector2( 1, 0 )
 BType = 1
 
@@ -4547,25 +4548,25 @@ BType = 7
 
 [node name="Tile201" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1445, 1625 )
-z_index = -41
+z_index = -35
 coordOnTexture = Vector2( 3, 3 )
 BType = 15
 
 [node name="Tile231" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1265, 1715 )
-z_index = -40
+z_index = -35
 coordOnTexture = Vector2( 3, 2 )
 BType = 15
 
 [node name="Tile245" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1085, 1805 )
-z_index = -39
+z_index = -35
 coordOnTexture = Vector2( 3, 1 )
 BType = 15
 
 [node name="Tile273" parent="." instance=ExtResource( 2 )]
 position = Vector2( 905, 1895 )
-z_index = -38
+z_index = -35
 coordOnTexture = Vector2( 3, 0 )
 BType = 15
 
@@ -4577,13 +4578,13 @@ BType = 9
 
 [node name="Tile356" parent="." instance=ExtResource( 2 )]
 position = Vector2( 545, 2075 )
-z_index = -36
+z_index = -33
 coordOnTexture = Vector2( 1, 1 )
 BType = 13
 
 [node name="Tile364" parent="." instance=ExtResource( 2 )]
 position = Vector2( 365, 2165 )
-z_index = -35
+z_index = -33
 coordOnTexture = Vector2( 1, 0 )
 BType = 13
 
@@ -4595,49 +4596,49 @@ BType = 9
 
 [node name="Tile435" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, 2345 )
-z_index = -32
+z_index = -26
 coordOnTexture = Vector2( 3, 3 )
 BType = 11
 
 [node name="Tile455" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 2435 )
-z_index = -31
+z_index = -26
 coordOnTexture = Vector2( 3, 2 )
 BType = 11
 
 [node name="Tile485" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 2525 )
-z_index = -30
+z_index = -26
 coordOnTexture = Vector2( 3, 1 )
 BType = 11
 
 [node name="Tile522" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 2615 )
-z_index = -29
+z_index = -26
 coordOnTexture = Vector2( 3, 0 )
 BType = 11
 
 [node name="Tile549" parent="." instance=ExtResource( 2 )]
 position = Vector2( -715, 2705 )
-z_index = -28
+z_index = -26
 coordOnTexture = Vector2( 1, 1 )
 BType = 1
 
 [node name="Tile593" parent="." instance=ExtResource( 2 )]
 position = Vector2( -895, 2795 )
-z_index = -27
+z_index = -26
 coordOnTexture = Vector2( 1, 0 )
 BType = 1
 
 [node name="Tile627" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1075, 2885 )
-z_index = -26
+z_index = -24
 coordOnTexture = Vector2( 1, 1 )
 BType = 1
 
 [node name="Tile651" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1255, 2975 )
-z_index = -25
+z_index = -24
 coordOnTexture = Vector2( 1, 0 )
 BType = 1
 
@@ -4649,7 +4650,7 @@ BType = 9
 
 [node name="Tile694" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1615, 3155 )
-z_index = -23
+z_index = -22
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -4667,25 +4668,25 @@ BType = 9
 
 [node name="Tile809" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2155, 3425 )
-z_index = -20
+z_index = -14
 coordOnTexture = Vector2( 2, 3 )
 BType = 16
 
 [node name="Tile839" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2335, 3515 )
-z_index = -19
+z_index = -14
 coordOnTexture = Vector2( 2, 2 )
 BType = 16
 
 [node name="Tile852" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2515, 3605 )
-z_index = -18
+z_index = -14
 coordOnTexture = Vector2( 2, 1 )
 BType = 16
 
 [node name="Tile893" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2695, 3695 )
-z_index = -17
+z_index = -14
 coordOnTexture = Vector2( 2, 0 )
 BType = 16
 
@@ -4703,37 +4704,37 @@ BType = 9
 
 [node name="Tile70" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3965, 2165 )
-z_index = -35
+z_index = -30
 coordOnTexture = Vector2( 1, 3 )
 BType = 2
 
 [node name="Tile112" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3785, 2255 )
-z_index = -33
+z_index = -30
 coordOnTexture = Vector2( 1, 2 )
 BType = 2
 
 [node name="Tile140" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3605, 2345 )
-z_index = -32
+z_index = -30
 coordOnTexture = Vector2( 1, 1 )
 BType = 2
 
 [node name="Tile177" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3425, 2435 )
-z_index = -31
+z_index = -30
 coordOnTexture = Vector2( 1, 0 )
 BType = 2
 
 [node name="Tile184" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3245, 2525 )
-z_index = -30
+z_index = -28
 coordOnTexture = Vector2( 1, 1 )
 BType = 3
 
 [node name="Tile222" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3065, 2615 )
-z_index = -29
+z_index = -28
 coordOnTexture = Vector2( 1, 0 )
 BType = 3
 
@@ -4745,7 +4746,7 @@ BType = 9
 
 [node name="Tile297" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2705, 2795 )
-z_index = -27
+z_index = -26
 coordOnTexture = Vector2( 0, 1 )
 BType = 12
 
@@ -4757,25 +4758,25 @@ BType = 12
 
 [node name="Tile342" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2345, 2975 )
-z_index = -25
+z_index = -21
 coordOnTexture = Vector2( 1, 3 )
 BType = 16
 
 [node name="Tile372" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2165, 3065 )
-z_index = -24
+z_index = -21
 coordOnTexture = Vector2( 1, 2 )
 BType = 16
 
 [node name="Tile410" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1985, 3155 )
-z_index = -23
+z_index = -21
 coordOnTexture = Vector2( 1, 1 )
 BType = 16
 
 [node name="Tile432" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1805, 3245 )
-z_index = -22
+z_index = -21
 coordOnTexture = Vector2( 1, 0 )
 BType = 16
 
@@ -4787,25 +4788,25 @@ BType = 9
 
 [node name="Tile489" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1445, 3425 )
-z_index = -20
+z_index = -13
 coordOnTexture = Vector2( 3, 3 )
 BType = 15
 
 [node name="Tile521" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1265, 3515 )
-z_index = -19
+z_index = -13
 coordOnTexture = Vector2( 3, 2 )
 BType = 15
 
 [node name="Tile550" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1085, 3605 )
-z_index = -18
+z_index = -13
 coordOnTexture = Vector2( 3, 1 )
 BType = 15
 
 [node name="Tile594" parent="." instance=ExtResource( 2 )]
 position = Vector2( 905, 3695 )
-z_index = -17
+z_index = -13
 coordOnTexture = Vector2( 3, 0 )
 BType = 15
 
@@ -4817,13 +4818,13 @@ BType = 9
 
 [node name="Tile648" parent="." instance=ExtResource( 2 )]
 position = Vector2( 545, 3875 )
-z_index = -14
+z_index = -12
 coordOnTexture = Vector2( 1, 1 )
 BType = 1
 
 [node name="Tile685" parent="." instance=ExtResource( 2 )]
 position = Vector2( 365, 3965 )
-z_index = -13
+z_index = -12
 coordOnTexture = Vector2( 1, 0 )
 BType = 1
 
@@ -4835,19 +4836,19 @@ BType = 9
 
 [node name="Tile723" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, 4145 )
-z_index = -11
+z_index = -8
 coordOnTexture = Vector2( 0, 3 )
 BType = 16
 
 [node name="Tile778" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 4235 )
-z_index = -10
+z_index = -8
 coordOnTexture = Vector2( 0, 2 )
 BType = 16
 
 [node name="Tile795" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 4325 )
-z_index = -9
+z_index = -8
 coordOnTexture = Vector2( 0, 1 )
 BType = 16
 
@@ -4865,7 +4866,7 @@ BType = 9
 
 [node name="Tile880" parent="." instance=ExtResource( 2 )]
 position = Vector2( -895, 4595 )
-z_index = -6
+z_index = -5
 coordOnTexture = Vector2( 0, 1 )
 BType = 12
 
@@ -4907,49 +4908,49 @@ BType = 6
 
 [node name="Tile208" parent="." instance=ExtResource( 2 )]
 position = Vector2( 545, 1175 )
-z_index = -46
+z_index = -40
 coordOnTexture = Vector2( 3, 3 )
 BType = 16
 
 [node name="Tile214" parent="." instance=ExtResource( 2 )]
 position = Vector2( 365, 1265 )
-z_index = -45
+z_index = -40
 coordOnTexture = Vector2( 3, 2 )
 BType = 16
 
 [node name="Tile249" parent="." instance=ExtResource( 2 )]
 position = Vector2( 185, 1355 )
-z_index = -44
+z_index = -40
 coordOnTexture = Vector2( 3, 1 )
 BType = 16
 
 [node name="Tile276" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, 1445 )
-z_index = -43
+z_index = -40
 coordOnTexture = Vector2( 3, 0 )
 BType = 16
 
 [node name="Tile317" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 1535 )
-z_index = -42
+z_index = -40
 coordOnTexture = Vector2( 1, 1 )
 BType = 3
 
 [node name="Tile357" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 1625 )
-z_index = -41
+z_index = -40
 coordOnTexture = Vector2( 1, 0 )
 BType = 3
 
 [node name="Tile367" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 1715 )
-z_index = -40
+z_index = -38
 coordOnTexture = Vector2( 1, 1 )
 BType = 12
 
 [node name="Tile418" parent="." instance=ExtResource( 2 )]
 position = Vector2( -715, 1805 )
-z_index = -39
+z_index = -38
 coordOnTexture = Vector2( 1, 0 )
 BType = 12
 
@@ -4961,7 +4962,7 @@ BType = 9
 
 [node name="Tile477" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1075, 1985 )
-z_index = -37
+z_index = -36
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -4979,19 +4980,19 @@ BType = 9
 
 [node name="Tile544" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1615, 2255 )
-z_index = -33
+z_index = -30
 coordOnTexture = Vector2( 0, 3 )
 BType = 14
 
 [node name="Tile583" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1795, 2345 )
-z_index = -32
+z_index = -30
 coordOnTexture = Vector2( 0, 2 )
 BType = 14
 
 [node name="Tile603" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1975, 2435 )
-z_index = -31
+z_index = -30
 coordOnTexture = Vector2( 0, 1 )
 BType = 14
 
@@ -5009,13 +5010,13 @@ BType = 9
 
 [node name="Tile714" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2515, 2705 )
-z_index = -28
+z_index = -26
 coordOnTexture = Vector2( 1, 1 )
 BType = 3
 
 [node name="Tile747" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2695, 2795 )
-z_index = -27
+z_index = -26
 coordOnTexture = Vector2( 1, 0 )
 BType = 3
 
@@ -5027,25 +5028,25 @@ BType = 9
 
 [node name="Tile805" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3055, 2975 )
-z_index = -25
+z_index = -19
 coordOnTexture = Vector2( 3, 3 )
 BType = 2
 
 [node name="Tile837" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3235, 3065 )
-z_index = -24
+z_index = -19
 coordOnTexture = Vector2( 3, 2 )
 BType = 2
 
 [node name="Tile847" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3415, 3155 )
-z_index = -23
+z_index = -19
 coordOnTexture = Vector2( 3, 1 )
 BType = 2
 
 [node name="Tile890" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3595, 3245 )
-z_index = -22
+z_index = -19
 coordOnTexture = Vector2( 3, 0 )
 BType = 2
 
@@ -5057,13 +5058,13 @@ BType = 9
 
 [node name="Tile15" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3245, 1625 )
-z_index = -41
+z_index = -39
 coordOnTexture = Vector2( 1, 1 )
 BType = 13
 
 [node name="Tile62" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3065, 1715 )
-z_index = -40
+z_index = -39
 coordOnTexture = Vector2( 1, 0 )
 BType = 13
 
@@ -5075,7 +5076,7 @@ BType = 9
 
 [node name="Tile122" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2705, 1895 )
-z_index = -38
+z_index = -37
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -5087,25 +5088,25 @@ BType = 1
 
 [node name="Tile192" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2345, 2075 )
-z_index = -36
+z_index = -30
 coordOnTexture = Vector2( 2, 3 )
 BType = 11
 
 [node name="Tile238" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2165, 2165 )
-z_index = -35
+z_index = -30
 coordOnTexture = Vector2( 2, 2 )
 BType = 11
 
 [node name="Tile264" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1985, 2255 )
-z_index = -33
+z_index = -30
 coordOnTexture = Vector2( 2, 1 )
 BType = 11
 
 [node name="Tile281" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1805, 2345 )
-z_index = -32
+z_index = -30
 coordOnTexture = Vector2( 2, 0 )
 BType = 11
 
@@ -5117,7 +5118,7 @@ BType = 9
 
 [node name="Tile344" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1445, 2525 )
-z_index = -30
+z_index = -29
 coordOnTexture = Vector2( 0, 1 )
 BType = 13
 
@@ -5135,25 +5136,25 @@ BType = 9
 
 [node name="Tile424" parent="." instance=ExtResource( 2 )]
 position = Vector2( 905, 2795 )
-z_index = -27
+z_index = -25
 coordOnTexture = Vector2( 1, 1 )
 BType = 1
 
 [node name="Tile465" parent="." instance=ExtResource( 2 )]
 position = Vector2( 725, 2885 )
-z_index = -26
+z_index = -25
 coordOnTexture = Vector2( 1, 0 )
 BType = 1
 
 [node name="Tile492" parent="." instance=ExtResource( 2 )]
 position = Vector2( 545, 2975 )
-z_index = -25
+z_index = -23
 coordOnTexture = Vector2( 1, 1 )
 BType = 13
 
 [node name="Tile535" parent="." instance=ExtResource( 2 )]
 position = Vector2( 365, 3065 )
-z_index = -24
+z_index = -23
 coordOnTexture = Vector2( 1, 0 )
 BType = 13
 
@@ -5165,31 +5166,31 @@ BType = 9
 
 [node name="Tile576" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, 3245 )
-z_index = -22
+z_index = -20
 coordOnTexture = Vector2( 1, 1 )
 BType = 12
 
 [node name="Tile602" parent="." instance=ExtResource( 2 )]
 position = Vector2( -175, 3335 )
-z_index = -21
+z_index = -20
 coordOnTexture = Vector2( 1, 0 )
 BType = 12
 
 [node name="Tile631" parent="." instance=ExtResource( 2 )]
 position = Vector2( -355, 3425 )
-z_index = -20
+z_index = -18
 coordOnTexture = Vector2( 1, 1 )
 BType = 3
 
 [node name="Tile681" parent="." instance=ExtResource( 2 )]
 position = Vector2( -535, 3515 )
-z_index = -19
+z_index = -18
 coordOnTexture = Vector2( 1, 0 )
 BType = 3
 
 [node name="Tile712" parent="." instance=ExtResource( 2 )]
 position = Vector2( -715, 3605 )
-z_index = -18
+z_index = -17
 coordOnTexture = Vector2( 0, 1 )
 BType = 12
 
@@ -5201,7 +5202,7 @@ BType = 12
 
 [node name="Tile763" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1075, 3785 )
-z_index = -15
+z_index = -14
 coordOnTexture = Vector2( 0, 1 )
 BType = 12
 
@@ -5213,7 +5214,7 @@ BType = 12
 
 [node name="Tile817" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1435, 3965 )
-z_index = -13
+z_index = -12
 coordOnTexture = Vector2( 0, 1 )
 BType = 12
 
@@ -5225,7 +5226,7 @@ BType = 12
 
 [node name="Tile877" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1795, 4145 )
-z_index = -11
+z_index = -10
 coordOnTexture = Vector2( 0, 1 )
 BType = 12
 
@@ -5255,13 +5256,15 @@ BType = 10
 
 [node name="Tile123" parent="." instance=ExtResource( 2 )]
 position = Vector2( 4505, 2795 )
-z_index = -27
+z_index = -57
+coordOnTexture = Vector2( 1, 1 )
 root = true
 BType = 10
 
 [node name="Tile167" parent="." instance=ExtResource( 2 )]
 position = Vector2( 4325, 2885 )
-z_index = -26
+z_index = -57
+coordOnTexture = Vector2( 1, 0 )
 root = true
 BType = 10
 
@@ -5297,19 +5300,19 @@ BType = 10
 
 [node name="Tile354" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3245, 3425 )
-z_index = -20
+z_index = -17
 coordOnTexture = Vector2( 0, 3 )
 BType = 14
 
 [node name="Tile366" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3065, 3515 )
-z_index = -19
+z_index = -17
 coordOnTexture = Vector2( 0, 2 )
 BType = 14
 
 [node name="Tile415" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2885, 3605 )
-z_index = -18
+z_index = -17
 coordOnTexture = Vector2( 0, 1 )
 BType = 14
 
@@ -5327,7 +5330,7 @@ BType = 9
 
 [node name="Tile484" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2345, 3875 )
-z_index = -14
+z_index = -13
 coordOnTexture = Vector2( 0, 1 )
 BType = 3
 
@@ -5339,7 +5342,7 @@ BType = 3
 
 [node name="Tile557" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1985, 4055 )
-z_index = -12
+z_index = -11
 coordOnTexture = Vector2( 0, 1 )
 BType = 1
 
@@ -5357,7 +5360,7 @@ BType = 9
 
 [node name="Tile660" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1445, 4325 )
-z_index = -9
+z_index = -8
 coordOnTexture = Vector2( 0, 1 )
 BType = 13
 
@@ -5369,7 +5372,7 @@ BType = 13
 
 [node name="Tile709" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1085, 4505 )
-z_index = -7
+z_index = -6
 coordOnTexture = Vector2( 0, 1 )
 BType = 3
 
@@ -5387,7 +5390,7 @@ BType = 9
 
 [node name="Tile785" parent="." instance=ExtResource( 2 )]
 position = Vector2( 545, 4775 )
-z_index = -4
+z_index = -3
 coordOnTexture = Vector2( 0, 1 )
 BType = 13
 
@@ -5405,7 +5408,6 @@ BType = 9
 
 [node name="Tile872" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, 5045 )
-z_index = -1
 coordOnTexture = Vector2( 0, 1 )
 BType = 3
 
