@@ -178,6 +178,11 @@ func buy(toPlant):
 	return canPlant
 
 
+func protect(power,tile):
+	for neigh in neighborsIndexes(tilePositionToIndexes(tile.position)):
+		allTiles[neigh.x][neigh.y].receiveSoutien(power)
+
+
 func can_place(toPlant,thisTile):
 	print("z_index : ",thisTile.baseZIndex)
 	return hasPlantNeighbors(thisTile)

@@ -83,7 +83,9 @@ var plantLife = {
 	PlantType.HERBE:10,
 	PlantType.LIERE:40,
 	PlantType.RONCE:50,
+	PlantType.MYCELIUM:30
 }
+
 var buildingAttack = {
 	BuildingType.NONE:0,
 	BuildingType.PARCKING:1,
@@ -102,6 +104,10 @@ var buildingAttack = {
 	BuildingType.BUILDING:10,
 	BuildingType.CENTRALE:12,
 	BuildingType.TERRAIN:100
+}
+var plantSoutien = {
+	PlantType.MYCELIUM:5,
+	PlantType.RONCE:3
 }
 
 #Fonction de l'outil
@@ -362,6 +368,15 @@ func setPlant(type):
 	print(pLife, ", ", buildingDamage)
 	instancePlant(type)
 	return true
+
+
+func activeSoutien(type):
+	if plantSoutien.has(type):
+		map.protect(plantSoutien[type],self)
+
+#pas sur pour cette fonction : 
+func receiveSoutien(power):
+	pLife += power
 
 func getBuilding():
 	return BType
