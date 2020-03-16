@@ -343,4 +343,7 @@ func _on_Life_timeout():
 	life -= nbPlantsInTile
 	if life <= 0:
 		lifeTimer.stop()
-		$Building.texture = load(textureName + "Destroyed.png")
+		if textureName != null:
+			$Building.texture = load(textureName + "Destroyed.png")
+		else:
+			print("error")
