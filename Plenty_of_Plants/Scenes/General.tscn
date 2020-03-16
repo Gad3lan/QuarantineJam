@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Camera.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/background.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Map.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
@@ -12,3 +13,9 @@ miny = -6500
 maxy = 6500
 
 [node name="Map" parent="." instance=ExtResource( 3 )]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 57.8846, 1635.48 )
+scale = Vector2( 8, 8 )
+z_index = -100
+texture = ExtResource( 2 )
