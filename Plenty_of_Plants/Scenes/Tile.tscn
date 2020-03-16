@@ -12,15 +12,16 @@ shader = ExtResource( 2 )
 shader_param/width = null
 shader_param/outline_color = null
 
-[sub_resource type="OpenSimplexNoise" id=3]
+[sub_resource type="OpenSimplexNoise" id=2]
 
-[sub_resource type="NoiseTexture" id=4]
-noise = SubResource( 3 )
+[sub_resource type="NoiseTexture" id=3]
+seamless = true
+noise = SubResource( 2 )
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 4 )
 shader_param/city = ExtResource( 5 )
-shader_param/noise = SubResource( 4 )
+shader_param/noise = SubResource( 3 )
 
 [node name="Tile" type="Area2D"]
 script = ExtResource( 1 )
@@ -36,6 +37,6 @@ polygon = PoolVector2Array( 0.00820923, -88.3135, -178.866, 0.901711, 0.895317, 
 position = Vector2( 3.68323, -174.339 )
 
 [node name="Building" type="Sprite" parent="."]
-material = SubResource( 2 )
+material = SubResource( 4 )
 [connection signal="mouse_entered" from="." to="." method="_on_Tile_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_Tile_mouse_exited"]
