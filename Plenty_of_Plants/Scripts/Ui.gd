@@ -1,6 +1,6 @@
 extends MarginContainer
 
-enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS, SECOIA, MYCELIUM, RONCE}
+enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL,HERBE, EUCALYPTUS, SECOIA, MYCELIUM, RONCE}
 
 export (PlantType) var selectedPlant = PlantType.NONE;
 export (int) var pollenNum = 0
@@ -70,6 +70,7 @@ func _on_Eucalyptus_gui_input(event):
 func _on_Sequoia_gui_input(event):
 	if event.is_pressed():
 		selectedPlant = PlantType.SECOIA
+
 
 func _on_Mycellium_gui_input(event):
 	if event.is_pressed():

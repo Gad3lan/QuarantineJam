@@ -6,9 +6,13 @@ onready var map = self.get_parent()
 var mouseIsIn:bool = false
 var baseZIndex
 onready var pollen = preload("res://Scenes/BioMasse.tscn")
+onready var Ui = map.get_parent().get_node("CameraNode").get_node("CanvasLayer/Ui")
 
-enum PlantType {NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE, HERBE}
+
+enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS,HERBE, SECOIA, MYCELIUM, RONCE}
 enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, IMMEUBLE2, BUILDING, CENTRALE, TERRAIN}
+
+
 
 var plantGivingBiomasse ={
 	PlantType.SECOIA : 60,
@@ -190,9 +194,10 @@ func getBuilding():
 func _input(event):
 	if mouseIsIn and event is InputEventMouseButton:
 		if event.is_pressed() and event.button_index == BUTTON_LEFT:
-				if map.can_place(PlantType.SECOIA,self):
-					print("can place")
-					setPlant(PlantType.SECOIA)
+			var toPlant = Ui.selectedPlant
+			if map.can_place(toPlant,self):
+				print("can place")
+				setPlant(toPlant)
 
 func _on_Tile_mouse_entered():
 	mouseIsIn = true
