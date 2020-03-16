@@ -33,11 +33,16 @@ onready var buildPaths = {
 	BuildingType.PARCKING : preload("res://Scenes/Prefabs/Parcking.tscn")
 }
 
-onready var plantPaths = {
-	PlantType.SECOIA : preload("res://Scenes/Prefabs/Sequoia.tscn"),
-	PlantType.HERBE : preload("res://Scenes/Prefabs/Herbe.tscn")
-	
+
+#NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE, HERBE
+onready var plantBuildingPath = {
+	PlantType.SECOIA : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Sequoia.tscn")}},
+	PlantType.HERBE : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Herbe.tscn")}},
+	PlantType.EUCALYPTUS : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Eucalyptus.tscn")}},
+	PlantType.CHAMPIGNON : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Champignon.tscn")}},
+	PlantType.LIERE : {BuildingType.USINE:{Vector2(0,0):preload("res://Scenes/Prefabs/LierrePourUsineFront.tscn")}}
 }
+
 
 var ROADPLACEHOLDER = -1
 
@@ -46,9 +51,10 @@ var plantBuildingcompatibleDict = {
 	PlantType.CHAMPIGNON:[BuildingType.NONE, BuildingType.PARCKING, ROADPLACEHOLDER],
 	PlantType.SECOIA:[BuildingType.NONE, BuildingType.PARCKING, ROADPLACEHOLDER],
 	PlantType.EUCALYPTUS:[BuildingType.NONE, BuildingType.PARCKING, ROADPLACEHOLDER],
+		PlantType.HERBE:[BuildingType.NONE, BuildingType.PARCKING,ROADPLACEHOLDER],
 	PlantType.CHAMPIGNON:[BuildingType.NONE, BuildingType.PARCKING, ROADPLACEHOLDER,BuildingType.HOTEL],
 	PlantType.LIERE:[BuildingType.HOTEL, BuildingType.USINE],
-	PlantType.RONCE:[BuildingType.HOTEL, BuildingType.USINE]
+	PlantType.RONCE:[BuildingType.HOTEL, BuildingType.USINE],
 }
 
 export var startTile = false
@@ -143,19 +149,24 @@ func hasPlant():
 	
 
 func plantCanBePlaced(plant):
-	if PType == PlantType.NONE:
-		print (plantBuildingcompatibleDict[plant], ", BType ",BType2)
 	return PType == PlantType.NONE and plantBuildingcompatibleDict[plant].has(BType2)
 
+func findPrefab():
+	if plantBuildingPath[PType].has(BType2):
+		return plantBuildingPath[PType][BType2][coordOnTexture]
+	else:
+		return plantBuildingPath[PType][BuildingType.NONE][coordOnTexture]
+
 func instancePlant(type):
+	print("plant type : ",type)
 	var plantInstance
-	if plantPaths.has(type):
-		plantInstance = plantPaths[type].instance()
+	if plantBuildingPath.has(type):
+		PType = type
+		plantInstance = findPrefab().instance()
 	else:
 		plantInstance = placeHolderPath.instance()
 	plantInstance.z_index = self.z_index + 1
 	call_deferred("add_child",plantInstance)
-	PType = type
 	if plantGivingBiomasse.has(PType):
 		timer.set_wait_time(plantGivingBiomasse[PType] *(1+ 0.33*(randf()-0.5)))
 		timer.start()
@@ -172,9 +183,9 @@ func getBuilding():
 func _input(event):
 	if mouseIsIn and event is InputEventMouseButton:
 		if event.is_pressed() and event.button_index == BUTTON_LEFT:
-				if map.can_place(PlantType.SECOIA,self):
+				if map.can_place(PlantType.LIERE,self):
 					print("can place")
-					setPlant(PlantType.SECOIA)
+					setPlant(PlantType.LIERE)
 
 func _on_Tile_mouse_entered():
 	mouseIsIn = true
