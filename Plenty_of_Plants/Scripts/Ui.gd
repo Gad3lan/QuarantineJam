@@ -1,9 +1,7 @@
 extends MarginContainer
 
-var attaqueShow = false
-var auxiliaireShow = false
-var biomasseShow = false
-var soutiensShow = false
+enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS, SECOIA, MYCELIUM, RONCE}
+export (PlantType) var selectedPlant = PlantType.NONE;
 
 onready var menuContainer = get_node("VBoxContainer/MenuContainer")
 onready var attaqueMenu = get_node("VBoxContainer/MenuContainer/Attaque")
@@ -19,23 +17,18 @@ func _ready():
 	soutiensMenu.hide()
 	
 func _process(delta):
-	if attaqueShow || auxiliaireShow || biomasseShow || soutiensShow:
-		pass
+	pass
 
 func _on_Attaque_mouse_entered():
-	attaqueShow = true
 	attaqueMenu.show()
 
 func _on_Auxiliaire_mouse_entered():
-	auxiliaireShow = true
 	auxiliaireMenu.show()
 
 func _on_Biomasse_mouse_entered():
-	biomasseShow = true
 	biomasseMenu.show()
 
 func _on_Soutien_mouse_entered():
-	soutiensShow = true
 	soutiensMenu.show()
 
 func _on_Attaque_mouse_exited():
@@ -52,5 +45,28 @@ func _on_Soutien_mouse_exited():
 
 func _on_Champignon_gui_input(event):
 	if event.is_pressed():
-		print("CHAAAAAAAAAAAAAAAAAAAAAAAAMPIIIIIIIIIIIIIIII")
-		print(event.as_text())
+		selectedPlant = PlantType.CHAMPIGNON
+
+func _on_Liere_gui_input(event):
+	if event.is_pressed():
+		selectedPlant = PlantType.LIERE
+
+func _on_Tournessole_gui_input(event):
+	if event.is_pressed():
+		selectedPlant = PlantType.TOURNESSOL
+
+func _on_Eucalyptus_gui_input(event):
+	if event.is_pressed():
+		selectedPlant = PlantType.EUCALYPTUS
+
+func _on_Sequoia_gui_input(event):
+	if event.is_pressed():
+		selectedPlant = PlantType.SECOIA
+
+func _on_Mycellium_gui_input(event):
+	if event.is_pressed():
+		selectedPlant = PlantType.MYCELIUM
+
+func _on_Ronces_gui_input(event):
+	if event.is_pressed():
+		selectedPlant = PlantType.RONCE
