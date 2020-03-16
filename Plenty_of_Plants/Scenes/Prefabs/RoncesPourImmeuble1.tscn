@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Sprites/TileSprite/Plants/Soutien/IMG_6602.PNG" type="Texture" id=2]
 [ext_resource path="res://Sprites/TileSprite/Building/sol neutre.png" type="Texture" id=5]
@@ -7,6 +7,10 @@
 [sub_resource type="StreamTexture" id=1]
 flags = 4
 load_path = "res://.import/immeuble.png-9e00c29d605e4c602d4d4d242f039005.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/IMG_6616.PNG-9171e6b7995ea6cc3c6f326d48d8e328.stex"
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 542.642, 370.805 )
@@ -23,6 +27,16 @@ scale = Vector2( 0.5, 0.5 )
 texture = SubResource( 1 )
 
 [node name="toKeep" type="Node2D" parent="."]
+
+[node name="Sprite8" type="Sprite" parent="toKeep"]
+position = Vector2( -14.6935, -53.7915 )
+scale = Vector2( 0.421361, 0.421361 )
+texture = SubResource( 2 )
+
+[node name="Sprite9" type="Sprite" parent="toKeep"]
+position = Vector2( 27.4005, -41.4713 )
+scale = Vector2( 0.421361, 0.421361 )
+texture = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="toKeep"]
 position = Vector2( -2.51276, 25.2699 )

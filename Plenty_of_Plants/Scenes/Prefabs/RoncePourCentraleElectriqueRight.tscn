@@ -1,0 +1,106 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/TileSprite/Building/sol neutre.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/prefabTile.gd" type="Script" id=5]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/centrale electric.png-0a1c5be4cb251f6084a955fab7ae2a87.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/IMG_6602.PNG-6b8b8bb177dfd1d34e0ed3e564e16a34.stex"
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 517.839, 344.653 )
+script = ExtResource( 5 )
+
+[node name="toDelete" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="toDelete"]
+position = Vector2( 0.0418396, 2.20062 )
+texture = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="toDelete"]
+position = Vector2( -177.172, 89.3787 )
+texture = ExtResource( 4 )
+
+[node name="Sprite4" type="Sprite" parent="toDelete"]
+position = Vector2( 3.24042, 177.407 )
+texture = ExtResource( 4 )
+
+[node name="Sprite5" type="Sprite" parent="toDelete"]
+position = Vector2( 182.199, 89.3255 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="toDelete"]
+position = Vector2( 1.776, -43.973 )
+scale = Vector2( 0.5, 0.5 )
+texture = SubResource( 1 )
+
+[node name="toKeep" type="Node2D" parent="."]
+
+[node name="Right" type="Sprite" parent="toKeep"]
+position = Vector2( 141.434, 196.593 )
+scale = Vector2( 0.320915, 0.320915 )
+texture = SubResource( 2 )
+
+[node name="Sprite20" type="Sprite" parent="toKeep/Right"]
+position = Vector2( -54.9453, -61.9117 )
+rotation = 0.0506736
+texture = SubResource( 2 )
+
+[node name="Sprite21" type="Sprite" parent="toKeep/Right"]
+position = Vector2( 258.775, -191.299 )
+rotation = 0.0506736
+texture = SubResource( 2 )
+
+[node name="Sprite22" type="Sprite" parent="toKeep/Right"]
+position = Vector2( 283.589, -129.264 )
+rotation = 0.0506736
+texture = SubResource( 2 )
+
+[node name="Sprite23" type="Sprite" parent="toKeep/Right"]
+position = Vector2( 503.669, -252.738 )
+rotation = 0.0506736
+texture = SubResource( 2 )
+
+[node name="Sprite24" type="Sprite" parent="toKeep/Right"]
+position = Vector2( 482.989, -307.981 )
+rotation = 0.0506736
+texture = SubResource( 2 )
+
+[node name="Sprite25" type="Sprite" parent="toKeep/Right"]
+position = Vector2( 370.438, -329.549 )
+rotation = 0.0506736
+texture = SubResource( 2 )
+
+[node name="Sprite26" type="Sprite" parent="toKeep/Right"]
+position = Vector2( 255.23, -414.625 )
+rotation = 0.0506736
+texture = SubResource( 2 )
+
+[node name="Sprite27" type="Sprite" parent="toKeep/Right"]
+position = Vector2( 225.099, -437.667 )
+rotation = 0.0506736
+texture = SubResource( 2 )
+
+[node name="Sprite28" type="Sprite" parent="toKeep/Right"]
+position = Vector2( 15.0675, -556.42 )
+rotation = 0.0506736
+texture = SubResource( 2 )
+
+[node name="Sprite29" type="Sprite" parent="toKeep/Right"]
+position = Vector2( -46.0831, -595.414 )
+rotation = 0.0506736
+texture = SubResource( 2 )
+
+[node name="Sprite30" type="Sprite" parent="toKeep/Right"]
+position = Vector2( 289.486, -413.158 )
+rotation = 0.0506736
+texture = SubResource( 2 )
+
+[node name="Sprite31" type="Sprite" parent="toKeep/Right"]
+position = Vector2( 33.0731, -604.269 )
+rotation = 0.0506736
+texture = SubResource( 2 )
