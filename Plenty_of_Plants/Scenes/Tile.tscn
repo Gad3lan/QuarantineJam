@@ -48,6 +48,7 @@ material = SubResource( 4 )
 [node name="plantLife" type="Timer" parent="."]
 
 [node name="Fire" type="Sprite" parent="."]
+visible = false
 material = ExtResource( 7 )
 position = Vector2( -43.9067, -176.85 )
 scale = Vector2( 0.565507, 0.565507 )

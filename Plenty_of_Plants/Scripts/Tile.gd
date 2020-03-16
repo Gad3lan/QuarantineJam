@@ -38,6 +38,7 @@ var pLife
 var nbPlantsInTile
 var textureName
 var buildingDamage
+var plantDamage
 var destroyed
 var roads = [BuildingType.ROAD0, BuildingType.ROAD1, BuildingType.ROAD2, BuildingType.ROAD3, BuildingType.ROAD4, BuildingType.ROAD5, BuildingType.ROAD6]
 var flats = [BuildingType.TERRAIN,BuildingType.PARCKING,BuildingType.NONE]
@@ -110,6 +111,16 @@ var buildingAttack = {
 	BuildingType.BUILDING:13,
 	BuildingType.CENTRALE:15,
 	BuildingType.TERRAIN:4
+}
+var plantAttack = {
+	PlantType.NONE:0,
+	PlantType.CHAMPIGNON:1,
+	PlantType.SECOIA:2,
+	PlantType.EUCALYPTUS:1,
+	PlantType.HERBE:1,
+	PlantType.LIERE:3,
+	PlantType.RONCE:3,
+	PlantType.MYCELIUM:2
 }
 var plantSoutien = {
 	PlantType.MYCELIUM:5,
@@ -418,7 +429,7 @@ func setPlant(type):
 		return false
 	if (root):
 		lifeTimer.start()
-	nbPlantsInTile += 1
+	nbPlantsInTile += plantDamage
 	if ((not root and not parent.destroyed) or not destroyed):
 		plantLifeTimer.start()
 	pLife = plantLife.get(type)
@@ -448,6 +459,7 @@ func _input(event):
 	if mouseIsIn and event is InputEventMouseButton:
 		if event.is_pressed() and event.button_index == BUTTON_LEFT:
 			var toPlant = Ui.selectedPlant
+			plantDamage = plantAttack.get(toPlant)
 			if map.can_place(toPlant,self):
 				print("can place")
 				setPlant(toPlant)

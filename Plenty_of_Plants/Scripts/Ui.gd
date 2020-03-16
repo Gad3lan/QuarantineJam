@@ -1,11 +1,10 @@
-extends MarginContainer
+extends Control
 
-onready var menuContainer = get_node("VBoxContainer/MenuContainer")
-onready var attaqueMenu = get_node("VBoxContainer/MenuContainer/Attaque")
-onready var auxiliaireMenu = get_node("VBoxContainer/MenuContainer/Auxilliaire")
-onready var biomasseMenu = get_node("VBoxContainer/MenuContainer/Biomasse")
-onready var soutiensMenu = get_node("VBoxContainer/MenuContainer/Soutien")
-onready var numNode = get_node("VBoxContainer/MenuPrincipale/Money/Label")
+onready var attaqueMenu = get_node("Attaque")
+onready var auxiliaireMenu = get_node("Auxilliaire")
+onready var biomasseMenu = get_node("Biomasse")
+onready var soutiensMenu = get_node("Soutien")
+onready var numNode = get_node("MenuPrincipale/Money/Label")
 
 enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS,HERBE, SECOIA, MYCELIUM, RONCE,BAMBOU, MOUSSE, ORTIE, CONSOUD}
 
@@ -33,22 +32,16 @@ func _process(delta):
 	pass
 
 func _on_Attaque_mouse_entered():
-	attaqueMenu.show()
+	attaqueMenu.popup()
 
 func _on_Auxiliaire_mouse_entered():
-	auxiliaireMenu.show()
+	auxiliaireMenu.popup()
 
 func _on_Biomasse_mouse_entered():
-	biomasseMenu.show()
+	biomasseMenu.popup()
 
 func _on_Soutien_mouse_entered():
-	soutiensMenu.show()
-
-func _on_Attaque_mouse_exited():
-	pass
-
-func _on_Auxilliaire_mouse_exited():
-	pass
+	soutiensMenu.popup()
 
 func close_all():
 	biomasseMenu.hide()
@@ -56,13 +49,6 @@ func close_all():
 	attaqueMenu.hide()
 	auxiliaireMenu.hide()
 	print("selectedPlant: ",selectedPlant)
-
-func _on_Biomasse_mouse_exited():
-	pass
-
-
-func _on_Soutien_mouse_exited():
-	pass
 
 func _on_Champignon_gui_input(event):
 	if event.is_pressed():
