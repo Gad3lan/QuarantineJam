@@ -13,21 +13,6 @@ onready var buildPaths = {
 	BuildingType.NONE : preload("res://Scenes/Prefabs/NoBuilding.tscn"),
 	#BuildingType.PARCKING : preload("res://Scenes/Prefabs/Parcking.tscn")
 }
-onready var plantBuildingPath = {
-	PlantType.SECOIA : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Sequoia.tscn")}},
-	PlantType.HERBE : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Herbe.tscn")}},
-	PlantType.EUCALYPTUS : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Eucalyptus.tscn")}},
-	PlantType.CHAMPIGNON : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Champignon.tscn")}},
-	PlantType.LIERE : {BuildingType.IMMEUBLE:{
-		Vector2(0,0):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(0,0).tscn"),
-		Vector2(1,0):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(1,0).tscn"),
-		Vector2(2,0):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(2,0).tscn"),
-		Vector2(3,0):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(3,0).tscn"),
-		Vector2(0,1):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(0,1).tscn"),
-		Vector2(0,2):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(0,2).tscn"),
-		Vector2(0,3):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(0,3).tscn")
-		}}
-}
 
 enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS,HERBE, SECOIA, MYCELIUM, RONCE}
 enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, IMMEUBLE2, BUILDING, CENTRALE, TERRAIN}
@@ -44,12 +29,14 @@ var baseZIndex
 var BType2 = BuildingType.NONE
 var ROADPLACEHOLDER = -1
 var FLATPLACEHOLDER = -2
+var WALLPLACEHOLDER = -3
 var parent : Area2D
 var life
 var nbPlantsInTile
 var textureName
 var roads = [BuildingType.ROAD0, BuildingType.ROAD1, BuildingType.ROAD2, BuildingType.ROAD3, BuildingType.ROAD4, BuildingType.ROAD5, BuildingType.ROAD6]
 var flats = [BuildingType.TERRAIN,BuildingType.PARCKING,BuildingType.NONE]
+var walls = [BuildingType.HOTEL, BuildingType.USINE,BuildingType.BUILDING,BuildingType.CENTRALE,BuildingType.HLM,BuildingType.IMMEUBLE,BuildingType.IMMEUBLE2]
 var plantGivingBiomasse ={
 	PlantType.SECOIA : 60,
 	PlantType.EUCALYPTUS : 30,
@@ -62,8 +49,8 @@ var plantBuildingcompatibleDict = {
 	PlantType.EUCALYPTUS:[FLATPLACEHOLDER, ROADPLACEHOLDER],
 	PlantType.HERBE:[FLATPLACEHOLDER,ROADPLACEHOLDER],
 	PlantType.CHAMPIGNON:[FLATPLACEHOLDER, ROADPLACEHOLDER,BuildingType.HOTEL],
-	PlantType.LIERE:[BuildingType.HOTEL, BuildingType.USINE],
-	PlantType.RONCE:[BuildingType.HOTEL, BuildingType.USINE,BuildingType.BUILDING],
+	PlantType.LIERE:[WALLPLACEHOLDER],
+	PlantType.RONCE:[WALLPLACEHOLDER],
 }
 var buildingLife = {
 	BuildingType.NONE:0,
@@ -84,6 +71,7 @@ var buildingLife = {
 	BuildingType.CENTRALE:150,
 	BuildingType.TERRAIN:20
 }
+
 
 #Fonction de l'outil
 func selectBuilding(buildingType):
@@ -160,6 +148,10 @@ func replacePlaceHolderOnDict():
 			plantBuildingcompatibleDict[key].erase(FLATPLACEHOLDER)
 			for flat in flats:
 				plantBuildingcompatibleDict[key].push_back(flat)
+		if plantBuildingcompatibleDict[key].has(WALLPLACEHOLDER):
+			plantBuildingcompatibleDict[key].erase(WALLPLACEHOLDER)
+			for wall in walls:
+				plantBuildingcompatibleDict[key].push_back(wall)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -172,11 +164,88 @@ func _ready():
 
 #return True si il y a une plante
 func hasPlant():
-	print(PType)
 	return PType != PlantType.NONE
 
 func plantCanBePlaced(plant):
 	return PType == PlantType.NONE and plantBuildingcompatibleDict[plant].has(BType2)
+
+#NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE, HERBE
+onready var plantBuildingPath = {
+	PlantType.SECOIA : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Sequoia.tscn")}},
+	PlantType.HERBE : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Herbe.tscn")}},
+	PlantType.EUCALYPTUS : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Eucalyptus.tscn")}},
+	PlantType.CHAMPIGNON : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Champignon.tscn")}},
+	PlantType.LIERE : {BuildingType.BUILDING:{
+			Vector2(0,0):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(0,0).tscn"),
+			Vector2(1,0):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(1,0).tscn"),
+			Vector2(2,0):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(2,0).tscn"),
+			Vector2(3,0):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(3,0).tscn"),
+			Vector2(0,1):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(0,1).tscn"),
+			Vector2(0,2):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(0,2).tscn"),
+			Vector2(0,3):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(0,3).tscn")
+		},BuildingType.IMMEUBLE2:{
+			Vector2(0,0):preload("res://Scenes/Prefabs/LierrePourImmeuble1/LierrePourImmeuble1(0,0).tscn"),
+			Vector2(1,0):preload("res://Scenes/Prefabs/LierrePourImmeuble1/LierrePourImmeuble1(1,0).tscn"),
+		},BuildingType.CENTRALE:{
+			Vector2(0,0):preload("res://Scenes/Prefabs/LierrePourCentraleElectrique/LierrePourCentraleElectrique(0,0).tscn"),
+			Vector2(1,0):preload("res://Scenes/Prefabs/LierrePourCentraleElectrique/LierrePourCentraleElectrique(1,0).tscn"),
+			Vector2(2,0):preload("res://Scenes/Prefabs/LierrePourCentraleElectrique/LierrePourCentraleElectrique(2,0).tscn"),
+			Vector2(3,0):preload("res://Scenes/Prefabs/LierrePourCentraleElectrique/LierrePourCentraleElectrique(3,0).tscn"),
+			Vector2(0,1):preload("res://Scenes/Prefabs/LierrePourCentraleElectrique/LierrePourCentraleElectrique(0,1).tscn"),
+			Vector2(0,2):preload("res://Scenes/Prefabs/LierrePourCentraleElectrique/LierrePourCentraleElectrique(0,2).tscn"),
+			Vector2(0,3):preload("res://Scenes/Prefabs/LierrePourCentraleElectrique/LierrePourCentraleElectrique(0,3).tscn")
+		},BuildingType.IMMEUBLE:{
+			Vector2(0,0):preload("res://Scenes/Prefabs/LierrePourImmeuble2/LierrePourImmeuble2(0,0).tscn"),
+			Vector2(0,1):preload("res://Scenes/Prefabs/LierrePourImmeuble2/LierrePourImmeuble2(0,1).tscn")
+		},BuildingType.USINE:{
+			Vector2(0,0):preload("res://Scenes/Prefabs/LierrePourUsine/LierrePourUsine(0,0).tscn"),
+			Vector2(1,0):preload("res://Scenes/Prefabs/LierrePourUsine/LierrePourUsine(1,0).tscn"),
+			Vector2(2,0):preload("res://Scenes/Prefabs/LierrePourUsine/LierrePourUsine(2,0).tscn"),
+			Vector2(3,0):preload("res://Scenes/Prefabs/LierrePourUsine/LierrePourUsine(3,0).tscn"),
+			Vector2(0,1):preload("res://Scenes/Prefabs/LierrePourUsine/LierrePourUsine(0,1).tscn"),
+			Vector2(0,2):preload("res://Scenes/Prefabs/LierrePourUsine/LierrePourUsine(0,2).tscn"),
+			Vector2(0,3):preload("res://Scenes/Prefabs/LierrePourUsine/LierrePourUsine(0,3).tscn")
+		},BuildingType.HLM:{
+			Vector2(0,0):preload("res://Scenes/Prefabs/LierrePourHLM/LierrePourHLM(0,0).tscn"),
+			Vector2(1,0):preload("res://Scenes/Prefabs/LierrePourHLM/LierrePourHLM(1,0).tscn"),
+			Vector2(2,0):preload("res://Scenes/Prefabs/LierrePourHLM/LierrePourHLM(2,0).tscn"),
+			Vector2(3,0):preload("res://Scenes/Prefabs/LierrePourHLM/LierrePourHLM(3,0).tscn"),
+			Vector2(0,1):preload("res://Scenes/Prefabs/LierrePourHLM/LierrePourHLM(0,1).tscn"),
+			Vector2(0,2):preload("res://Scenes/Prefabs/LierrePourHLM/LierrePourHLM(0,2).tscn"),
+			Vector2(0,3):preload("res://Scenes/Prefabs/LierrePourHLM/LierrePourHLM(0,3).tscn")
+		}
+	},
+	PlantType.HERBE : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Herbe.tscn")}}
+	
+}
+"""
+			Vector2(0,0):preload(),
+			Vector2(1,0):preload(),
+			Vector2(2,0):preload(),
+			Vector2(3,0):preload(),
+			Vector2(0,1):preload(),
+			Vector2(0,2):preload(),
+			Vector2(0,3):preload()
+
+			Vector2(0,0):preload(),
+			Vector2(1,0):preload(),
+			Vector2(2,0):preload(),
+			Vector2(0,1):preload(),
+			Vector2(0,2):preload()
+
+			Vector2(0,0):preload(),
+			Vector2(1,0):preload(),
+			Vector2(0,1):preload()
+
+
+
+"""
+
+func hasPrefab(type):
+	if plantBuildingPath[type].has(BType2) &&plantBuildingPath[type][BType2].has(coordOnTexture) :
+		return true
+	else:
+		return plantBuildingPath[type].has(BuildingType.NONE)
 
 func findPrefab():
 	print("PType :", PType, " , dict ",plantBuildingPath[PType],", BType2 : ",BType2)
@@ -189,7 +258,7 @@ func findPrefab():
 func instancePlant(type):
 	print("plant type : ",type)
 	var plantInstance
-	if plantBuildingPath.has(type):
+	if plantBuildingPath.has(type)&& hasPrefab(type):
 		PType = type
 		print("finding prefab")
 		plantInstance = findPrefab().instance()
