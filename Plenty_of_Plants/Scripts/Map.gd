@@ -6,7 +6,7 @@ export var tileCountA : int = 30 # sur le vecteur (1,1)
 export var tileCountB : int = 30 # sur le vecteur (-1,1)
 export (bool) var assignTiles = false setget initTiles
 export (bool) var reset = false setget resetTiles
-
+export (bool) var placeTiles = false setget roundTilesTransform
 export var firstTilePos = Vector2(-175.0,-85)
 
 
@@ -18,7 +18,7 @@ export var tileSpacing = Vector2(180.0,90.0)
 
 
 
-enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, BUILDING, CENTRALE}
+enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, IMMEUBLE2, BUILDING, CENTRALE, TERRAIN}
 enum PlantType {NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE}
 
 var plantCost ={
@@ -35,7 +35,13 @@ enum toTransmit {Z_INDEX, B_TYPE}
 var toDoForBuilding ={
 	BuildingType.HOTEL : Vector2(2,2),
 	BuildingType.PARCKING : Vector2(2,2),
-	BuildingType.USINE : Vector2(4,4)
+	BuildingType.USINE : Vector2(4,4),
+	BuildingType.HLM : Vector2(4,4),
+	BuildingType.IMMEUBLE : Vector2(2,2),
+	BuildingType.IMMEUBLE2 : Vector2(2,2),
+	BuildingType.BUILDING : Vector2(4,4),
+	BuildingType.CENTRALE : Vector2(4,4),
+	BuildingType.TERRAIN : Vector2(4,4)
 }
 
 export var biomasseNow : int = 500
@@ -45,29 +51,28 @@ export var biomasseNow : int = 500
 
 func tilePositionToIndexes(pos):
 	var arrayPosition = Vector2(0,0)
-	arrayPosition.x = floor((pos.x - firstTilePos.x)/(tileSpacing.x))
-	arrayPosition.y = floor((pos.y - firstTilePos.y)/(tileSpacing.y))
+	arrayPosition.x = round((pos.x - firstTilePos.x)/(tileSpacing.x))
+	arrayPosition.y = round((pos.y - firstTilePos.y)/(tileSpacing.y))
 	return Vector2((arrayPosition.x+arrayPosition.y)*0.5, (-arrayPosition.x+arrayPosition.y)*0.5)
 
-func resetTiles(boolean):
-	print("initTiles")
-	assignTiles = false
-	var rowB : Array = []
-	for b in range(tileCountA):
-		rowB = []
-		for a in range(tileCountB):
-			rowB.push_back(null)
-		allTiles.push_back(rowB.duplicate())
-		rowB.empty()
+func placeVectorOnGrid(vec,gridDims,gridOffset):
+	vec.x = gridOffset.x + round((vec.x-gridOffset.x)/(gridDims.x))*gridDims.x
+	vec.y = gridOffset.y + round((vec.y-gridOffset.y)/(gridDims.y))*gridDims.y
+	assert(int(vec.x-gridOffset.x)%int(gridDims.x)==0) 
+	assert(int(vec.y-gridOffset.y)%int(gridDims.y)==0)
+	return vec
+
+func roundTilesTransform(boolean):
+	print("roundTilesTransform")
 	for tile in get_children():
-		var arrayPosition = Vector2(0,0)
-		arrayPosition.x = floor((tile.position.x - firstTilePos.x)/(tileSpacing.x))
-		arrayPosition.y = floor((tile.position.y - firstTilePos.y)/(tileSpacing.y))
-		#on passe dans un repère basé sur la taille des losanges
-		allTiles[(arrayPosition.x+arrayPosition.y)*0.5][(-arrayPosition.x+arrayPosition.y)*0.5] = tile
-		#on tourne de 45 degrees
-		tile.z_index = -max(tileCountA,tileCountB)-floor(tile.position.y/firstTilePos.y)
-	
+		tile.position = placeVectorOnGrid(tile.position,tileSpacing,firstTilePos)
+
+
+func resetTiles(boolean):
+	if not boolean:
+		return
+	assignTiles = false
+	allTiles = getAllTiles()
 	print("hey")
 	print("allTiles")
 	for tile in get_children():
@@ -79,28 +84,33 @@ func resetTiles(boolean):
 		reset = false
 
 
-
-func initTiles(hasToInit):
-	print("initTiles")
-	if not hasToInit:
-		return
-	hasToInit = false
-	assignTiles = false
+func getAllTiles():
 	var rowB : Array = []
+	var tilesToGet = []
 	for b in range(tileCountA):
 		rowB = []
 		for a in range(tileCountB):
 			rowB.push_back(null)
-		allTiles.push_back(rowB.duplicate())
+		tilesToGet.push_back(rowB.duplicate())
 		rowB.empty()
 	for tile in get_children():
 		var arrayPosition = Vector2(0,0)
-		arrayPosition.x = floor((tile.position.x - firstTilePos.x)/(tileSpacing.x))
-		arrayPosition.y = floor((tile.position.y - firstTilePos.y)/(tileSpacing.y))
+		arrayPosition.x = round((tile.position.x - firstTilePos.x)/(tileSpacing.x))
+		arrayPosition.y = round((tile.position.y - firstTilePos.y)/(tileSpacing.y))
 		#on passe dans un repère basé sur la taille des losanges
-		allTiles[(arrayPosition.x+arrayPosition.y)*0.5][(-arrayPosition.x+arrayPosition.y)*0.5] = tile
+		tilesToGet[(arrayPosition.x+arrayPosition.y)*0.5][(-arrayPosition.x+arrayPosition.y)*0.5] = tile
 		#on tourne de 45 degrees
-		tile.z_index = -max(tileCountA,tileCountB)-floor(tile.position.y/firstTilePos.y)
+		tile.z_index = -2*max(tileCountA,tileCountB)-round(tile.position.y/firstTilePos.y)
+	return tilesToGet
+
+func initTiles(hasToInit):
+	print("initTiles")
+	allTiles = getAllTiles()
+	if not hasToInit:
+		return
+	hasToInit = false
+	assignTiles = false
+
 	propageTypeAndZ()
 	
 
@@ -123,7 +133,7 @@ func propageTypeAndZ():
 			var indexVec = tilePositionToIndexes(tile.position)
 			for indexToTransferTo in getRectIndexFrom(indexVec,dimensions.x,dimensions.y):
 				allTiles[indexToTransferTo.x][indexToTransferTo.y].coordOnTexture = indexVec-indexToTransferTo
-				allTiles[indexToTransferTo.x][indexToTransferTo.y].BType = tile.BType
+				allTiles[indexToTransferTo.x][indexToTransferTo.y].BType2 = tile.BType
 				allTiles[indexToTransferTo.x][indexToTransferTo.y].z_index = tile.z_index
 
 
@@ -137,7 +147,7 @@ func checkInBounds(vectorIndex):
 func _ready():
 	assignTiles = true
 	initTiles(true)
-	allTiles[0][0].setPlant(PlantType.SECOIA)
+	allTiles[-1][-1].setPlant(PlantType.SECOIA)
 	tests()
 	pass # Replace with function body.
 
@@ -189,8 +199,10 @@ func can_place(toPlant,thisTile):
 #A PARTIR DE LA,FONCTIONS DE TEST
 #////////////////////////////////////////////////////////////////////////////////////////////////////////
 func flourishNeighbors(pos:Vector2):
+	print(allTiles)
 	print("flourish")
 	for tilePos in neighborsIndexes(pos):
+		print(allTiles[tilePos.x][tilePos.y])
 		allTiles[tilePos.x][tilePos.y].spawnPollen()
 
 var idxToAddTo = Vector2(0,0)

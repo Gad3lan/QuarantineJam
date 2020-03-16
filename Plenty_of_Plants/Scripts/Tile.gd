@@ -15,6 +15,7 @@ export var root = false
 
 export (PlantType) var PType = PlantType.NONE
 export (BuildingType) var BType setget selectBuilding
+var BType2 = BuildingType.NONE
 export (int) var texturePart = 0
 
 onready var placeHolderPath = preload("res://Scenes/Prefabs/PlaceHolder.tscn")
@@ -49,7 +50,7 @@ onready var building : Sprite = get_node("Building")
 
 #Fonction de l'outil
 func selectBuilding(buildingType):
-	
+	BType2 = buildingType
 	BType = buildingType
 	if coordOnTexture != Vector2(0,0) || not root:
 		return
@@ -133,8 +134,8 @@ func hasPlant():
 
 func plantCanBePlaced(plant):
 	if PType == PlantType.NONE:
-		print (plantBuildingcompatibleDict[plant], ", BType ",BType)
-	return PType == PlantType.NONE and plantBuildingcompatibleDict[plant].has(BType)
+		print (plantBuildingcompatibleDict[plant], ", BType ",BType2)
+	return PType == PlantType.NONE and plantBuildingcompatibleDict[plant].has(BType2)
 
 func instancePlant(type):
 	var plantInstance
