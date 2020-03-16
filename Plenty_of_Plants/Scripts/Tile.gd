@@ -9,6 +9,7 @@ onready var placeHolderPath = preload("res://Scenes/Prefabs/PlaceHolder.tscn")
 onready var plant : Sprite = get_node("Plant")
 onready var building : Sprite = get_node("Building")
 onready var lifeTimer = get_node("Life")
+onready var plantLifeTimer = get_node("plantLife")
 onready var buildPaths = {
 	BuildingType.NONE : preload("res://Scenes/Prefabs/NoBuilding.tscn"),
 	#BuildingType.PARCKING : preload("res://Scenes/Prefabs/Parcking.tscn")
@@ -31,9 +32,12 @@ var ROADPLACEHOLDER = -1
 var FLATPLACEHOLDER = -2
 var WALLPLACEHOLDER = -3
 var parent : Area2D
-var life
+var bLife
+var pLife
 var nbPlantsInTile
 var textureName
+var buildingDamage
+var destroyed
 var roads = [BuildingType.ROAD0, BuildingType.ROAD1, BuildingType.ROAD2, BuildingType.ROAD3, BuildingType.ROAD4, BuildingType.ROAD5, BuildingType.ROAD6]
 var flats = [BuildingType.TERRAIN,BuildingType.PARCKING,BuildingType.NONE]
 var walls = [BuildingType.HOTEL, BuildingType.USINE,BuildingType.BUILDING,BuildingType.CENTRALE,BuildingType.HLM,BuildingType.IMMEUBLE,BuildingType.IMMEUBLE2]
@@ -71,7 +75,34 @@ var buildingLife = {
 	BuildingType.CENTRALE:150,
 	BuildingType.TERRAIN:20
 }
-
+var plantLife = {
+	PlantType.NONE:0,
+	PlantType.CHAMPIGNON:5,
+	PlantType.SECOIA:100,
+	PlantType.EUCALYPTUS:60,
+	PlantType.HERBE:10,
+	PlantType.LIERE:40,
+	PlantType.RONCE:50,
+}
+var buildingAttack = {
+	BuildingType.NONE:0,
+	BuildingType.PARCKING:1,
+	BuildingType.USINE:15,
+	BuildingType.HOTEL:2,
+	BuildingType.ROAD0:1,
+	BuildingType.ROAD1:1,
+	BuildingType.ROAD2:1,
+	BuildingType.ROAD3:1,
+	BuildingType.ROAD4:1,
+	BuildingType.ROAD5:1,
+	BuildingType.ROAD6:1,
+	BuildingType.HLM:6,
+	BuildingType.IMMEUBLE:3,
+	BuildingType.IMMEUBLE2:3,
+	BuildingType.BUILDING:10,
+	BuildingType.CENTRALE:12,
+	BuildingType.TERRAIN:100
+}
 
 #Fonction de l'outil
 func selectBuilding(buildingType):
@@ -158,8 +189,11 @@ func _ready():
 	add_to_group("Tiles")
 	replacePlaceHolderOnDict()
 	baseZIndex = self.z_index
-	life = buildingLife.get(BType)
+	bLife = buildingLife.get(BType2)
+	destroyed = false
+	buildingDamage = buildingAttack.get(BType2)
 	lifeTimer.set_wait_time(1)
+	plantLifeTimer.set_wait_time(10)
 	nbPlantsInTile = 0
 
 #return True si il y a une plante
@@ -302,6 +336,10 @@ func setPlant(type):
 	if (root):
 		lifeTimer.start()
 	nbPlantsInTile += 1
+	if ((not root and not parent.destroyed) or not destroyed):
+		plantLifeTimer.start()
+	pLife = plantLife.get(type)
+	print(pLife, ", ", buildingDamage)
 	instancePlant(type)
 	return true
 
@@ -334,16 +372,28 @@ func spawnPollen():
 	pollenInstance.z_index = 4
 
 func _on_Timer_timeout():
-	timer.set_wait_time(plantGivingBiomasse[PType] *(1+ 0.33*(randf()-0.5)))
+	timer.set_wait_time(plantGivingBiomasse.get(PType) *(1+ 0.33*(randf()-0.5)))
 	timer.start()
 	spawnPollen()
 
 
 func _on_Life_timeout():
-	life -= nbPlantsInTile
-	if life <= 0:
+	bLife -= nbPlantsInTile
+	if bLife <= 0:
 		lifeTimer.stop()
+		destroyed = true
 		if textureName != null:
 			$Building.texture = load(textureName + "Destroyed.png")
 		else:
 			print("error")
+
+func _on_plantLife_timeout():
+	print("timout")
+	if ((not root and parent.destroyed) or destroyed):
+		plantLifeTimer.stop()
+	else:
+		pLife -= buildingDamage
+		if pLife <= 0:
+			plantLifeTimer.stop()
+			$Node2D.queue_free()
+			PType = PlantType.NONE
