@@ -121,6 +121,7 @@ func propageTypeAndZ():
 			var dimensions = toDoForBuilding[tile.BType]
 			var indexVec = tilePositionToIndexes(tile.position)
 			for indexToTransferTo in getRectIndexFrom(indexVec,dimensions.x,dimensions.y):
+				allTiles[indexToTransferTo.x][indexToTransferTo.y].parent = tile
 				allTiles[indexToTransferTo.x][indexToTransferTo.y].coordOnTexture = indexVec-indexToTransferTo
 				allTiles[indexToTransferTo.x][indexToTransferTo.y].BType2 = tile.BType
 				allTiles[indexToTransferTo.x][indexToTransferTo.y].z_index = tile.z_index
@@ -160,6 +161,8 @@ func hasPlantNeighbors(thisTile):
 	for neighPos in neighs:
 		canPlace = canPlace || allTiles[neighPos.x][neighPos.y].hasPlant()
 		if canPlace:
+			if (not thisTile.root):
+				thisTile.parent.nbPlantsInTile += 1
 			return true
 	return canPlace
 

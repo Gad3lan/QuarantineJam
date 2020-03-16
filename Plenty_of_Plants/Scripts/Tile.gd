@@ -8,13 +8,26 @@ onready var timer = get_node("Timer")
 onready var placeHolderPath = preload("res://Scenes/Prefabs/PlaceHolder.tscn")
 onready var plant : Sprite = get_node("Plant")
 onready var building : Sprite = get_node("Building")
+onready var lifeTimer = get_node("Life")
 onready var buildPaths = {
 	BuildingType.NONE : preload("res://Scenes/Prefabs/NoBuilding.tscn"),
-	BuildingType.PARCKING : preload("res://Scenes/Prefabs/Parcking.tscn")
+	#BuildingType.PARCKING : preload("res://Scenes/Prefabs/Parcking.tscn")
 }
-
-
-
+onready var plantBuildingPath = {
+	PlantType.SECOIA : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Sequoia.tscn")}},
+	PlantType.HERBE : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Herbe.tscn")}},
+	PlantType.EUCALYPTUS : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Eucalyptus.tscn")}},
+	PlantType.CHAMPIGNON : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Champignon.tscn")}},
+	PlantType.LIERE : {BuildingType.IMMEUBLE:{
+		Vector2(0,0):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(0,0).tscn"),
+		Vector2(1,0):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(1,0).tscn"),
+		Vector2(2,0):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(2,0).tscn"),
+		Vector2(3,0):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(3,0).tscn"),
+		Vector2(0,1):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(0,1).tscn"),
+		Vector2(0,2):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(0,2).tscn"),
+		Vector2(0,3):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(0,3).tscn")
+		}}
+}
 
 enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS,HERBE, SECOIA, MYCELIUM, RONCE}
 enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, IMMEUBLE2, BUILDING, CENTRALE, TERRAIN}
@@ -32,6 +45,10 @@ var BType2 = BuildingType.NONE
 var ROADPLACEHOLDER = -1
 var FLATPLACEHOLDER = -2
 var WALLPLACEHOLDER = -3
+var parent : Area2D
+var life
+var nbPlantsInTile
+var textureName
 var roads = [BuildingType.ROAD0, BuildingType.ROAD1, BuildingType.ROAD2, BuildingType.ROAD3, BuildingType.ROAD4, BuildingType.ROAD5, BuildingType.ROAD6]
 var flats = [BuildingType.TERRAIN,BuildingType.PARCKING,BuildingType.NONE]
 var walls = [BuildingType.HOTEL, BuildingType.USINE,BuildingType.BUILDING,BuildingType.CENTRALE,BuildingType.HLM,BuildingType.IMMEUBLE,BuildingType.IMMEUBLE2]
@@ -50,6 +67,25 @@ var plantBuildingcompatibleDict = {
 	PlantType.LIERE:[WALLPLACEHOLDER],
 	PlantType.RONCE:[WALLPLACEHOLDER],
 }
+var buildingLife = {
+	BuildingType.NONE:0,
+	BuildingType.PARCKING:30,
+	BuildingType.USINE:120,
+	BuildingType.HOTEL:60,
+	BuildingType.ROAD0:10,
+	BuildingType.ROAD1:10,
+	BuildingType.ROAD2:10,
+	BuildingType.ROAD3:10,
+	BuildingType.ROAD4:10,
+	BuildingType.ROAD5:10,
+	BuildingType.ROAD6:10,
+	BuildingType.HLM:90,
+	BuildingType.IMMEUBLE:60,
+	BuildingType.IMMEUBLE2:60,
+	BuildingType.BUILDING:120,
+	BuildingType.CENTRALE:150,
+	BuildingType.TERRAIN:20
+}
 
 
 #Fonction de l'outil
@@ -62,58 +98,60 @@ func selectBuilding(buildingType):
 	match buildingType:
 		BuildingType.HOTEL:
 			#Chargement de la texture
-			$Building.texture = preload("res://Sprites/TileSprite/Building/Hôtel.png")
+			textureName = "res://Sprites/TileSprite/Building/Hôtel"
 			#offset = -[taille sprite y]/ 2 + 90
 			$Building.offset.y = -284
 		BuildingType.PARCKING:
-			$Building.texture = preload("res://Sprites/TileSprite/Building/parcking.png")
+			textureName = "res://Sprites/TileSprite/Building/parking"
 			$Building.offset.y = -102
 		BuildingType.USINE:
-			$Building.texture = preload("res://Sprites/TileSprite/Building/usine.png")
+			textureName = "res://Sprites/TileSprite/Building/usine"
 			$Building.offset.y = -485
 		BuildingType.BUILDING:
-			$Building.texture = preload("res://Sprites/TileSprite/Building/building.png")
+			textureName = "res://Sprites/TileSprite/Building/building"
 			$Building.offset.y = -832
 		BuildingType.CENTRALE:
-			$Building.texture = preload("res://Sprites/TileSprite/Building/centrale electric.png")
+			textureName = "res://Sprites/TileSprite/Building/centrale electric"
 			$Building.offset.y = -532
 		BuildingType.HLM:
-			$Building.texture = preload("res://Sprites/TileSprite/Building/HLM.png")
+			textureName = "res://Sprites/TileSprite/Building/HLM"
 			$Building.offset.y = -565
 		BuildingType.IMMEUBLE:
-			$Building.texture = preload("res://Sprites/TileSprite/Building/immeuble.png")
+			textureName = "res://Sprites/TileSprite/Building/immeuble"
 			$Building.offset.y = -332.5
 		BuildingType.ROAD0:
-			$Building.texture = preload("res://Sprites/TileSprite/Building/angle 1.png")
+			textureName = "res://Sprites/TileSprite/Building/angle 1"
 			$Building.offset.y = 0
 		BuildingType.ROAD1:
-			$Building.texture = preload("res://Sprites/TileSprite/Building/angle 2.png")
+			textureName = "res://Sprites/TileSprite/Building/angle 2"
 			$Building.offset.y = 0
 		BuildingType.ROAD2:
-			$Building.texture = preload("res://Sprites/TileSprite/Building/carrefour.png")
+			textureName = "res://Sprites/TileSprite/Building/carrefour"
 			$Building.offset.y = 0
 		BuildingType.ROAD3:
-			$Building.texture = preload("res://Sprites/TileSprite/Building/coin 2.png")
+			textureName = "res://Sprites/TileSprite/Building/coin 2"
 			$Building.offset.y = 0
 		BuildingType.ROAD4:
-			$Building.texture = preload("res://Sprites/TileSprite/Building/coin.png")
+			textureName = "res://Sprites/TileSprite/Building/coin"
 			$Building.offset.y = 0
 		BuildingType.ROAD5:
-			$Building.texture = preload("res://Sprites/TileSprite/Building/route 1.png")
+			textureName = "res://Sprites/TileSprite/Building/route 1"
 			$Building.offset.y = 0
 		BuildingType.ROAD6:
-			$Building.texture = preload("res://Sprites/TileSprite/Building/route 2.png")
+			textureName = "res://Sprites/TileSprite/Building/route 2"
 			$Building.offset.y = 0
 		BuildingType.IMMEUBLE2:
-			$Building.texture = preload("res://Sprites/TileSprite/Building/immeuble 2.png")
+			textureName = "res://Sprites/TileSprite/Building/immeuble 2"
 			$Building.offset.y = -332.5
 		BuildingType.TERRAIN:
-			$Building.texture = preload("res://Sprites/TileSprite/Building/terrain vague.png")
+			textureName = "res://Sprites/TileSprite/Building/terrain vague"
 			$Building.offset.y = -307.5
 		_:
 			#Texture vide
 			$Building.texture = null
 			$Building.offset.y = 0
+	var toLoad = textureName + ".png"
+	$Building.texture = load(toLoad)
 
 func replacePlaceHolderOnDict():
 	for key in plantBuildingcompatibleDict.keys():
@@ -135,6 +173,9 @@ func _ready():
 	add_to_group("Tiles")
 	replacePlaceHolderOnDict()
 	baseZIndex = self.z_index
+	life = buildingLife.get(BType)
+	lifeTimer.set_wait_time(1)
+	nbPlantsInTile = 0
 
 #return True si il y a une plante
 func hasPlant():
@@ -248,6 +289,9 @@ func instancePlant(type):
 func setPlant(type):
 	if not plantCanBePlaced(type):
 		return false
+	if (root):
+		lifeTimer.start()
+	nbPlantsInTile += 1
 	instancePlant(type)
 	return true
 
@@ -283,3 +327,10 @@ func _on_Timer_timeout():
 	timer.set_wait_time(plantGivingBiomasse[PType] *(1+ 0.33*(randf()-0.5)))
 	timer.start()
 	spawnPollen()
+
+
+func _on_Life_timeout():
+	life -= nbPlantsInTile
+	if life <= 0:
+		lifeTimer.stop()
+		$Building.texture = load(textureName + "Destroyed.png")
