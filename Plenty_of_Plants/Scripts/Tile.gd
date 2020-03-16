@@ -13,21 +13,6 @@ onready var buildPaths = {
 	BuildingType.NONE : preload("res://Scenes/Prefabs/NoBuilding.tscn"),
 	#BuildingType.PARCKING : preload("res://Scenes/Prefabs/Parcking.tscn")
 }
-onready var plantBuildingPath = {
-	PlantType.SECOIA : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Sequoia.tscn")}},
-	PlantType.HERBE : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Herbe.tscn")}},
-	PlantType.EUCALYPTUS : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Eucalyptus.tscn")}},
-	PlantType.CHAMPIGNON : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Champignon.tscn")}},
-	PlantType.LIERE : {BuildingType.IMMEUBLE:{
-		Vector2(0,0):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(0,0).tscn"),
-		Vector2(1,0):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(1,0).tscn"),
-		Vector2(2,0):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(2,0).tscn"),
-		Vector2(3,0):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(3,0).tscn"),
-		Vector2(0,1):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(0,1).tscn"),
-		Vector2(0,2):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(0,2).tscn"),
-		Vector2(0,3):preload("res://Scenes/Prefabs/LierrePourBuilding/LierrePourBuilding(0,3).tscn")
-		}}
-}
 
 enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS,HERBE, SECOIA, MYCELIUM, RONCE}
 enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, IMMEUBLE2, BUILDING, CENTRALE, TERRAIN}
