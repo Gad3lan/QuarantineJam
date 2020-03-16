@@ -164,7 +164,7 @@ func hasPlantNeighbors(thisTile):
 		canPlace = canPlace || allTiles[neighPos.x][neighPos.y].hasPlant()
 		if canPlace:
 			if (not thisTile.root):
-				thisTile.parent.nbPlantsInTile += 1
+				thisTile.parent.nbPlantsInTile += thisTile.plantDamage
 			return true
 	return canPlace
 
