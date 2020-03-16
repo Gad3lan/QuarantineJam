@@ -1,0 +1,170 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Sprites/TileSprite/Building/sol neutre.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/prefabTile.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/TileSprite/Plants/Soutien/IMG_6602.PNG" type="Texture" id=3]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/centrale electric.png-0a1c5be4cb251f6084a955fab7ae2a87.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/IMG_6616.PNG-9171e6b7995ea6cc3c6f326d48d8e328.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/Ronces haute 2 droite.PNG-728b9cbaebf74fa2b6ad7d58a2adf0a6.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+load_path = "res://.import/Ronces hautes.PNG-b30b7b07bd867f54d7048ae3c72f5b0b.stex"
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="toDelete" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="toDelete"]
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="toDelete"]
+position = Vector2( 182.105, -90.5262 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="toDelete"]
+position = Vector2( 363.158, -181.052 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="toDelete"]
+position = Vector2( 540.762, -270.98 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="toDelete"]
+position = Vector2( -180, -90.5262 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="toDelete"]
+position = Vector2( -1.05261, -180 )
+texture = ExtResource( 1 )
+
+[node name="Sprite7" type="Sprite" parent="toDelete"]
+position = Vector2( 180.365, -269.212 )
+texture = ExtResource( 1 )
+
+[node name="Sprite8" type="Sprite" parent="toDelete"]
+position = Vector2( 359.387, -359.022 )
+texture = ExtResource( 1 )
+
+[node name="Sprite9" type="Sprite" parent="toDelete"]
+position = Vector2( -359.097, -180.599 )
+texture = ExtResource( 1 )
+
+[node name="Sprite10" type="Sprite" parent="toDelete"]
+position = Vector2( -180.075, -269.81 )
+texture = ExtResource( 1 )
+
+[node name="Sprite11" type="Sprite" parent="toDelete"]
+position = Vector2( 1.34229, -359.621 )
+texture = ExtResource( 1 )
+
+[node name="Sprite12" type="Sprite" parent="toDelete"]
+position = Vector2( 179.766, -450.03 )
+texture = ExtResource( 1 )
+
+[node name="Sprite13" type="Sprite" parent="toDelete"]
+position = Vector2( -538.687, -269.148 )
+texture = ExtResource( 1 )
+
+[node name="Sprite14" type="Sprite" parent="toDelete"]
+position = Vector2( -357.899, -361.417 )
+texture = ExtResource( 1 )
+
+[node name="Sprite15" type="Sprite" parent="toDelete"]
+position = Vector2( -177.68, -450.03 )
+texture = ExtResource( 1 )
+
+[node name="Sprite16" type="Sprite" parent="toDelete"]
+position = Vector2( 0.743561, -540.439 )
+texture = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="toDelete/Sprite16"]
+position = Vector2( -1.30597, 4.89557 )
+texture = SubResource( 1 )
+
+[node name="toKeep" type="Node2D" parent="."]
+
+[node name="(0,0)" type="Sprite" parent="toKeep"]
+position = Vector2( 80.4786, 44.3214 )
+scale = Vector2( 0.506627, 0.506627 )
+texture = ExtResource( 3 )
+
+[node name="Droite" type="Sprite" parent="toKeep/(0,0)"]
+texture = ExtResource( 3 )
+
+[node name="Droite2" type="Sprite" parent="toKeep/(0,0)"]
+position = Vector2( -59.857, -32.2307 )
+texture = ExtResource( 3 )
+
+[node name="Droite3" type="Sprite" parent="toKeep/(0,0)"]
+position = Vector2( -156.549, -85.1812 )
+texture = ExtResource( 3 )
+
+[node name="Droite4" type="Sprite" parent="toKeep/(0,0)"]
+position = Vector2( -241.73, -138.132 )
+texture = ExtResource( 3 )
+
+[node name="Droite5" type="Sprite" parent="toKeep/(0,0)"]
+position = Vector2( -197.988, -119.714 )
+texture = ExtResource( 3 )
+
+[node name="Droite6" type="Sprite" parent="toKeep/(0,0)"]
+position = Vector2( -131.225, -73.6703 )
+texture = ExtResource( 3 )
+
+[node name="Droite7" type="Sprite" parent="toKeep/(0,0)"]
+position = Vector2( 131.225, -87.4835 )
+texture = ExtResource( 3 )
+
+[node name="Droite8" type="Sprite" parent="toKeep/(0,0)"]
+position = Vector2( 92.0879, -138.132 )
+texture = ExtResource( 3 )
+
+[node name="Droite9" type="Sprite" parent="toKeep/(0,0)"]
+position = Vector2( 23.451, -180 )
+texture = ExtResource( 3 )
+
+[node name="Droite10" type="Sprite" parent="toKeep/(0,0)"]
+position = Vector2( -17.9884, -212.231 )
+texture = ExtResource( 3 )
+
+[node name="Droite11" type="Sprite" parent="toKeep/(0,0)"]
+position = Vector2( -75.5431, -244.461 )
+texture = ExtResource( 3 )
+
+[node name="Droite12" type="Sprite" parent="toKeep/(0,0)"]
+position = Vector2( -75.5431, -244.461 )
+texture = ExtResource( 3 )
+
+[node name="Sprite12" type="Sprite" parent="toKeep/(0,0)"]
+position = Vector2( 2.30177, -158.851 )
+scale = Vector2( 0.984942, 0.984942 )
+texture = SubResource( 2 )
+
+[node name="Sprite5" type="Sprite" parent="toKeep/(0,0)"]
+position = Vector2( -211.802, -179.571 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="toKeep/(0,0)"]
+position = Vector2( -36.8351, -71.3679 )
+texture = ExtResource( 3 )
+
+[node name="DroiteGGA" type="Sprite" parent="toKeep/(0,0)"]
+position = Vector2( -25.1827, -300.867 )
+scale = Vector2( 1.21319, 1.21319 )
+texture = SubResource( 3 )
+
+[node name="DroiteG" type="Sprite" parent="toKeep/(0,0)"]
+position = Vector2( 139.976, -376.989 )
+scale = Vector2( 1.21319, 1.21319 )
+texture = SubResource( 4 )
