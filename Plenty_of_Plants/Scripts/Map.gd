@@ -7,6 +7,7 @@ export var tileCountB : int = 30 # sur le vecteur (-1,1)
 export (bool) var assignTiles = false setget initTiles
 export (bool) var reset = false setget resetTiles
 export (bool) var placeTiles = false setget roundTilesTransform
+export (bool) var resetCoords = false setget resetTilesCoord
 export var firstTilePos = Vector2(-175.0,-85)
 
 
@@ -83,6 +84,14 @@ func resetTiles(boolean):
 		tile.root = false
 		reset = false
 
+func resetTilesCoord(boolean):
+	if not boolean:
+		return
+	assignTiles = false
+	allTiles = getAllTiles()
+	for tile in get_children():
+		tile.coordOnTexture = Vector2(0,0)
+		resetCoords = false
 
 func getAllTiles():
 	var rowB : Array = []
@@ -117,6 +126,7 @@ func initTiles(hasToInit):
 
 func getRectIndexFrom(index,sizeA,sizeB):
 	var rectIndexes = []
+	print(index, sizeA, sizeB)
 	print(range(index.x - sizeA+1,index.x+1))
 	for a in range(index.x - sizeA+1,index.x+1):
 		for b in range(index.y - sizeB+1,index.y+1):
@@ -128,18 +138,13 @@ func getRectIndexFrom(index,sizeA,sizeB):
 func propageTypeAndZ():
 	print("propagate type and Z")
 	for tile in get_children():
-		if toDoForBuilding.has(tile.BType):
+		if toDoForBuilding.has(tile.BType) and tile.root:
 			var dimensions = toDoForBuilding[tile.BType]
 			var indexVec = tilePositionToIndexes(tile.position)
 			for indexToTransferTo in getRectIndexFrom(indexVec,dimensions.x,dimensions.y):
 				allTiles[indexToTransferTo.x][indexToTransferTo.y].coordOnTexture = indexVec-indexToTransferTo
 				allTiles[indexToTransferTo.x][indexToTransferTo.y].BType2 = tile.BType
 				allTiles[indexToTransferTo.x][indexToTransferTo.y].z_index = tile.z_index
-
-
-
-
-
 
 func checkInBounds(vectorIndex):
 	return  vectorIndex.x >= 0 && vectorIndex.y >= 0 && vectorIndex.x < tileCountA && vectorIndex.y < tileCountB
