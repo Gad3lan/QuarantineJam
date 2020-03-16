@@ -47,6 +47,7 @@ var toDoForBuilding ={
 }
 
 export var biomasseNow : int = 500
+onready var ui = get_parent().get_node("CameraNode").get_node("CanvasLayer/Ui")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -152,6 +153,7 @@ func checkInBounds(vectorIndex):
 	return  vectorIndex.x >= 0 && vectorIndex.y >= 0 && vectorIndex.x < tileCountA && vectorIndex.y < tileCountB
 
 func _ready():
+	ui.setPollen(biomasseNow)
 	initTiles(true)
 	allTiles[0][-1].instancePlant(PlantType.SECOIA)
 	tests()
@@ -188,19 +190,19 @@ func hasPlantNeighbors(thisTile):
 
 func pickUpPollen():
 	biomasseNow += 3
+	ui.setPollen(biomasseNow)
 	print(biomasseNow)
 
 func buy(toPlant):
 	var canPlant = biomasseNow > plantCost[toPlant]
 	biomasseNow -= plantCost[toPlant] if canPlant else 0
+	ui.setPollen(biomasseNow)
 	return canPlant
 
 
 func can_place(toPlant,thisTile):
 	print("z_index : ",thisTile.baseZIndex)
 	return hasPlantNeighbors(thisTile) && buy(toPlant)
-
-
 
 	
 #A PARTIR DE LA,FONCTIONS DE TEST
