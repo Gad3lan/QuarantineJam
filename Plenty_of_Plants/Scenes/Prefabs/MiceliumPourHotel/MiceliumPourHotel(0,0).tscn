@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/TileSprite/Building/sol neutre.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/prefabTile.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/TileSprite/Plants/Soutien/Mur de micelium .PNG" type="Texture" id=4]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/Hôtel.png-e447f8b636963f7b97331dec743fd626.stex"
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="toDelete" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="toDelete"]
+position = Vector2( 0.554779, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="toDelete"]
+position = Vector2( 181.576, -90.2488 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="toDelete"]
+position = Vector2( -179.261, -90.5262 )
+texture = ExtResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="toDelete"]
+position = Vector2( 2.46143, -179.848 )
+texture = ExtResource( 2 )
+
+[node name="Sprite5" type="Sprite" parent="toDelete"]
+position = Vector2( 0.477968, -287.316 )
+texture = SubResource( 1 )
+
+[node name="toKeep" type="Node2D" parent="."]
+
+[node name="(0,0)" type="Sprite" parent="."]
+position = Vector2( -3.33704, -155.704 )
+scale = Vector2( 0.469684, 0.469684 )
+texture = ExtResource( 4 )
+
+[node name="devant" type="Sprite" parent="(0,0)"]
+position = Vector2( -2.24111, -242.044 )
+texture = ExtResource( 4 )
+
+[node name="devant2" type="Sprite" parent="(0,0)"]
+position = Vector2( -4.48235, -470.641 )
+texture = ExtResource( 4 )
+
+[node name="devant3" type="Sprite" parent="(0,0)"]
+position = Vector2( -0.000131607, -701.48 )
+texture = ExtResource( 4 )
