@@ -7,7 +7,7 @@ onready var biomasseMenu = get_node("VBoxContainer/MenuContainer/Biomasse")
 onready var soutiensMenu = get_node("VBoxContainer/MenuContainer/Soutien")
 onready var numNode = get_node("VBoxContainer/MenuPrincipale/Money/Label")
 
-enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS,HERBE, SECOIA, MYCELIUM, RONCE}
+enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS,HERBE, SECOIA, MYCELIUM, RONCE, BAMBOU, MOUSSE, ORTIE, HERBE, CONSOUD}
 
 export (PlantType) var selectedPlant = PlantType.NONE;
 export (int) var pollenNum = 0
@@ -46,17 +46,14 @@ func _on_Soutien_mouse_entered():
 func _on_Attaque_mouse_exited():
 	pass
 
-
 func _on_Auxilliaire_mouse_exited():
 	pass
-
 
 func close_all():
 	biomasseMenu.hide()
 	soutiensMenu.hide()
 	attaqueMenu.hide()
 	auxiliaireMenu.hide()
-
 
 func _on_Biomasse_mouse_exited():
 	pass
@@ -95,7 +92,6 @@ func _on_Sequoia_gui_input(event):
 		print("SECOIA")
 		close_all()
 
-
 func _on_Mycellium_gui_input(event):
 	if event.is_pressed():
 		selectedPlant = PlantType.MYCELIUM
@@ -106,4 +102,34 @@ func _on_Ronces_gui_input(event):
 	if event.is_pressed():
 		selectedPlant = PlantType.RONCE
 		print("RONCE")
+		close_all()
+
+func _on_Bambou_gui_input(event):
+	if event.is_pressed():
+		selectedPlant = PlantType.BAMBOU
+		print("BAMBOU")
+		close_all()
+
+func _on_Mousse_gui_input(event):
+	if event.is_pressed():
+		selectedPlant = PlantType.MOUSSE
+		print("MOUSSE")
+		close_all()
+
+func _on_Ortie_gui_input(event):
+	if event.is_pressed():
+		selectedPlant = PlantType.ORTIE
+		print("ORTIE")
+		close_all()
+
+func _on_Consoude_gui_input(event):
+	if event.is_pressed():
+		selectedPlant = PlantType.CONSOUD
+		print("CONSOUD")
+		close_all()
+
+func _on_Herbe_gui_input(event):
+	if event.is_pressed():
+		selectedPlant = PlantType.HERBE
+		print("HERBE")
 		close_all()
