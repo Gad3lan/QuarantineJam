@@ -2,36 +2,12 @@ tool
 extends Area2D
 
 onready var map = self.get_parent()
-
-var mouseIsIn:bool = false
-var baseZIndex
 onready var pollen = preload("res://Scenes/BioMasse.tscn")
 onready var Ui = map.get_parent().get_node("CameraNode").get_node("CanvasLayer/Ui")
-
-
-enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS,HERBE, SECOIA, MYCELIUM, RONCE}
-enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, IMMEUBLE2, BUILDING, CENTRALE, TERRAIN}
-
-
-
-var plantGivingBiomasse ={
-	PlantType.SECOIA : 60,
-	PlantType.EUCALYPTUS : 30,
-	PlantType.HERBE : 80
-}
-
-export var coordOnTexture = Vector2(0,0)
-export var root = false
-
-export (PlantType) var PType = PlantType.NONE
-export (BuildingType) var BType setget selectBuilding
-var BType2 = BuildingType.NONE
-export (int) var texturePart = 0
-
 onready var timer = get_node("Timer")
-
 onready var placeHolderPath = preload("res://Scenes/Prefabs/PlaceHolder.tscn")
-
+onready var plant : Sprite = get_node("Plant")
+onready var building : Sprite = get_node("Building")
 onready var buildPaths = {
 	BuildingType.NONE : preload("res://Scenes/Prefabs/NoBuilding.tscn"),
 	BuildingType.PARCKING : preload("res://Scenes/Prefabs/Parcking.tscn")
@@ -47,9 +23,28 @@ onready var plantBuildingPath = {
 	PlantType.LIERE : {BuildingType.USINE:{Vector2(0,0):preload("res://Scenes/Prefabs/LierrePourUsineFront.tscn")}}
 }
 
+enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS,HERBE, SECOIA, MYCELIUM, RONCE}
+enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, IMMEUBLE2, BUILDING, CENTRALE, TERRAIN}
 
+export var coordOnTexture = Vector2(0,0)
+export var root = false
+export (PlantType) var PType = PlantType.NONE
+export (BuildingType) var BType setget selectBuilding
+export (int) var texturePart = 0
+export var startTile = false
+
+var mouseIsIn:bool = false
+var baseZIndex
+var BType2 = BuildingType.NONE
 var ROADPLACEHOLDER = -1
 var FLATPLACEHOLDER = -2
+var roads = [BuildingType.ROAD0, BuildingType.ROAD1, BuildingType.ROAD2, BuildingType.ROAD3, BuildingType.ROAD4, BuildingType.ROAD5, BuildingType.ROAD6]
+var flats = [BuildingType.TERRAIN,BuildingType.PARCKING,BuildingType.NONE]
+var plantGivingBiomasse ={
+	PlantType.SECOIA : 60,
+	PlantType.EUCALYPTUS : 30,
+	PlantType.HERBE : 80
+}
 var plantBuildingcompatibleDict = {
 	PlantType.NONE:[BuildingType.NONE],
 	PlantType.CHAMPIGNON:[FLATPLACEHOLDER, ROADPLACEHOLDER],
@@ -60,13 +55,6 @@ var plantBuildingcompatibleDict = {
 	PlantType.LIERE:[BuildingType.HOTEL, BuildingType.USINE],
 	PlantType.RONCE:[BuildingType.HOTEL, BuildingType.USINE],
 }
-
-export var startTile = false
-
-onready var plant : Sprite = get_node("Plant")
-onready var building : Sprite = get_node("Building")
-
-
 
 #Fonction de l'outil
 func selectBuilding(buildingType):
@@ -131,9 +119,6 @@ func selectBuilding(buildingType):
 			$Building.texture = null
 			$Building.offset.y = 0
 
-
-var roads = [BuildingType.ROAD0, BuildingType.ROAD1, BuildingType.ROAD2, BuildingType.ROAD3, BuildingType.ROAD4, BuildingType.ROAD5, BuildingType.ROAD6]
-var flats = [BuildingType.TERRAIN,BuildingType.PARCKING,BuildingType.NONE]
 func replacePlaceHolderOnDict():
 	for key in plantBuildingcompatibleDict.keys():
 		if plantBuildingcompatibleDict[key].has(ROADPLACEHOLDER):
@@ -151,12 +136,10 @@ func _ready():
 	replacePlaceHolderOnDict()
 	baseZIndex = self.z_index
 
-
 #return True si il y a une plante
 func hasPlant():
 	print(PType)
 	return PType != PlantType.NONE
-	
 
 func plantCanBePlaced(plant):
 	return PType == PlantType.NONE and plantBuildingcompatibleDict[plant].has(BType2)
@@ -216,9 +199,7 @@ func spawnPollen():
 	call_deferred("add_child",pollenInstance)
 	pollenInstance.z_index = 4
 
-
 func _on_Timer_timeout():
 	timer.set_wait_time(plantGivingBiomasse[PType] *(1+ 0.33*(randf()-0.5)))
 	timer.start()
 	spawnPollen()
-	pass # Replace with function body.
