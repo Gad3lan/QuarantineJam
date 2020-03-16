@@ -34,6 +34,9 @@ font_data = ExtResource( 8 )
 
 [node name="Ui" type="Control"]
 script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MenuPrincipale" type="HBoxContainer" parent="."]
 margin_right = 1198.0
