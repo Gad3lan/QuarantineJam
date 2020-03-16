@@ -55,7 +55,6 @@ position = Vector2( 0, -180 )
 texture = ExtResource( 1 )
 
 [node name="Sprite10" type="Sprite" parent="toDelete"]
-visible = false
 position = Vector2( 7.40247, -491.884 )
 texture = ExtResource( 4 )
 
