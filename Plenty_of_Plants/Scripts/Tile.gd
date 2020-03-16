@@ -56,7 +56,9 @@ var plantBuildingcompatibleDict = {
 	PlantType.CHAMPIGNON:[FLATPLACEHOLDER, ROADPLACEHOLDER,BuildingType.HOTEL],
 	PlantType.LIERE:[WALLPLACEHOLDER],
 	PlantType.RONCE:[WALLPLACEHOLDER],
-	PlantType.MYCELIUM:[WALLPLACEHOLDER]
+	PlantType.MYCELIUM:[WALLPLACEHOLDER],
+	PlantType.TOURNESSOL:[FLATPLACEHOLDER, ROADPLACEHOLDER],
+	PlantType.CONSOUD:[FLATPLACEHOLDER, ROADPLACEHOLDER]
 }
 var buildingLife = {
 	BuildingType.NONE:0,
@@ -85,7 +87,9 @@ var plantLife = {
 	PlantType.HERBE:10,
 	PlantType.LIERE:40,
 	PlantType.RONCE:50,
-	PlantType.MYCELIUM:30
+	PlantType.MYCELIUM:30,
+	PlantType.TOURNESSOL:120,
+	PlantType.CONSOUD:110
 }
 
 var buildingAttack = {
@@ -347,7 +351,13 @@ onready var plantBuildingPath = {
 			Vector2(0,2):preload("res://Scenes/Prefabs/MiceliumPourUsine/MiceliumPourUsine(0,2).tscn"),
 			Vector2(0,3):preload("res://Scenes/Prefabs/MiceliumPourUsine/MiceliumPourUsine(0,3).tscn")
 		}
+	},PlantType.TOURNESSOL:{
+		BuildingType.NONE :{Vector2(0,0):preload("res://Scenes/Prefabs/Tournesol.tscn")} 
+	},
+	PlantType.CONSOUD:{
+		BuildingType.NONE :{Vector2(0,0):preload("res://Scenes/Prefabs/Cousoude.tscn")} 
 	}
+	
 }
 
 
@@ -373,7 +383,7 @@ onready var plantBuildingPath = {
 
 
 func hasPrefab(type):
-	if plantBuildingPath[type].has(BType2) &&plantBuildingPath[type][BType2].has(coordOnTexture) :
+	if plantBuildingPath[type].has(BType2) && plantBuildingPath[type][BType2].has(coordOnTexture) :
 		return true
 	else:
 		return plantBuildingPath[type].has(BuildingType.NONE)
