@@ -6,6 +6,11 @@ export (float) var maxSpeed = 1000.0
 export (int) var zoomPos = 0
 export (float) var zoomStep = 0.05
 
+export (int) var minx = -3000
+export (int) var maxx = 3000
+export (int) var miny = -3000
+export (int) var maxy = 3000
+
 onready var camera = get_node("Camera2D")
 
 var lastMousePos
@@ -24,6 +29,17 @@ func rightClicking():
 	rightClick = false
 	return false
 
+func normalizePos():
+	if position.x < minx:
+		position.x = minx
+	if position.x > maxx:
+		position.x = maxx
+
+	if position.y < miny:
+		position.y = miny
+	if position.y > maxy:
+		position.y = maxy
+
 # Move the camera
 func moveCamera(delta):
 	var vectorToMove = get_local_mouse_position() - lastMousePos
@@ -34,6 +50,7 @@ func moveCamera(delta):
 	if vectorToMove.length() > 1.0:
 		vectorToMove = vectorToMove/vectorToMove.length()
 	self.translate(maxSpeed * -vectorToMove * delta * camera.zoom)
+	normalizePos()
 	
 # Controle le zoom de camera
 func zoom(direcrion):
