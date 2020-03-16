@@ -4,7 +4,8 @@ extends Button
 
 # Declare member variables here. Examples:
 var add_Value = 0
-var timeToDelete = 100
+var timeToDelete = 10
+onready var map = get_parent().get_parent().get_parent()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Timer.set_one_shot(true)
@@ -36,5 +37,8 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 
 
 func _on_Button_pressed():
+	if map != null:
+		print(map)
+		map.pickUpPollen()
 	print("c")
 	self.queue_free()
