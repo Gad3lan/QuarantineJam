@@ -18,11 +18,15 @@ func _ready():
 	auxiliaireMenu.hide()
 	biomasseMenu.hide()
 	soutiensMenu.hide()
-	showPollen()
+	numNode.text = str(pollenNum)
 
-func showPollen():
+func addPollen(n):
+	pollenNum += n
 	numNode.text = str(pollenNum)
 	
+func setPollen(n):
+	pollenNum = n
+	numNode.text = str(pollenNum)
 
 func _process(delta):
 	pass
