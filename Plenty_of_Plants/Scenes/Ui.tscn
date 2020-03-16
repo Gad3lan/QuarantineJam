@@ -36,7 +36,7 @@ __meta__ = {
 }
 
 [node name="MenuPrincipale" type="HBoxContainer" parent="."]
-margin_right = 1198.0
+margin_right = 1409.0
 margin_bottom = 270.0
 alignment = 1
 __meta__ = {
@@ -44,83 +44,84 @@ __meta__ = {
 }
 
 [node name="Attaque" type="PanelContainer" parent="MenuPrincipale"]
-margin_right = 229.0
+margin_right = 321.0
 margin_bottom = 270.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="MenuPrincipale/Attaque"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 222.0
+margin_right = 314.0
 margin_bottom = 263.0
 
 [node name="Titre" type="Label" parent="MenuPrincipale/Attaque"]
 margin_left = 7.0
 margin_top = 93.0
-margin_right = 222.0
+margin_right = 314.0
 margin_bottom = 177.0
 custom_fonts/font = SubResource( 1 )
-text = "Attaque"
+text = "WallAttack"
 
 [node name="Auxiliaire" type="PanelContainer" parent="MenuPrincipale"]
-margin_left = 233.0
-margin_right = 480.0
+margin_left = 325.0
+margin_right = 724.0
 margin_bottom = 270.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="MenuPrincipale/Auxiliaire"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 240.0
+margin_right = 392.0
 margin_bottom = 263.0
 
 [node name="Titre" type="Label" parent="MenuPrincipale/Auxiliaire"]
 margin_left = 7.0
 margin_top = 93.0
-margin_right = 240.0
+margin_right = 392.0
 margin_bottom = 177.0
 custom_fonts/font = SubResource( 1 )
-text = "Auxiliaire"
+text = "groundAttack"
 
 [node name="Biomasse" type="PanelContainer" parent="MenuPrincipale"]
-margin_left = 484.0
-margin_right = 700.0
+margin_left = 728.0
+margin_right = 921.0
 margin_bottom = 270.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="MenuPrincipale/Biomasse"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 209.0
+margin_right = 186.0
 margin_bottom = 263.0
 
 [node name="Titre" type="Label" parent="MenuPrincipale/Biomasse"]
 margin_left = 7.0
-margin_top = 93.0
-margin_right = 209.0
-margin_bottom = 177.0
+margin_top = 49.0
+margin_right = 186.0
+margin_bottom = 220.0
 custom_fonts/font = SubResource( 2 )
-text = "Biomasse"
+text = "Biomass
+pollen"
 
 [node name="Soutien" type="PanelContainer" parent="MenuPrincipale"]
-margin_left = 704.0
-margin_right = 924.0
+margin_left = 925.0
+margin_right = 1135.0
 margin_bottom = 270.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="MenuPrincipale/Soutien"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 213.0
+margin_right = 203.0
 margin_bottom = 263.0
 
 [node name="Titre" type="Label" parent="MenuPrincipale/Soutien"]
 margin_left = 7.0
 margin_top = 93.0
-margin_right = 213.0
+margin_right = 203.0
 margin_bottom = 177.0
 custom_fonts/font = SubResource( 3 )
-text = "Soutiens"
+text = "support"
 
 [node name="Money" type="PanelContainer" parent="MenuPrincipale"]
-margin_left = 928.0
-margin_right = 1198.0
+margin_left = 1139.0
+margin_right = 1409.0
 margin_bottom = 270.0
 
 [node name="TextureRect" type="TextureRect" parent="MenuPrincipale/Money"]

@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Plenty of Plants"
-run/main_scene="res://Scenes/General.tscn"
+run/main_scene="res://Scenes/EcranPrincipale.tscn"
 
 [rendering]
 

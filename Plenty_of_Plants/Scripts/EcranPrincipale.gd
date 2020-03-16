@@ -6,6 +6,7 @@ func _ready():
 	
 func _on_Button_pressed():
 	print("Jouer")
+	get_tree().change_scene("res://Scenes/General.tscn")
 
 func _on_Button2_pressed():
-	print("Quitter")
+	get_tree().quit()
