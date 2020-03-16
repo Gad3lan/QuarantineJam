@@ -6,14 +6,14 @@
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
-load_path = "res://.import/building.png-286b147df14485cd062c19d0f9b8a36b.stex"
+load_path = "res://.import/HLM.png-37b6808a5280b01c410e0a3133ebef60.stex"
 
 [sub_resource type="StreamTexture" id=2]
 flags = 4
 load_path = "res://.import/Droit symétrique .PNG-df1f986deac6659c2574f7c0ac3f0a0d.stex"
 
 [node name="Node2D" type="Node2D"]
-position = Vector2( -181.083, 91.4204 )
+position = Vector2( -363.902, 176.119 )
 script = ExtResource( 2 )
 
 [node name="toDelete" type="Node2D" parent="."]
@@ -82,7 +82,7 @@ position = Vector2( 0.743561, -540.439 )
 texture = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="toDelete/Sprite16"]
-position = Vector2( 1.29236, -289.487 )
+position = Vector2( -0.655638, -26.5039 )
 texture = SubResource( 1 )
 
 [node name="toKeep" type="Node2D" parent="."]
@@ -92,15 +92,24 @@ visible = false
 position = Vector2( 1957.73, -800.791 )
 texture = ExtResource( 4 )
 
-[node name="Sprite(0,1)" type="Sprite" parent="toKeep"]
-position = Vector2( 153.632, -674.291 )
+[node name="Sprite(0,2)" type="Sprite" parent="toKeep"]
+position = Vector2( 263.113, -505.045 )
+scale = Vector2( 0.63859, 0.63859 )
 texture = ExtResource( 4 )
 
-[node name="Droit" type="Sprite" parent="toKeep/Sprite(0,1)"]
+[node name="Droit" type="Sprite" parent="toKeep/Sprite(0,2)"]
 visible = false
-position = Vector2( 1921.89, -159.904 )
+position = Vector2( 1415.02, -48.0945 )
 texture = ExtResource( 4 )
 
-[node name="DroitS" type="Sprite" parent="toKeep/Sprite(0,1)"]
-position = Vector2( 23.8483, 10.3727 )
+[node name="DroitS" type="Sprite" parent="toKeep/Sprite(0,2)"]
+position = Vector2( 50.7004, -11.1091 )
+texture = SubResource( 2 )
+
+[node name="Droit2" type="Sprite" parent="toKeep/Sprite(0,2)"]
+position = Vector2( 131.796, -50.5793 )
+texture = ExtResource( 4 )
+
+[node name="DroitS2" type="Sprite" parent="toKeep/Sprite(0,2)"]
+position = Vector2( 153.05, -36.8357 )
 texture = SubResource( 2 )
