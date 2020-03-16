@@ -10,6 +10,8 @@ export (int) var minx = -3000
 export (int) var maxx = 3000
 export (int) var miny = -3000
 export (int) var maxy = 3000
+export (int) var minZoom = -50
+export (int) var maxZoom = 50
 
 onready var camera = get_node("Camera2D")
 
@@ -71,8 +73,13 @@ func _input(event):
 				lastMousePos = get_local_mouse_position()
 			if event.button_index == BUTTON_WHEEL_UP: # zoom in
 				zoomTarget -= 10
+				if zoomTarget < minZoom:
+					zoomTarget = minZoom
 			if event.button_index == BUTTON_WHEEL_DOWN: # zoom out
 				zoomTarget += 10
+				if zoomTarget > maxZoom:
+					zoomTarget = maxZoom
+			print(zoomTarget)
 
 func _process(delta):
 	if (rightClick && rightClicking()):
