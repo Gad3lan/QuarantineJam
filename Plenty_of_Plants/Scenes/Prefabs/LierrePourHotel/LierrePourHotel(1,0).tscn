@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/TileSprite/Building/sol neutre.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/prefabTile.gd" type="Script" id=3]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/Hôtel.png-e447f8b636963f7b97331dec743fd626.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+load_path = "res://.import/Gauche symétrique .PNG-0623c11c5b8dc3e7048b079d174d5328.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/Lierre seul gauche.PNG-1911df4907c7de682a9faa77c2fb2cd9.stex"
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 177.562, 89.5956 )
+script = ExtResource( 3 )
+
+[node name="toDelete" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="toDelete"]
+position = Vector2( 0.554779, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="toDelete"]
+position = Vector2( 181.576, -90.2488 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="toDelete"]
+position = Vector2( -179.261, -90.5262 )
+texture = ExtResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="toDelete"]
+position = Vector2( 2.46143, -179.848 )
+texture = ExtResource( 2 )
+
+[node name="Sprite5" type="Sprite" parent="toDelete"]
+position = Vector2( 0.477968, -287.316 )
+texture = SubResource( 1 )
+
+[node name="toKeep" type="Node2D" parent="."]
+
+[node name="GaucheS2" type="Sprite" parent="toKeep"]
+position = Vector2( -149.609, -283.128 )
+scale = Vector2( 0.427056, 0.427056 )
+texture = SubResource( 4 )
+
+[node name="Gauche4" type="Sprite" parent="toKeep/GaucheS2"]
+position = Vector2( -219.416, -93.2055 )
+texture = SubResource( 3 )
+
+[node name="GaucheS3" type="Sprite" parent="toKeep/GaucheS2"]
+position = Vector2( -267.119, -103.306 )
+texture = SubResource( 4 )
+
+[node name="Gauche5" type="Sprite" parent="toKeep/GaucheS2"]
+position = Vector2( -74.7872, -16.4641 )
+texture = SubResource( 3 )
+
+[node name="GaucheS4" type="Sprite" parent="toKeep/GaucheS2"]
+position = Vector2( -122.491, -26.5643 )
+texture = SubResource( 4 )

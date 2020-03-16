@@ -3,14 +3,17 @@
 [ext_resource path="res://Sprites/TileSprite/Plants/Attaque/Lierre seul droit.PNG" type="Texture" id=1]
 [ext_resource path="res://Sprites/TileSprite/Building/sol neutre.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/prefabTile.gd" type="Script" id=3]
-[ext_resource path="res://Sprites/TileSprite/Plants/Attaque/Droit symétrique .PNG" type="Texture" id=4]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
-load_path = "res://.import/immeuble.png-9e00c29d605e4c602d4d4d242f039005.stex"
+load_path = "res://.import/Hôtel.png-e447f8b636963f7b97331dec743fd626.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/Droit symétrique .PNG-df1f986deac6659c2574f7c0ac3f0a0d.stex"
 
 [node name="Node2D" type="Node2D"]
-position = Vector2( -184, 90 )
+position = Vector2( -181.635, 89.5956 )
 script = ExtResource( 3 )
 
 [node name="toDelete" type="Node2D" parent="."]
@@ -32,38 +35,32 @@ position = Vector2( 2.46143, -179.848 )
 texture = ExtResource( 2 )
 
 [node name="Sprite5" type="Sprite" parent="toDelete"]
-position = Vector2( -3.20526, -329.059 )
+position = Vector2( 0.477968, -287.316 )
 texture = SubResource( 1 )
 
 [node name="toKeep" type="Node2D" parent="."]
 
-[node name="Droite" type="Sprite" parent="."]
-position = Vector2( -3.517, -372.073 )
-scale = Vector2( 0.543, 0.543 )
+[node name="(0,1)" type="Sprite" parent="toKeep"]
+position = Vector2( 145.227, -296.426 )
+scale = Vector2( 0.427056, 0.427056 )
 texture = ExtResource( 1 )
 
-[node name="Droite2" type="Sprite" parent="Droite"]
+[node name="Droit4" type="Sprite" parent="toKeep/(0,1)"]
+visible = false
 texture = ExtResource( 1 )
 
-[node name="DroiteS" type="Sprite" parent="Droite"]
-position = Vector2( 49.4315, -31.709 )
-scale = Vector2( 1.00002, 1.00002 )
-texture = ExtResource( 4 )
+[node name="DroitS2" type="Sprite" parent="toKeep/(0,1)"]
+position = Vector2( -56.0803, 23.6126 )
+texture = SubResource( 2 )
 
-[node name="Droite3" type="Sprite" parent="Droite"]
-position = Vector2( 136.159, -66.1505 )
+[node name="Droit6" type="Sprite" parent="toKeep/(0,1)/DroitS2"]
+position = Vector2( -85.5962, 22.1371 )
 texture = ExtResource( 1 )
 
-[node name="DroiteS2" type="Sprite" parent="Droite"]
-position = Vector2( 158.583, -90.1429 )
-scale = Vector2( 1.00002, 1.00002 )
-texture = ExtResource( 4 )
-
-[node name="Droite4" type="Sprite" parent="Droite"]
-position = Vector2( 212.225, -120.062 )
+[node name="Droit5" type="Sprite" parent="toKeep/(0,1)/DroitS2"]
+position = Vector2( 193.33, -85.5961 )
 texture = ExtResource( 1 )
 
-[node name="DroiteS3" type="Sprite" parent="Droite"]
-position = Vector2( 251.368, -132.48 )
-scale = Vector2( 1.00002, 1.00002 )
-texture = ExtResource( 4 )
+[node name="DroitS3" type="Sprite" parent="toKeep/(0,1)/DroitS2"]
+position = Vector2( 137.249, -61.9836 )
+texture = SubResource( 2 )
