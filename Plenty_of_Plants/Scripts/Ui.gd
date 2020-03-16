@@ -1,13 +1,16 @@
 extends MarginContainer
 
 enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS, SECOIA, MYCELIUM, RONCE}
+
 export (PlantType) var selectedPlant = PlantType.NONE;
+export (int) var pollenNum = 0
 
 onready var menuContainer = get_node("VBoxContainer/MenuContainer")
 onready var attaqueMenu = get_node("VBoxContainer/MenuContainer/Attaque")
 onready var auxiliaireMenu = get_node("VBoxContainer/MenuContainer/Auxilliaire")
 onready var biomasseMenu = get_node("VBoxContainer/MenuContainer/Biomasse")
 onready var soutiensMenu = get_node("VBoxContainer/MenuContainer/Soutien")
+onready var numNode = get_node("VBoxContainer/MenuPrincipale/Money/Label")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,7 +18,12 @@ func _ready():
 	auxiliaireMenu.hide()
 	biomasseMenu.hide()
 	soutiensMenu.hide()
+	showPollen()
+
+func showPollen():
+	numNode.text = str(pollenNum)
 	
+
 func _process(delta):
 	pass
 
