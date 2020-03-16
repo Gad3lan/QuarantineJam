@@ -20,7 +20,7 @@ export var tileSpacing = Vector2(180.0,90.0)
 
 
 enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, IMMEUBLE2, BUILDING, CENTRALE, TERRAIN}
-enum PlantType {NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE}
+enum PlantType {NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE, HERBE}
 
 var plantCost ={
 	PlantType.CHAMPIGNON : 3,
@@ -28,6 +28,7 @@ var plantCost ={
 	PlantType.RONCE : 4,
 	PlantType.EUCALYPTUS : 9,
 	PlantType.SECOIA : 6,
+	PlantType.HERBE : 3,
 	PlantType.NONE : 0
 }
 
@@ -110,6 +111,7 @@ func getAllTiles():
 		tilesToGet[(arrayPosition.x+arrayPosition.y)*0.5][(-arrayPosition.x+arrayPosition.y)*0.5] = tile
 		#on tourne de 45 degrees
 		tile.z_index = -2*max(tileCountA,tileCountB)-round(tile.position.y/firstTilePos.y)
+		#tile.baseIndex = -2*max(tileCountA,tileCountB)-round(tile.position.y/firstTilePos.y)
 	return tilesToGet
 
 func initTiles(hasToInit):
@@ -150,9 +152,8 @@ func checkInBounds(vectorIndex):
 	return  vectorIndex.x >= 0 && vectorIndex.y >= 0 && vectorIndex.x < tileCountA && vectorIndex.y < tileCountB
 
 func _ready():
-	assignTiles = true
 	initTiles(true)
-	allTiles[-1][-1].instancePlant(PlantType.SECOIA)
+	allTiles[0][-1].instancePlant(PlantType.SECOIA)
 	tests()
 	pass # Replace with function body.
 
