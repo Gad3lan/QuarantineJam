@@ -22,12 +22,13 @@ var tilesWithBuilding : Array
 var tilesWithPlants : Array
 var plantCost ={
 	PlantType.CHAMPIGNON : 3,
-	PlantType.LIERE : 3,
-	PlantType.RONCE : 4,
-	PlantType.EUCALYPTUS : 9,
+	PlantType.LIERE : 4,
+	PlantType.RONCE : 5,
+	PlantType.EUCALYPTUS : 7,
 	PlantType.SECOIA : 6,
 	PlantType.HERBE : 3,
 	PlantType.RONCE : 3,
+	PlantType.MYCELIUM : 4,
 	PlantType.NONE : 0
 }
 

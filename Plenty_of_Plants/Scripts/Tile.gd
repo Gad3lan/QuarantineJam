@@ -10,6 +10,7 @@ onready var plant : Sprite = get_node("Plant")
 onready var building : Sprite = get_node("Building")
 onready var lifeTimer = get_node("Life")
 onready var plantLifeTimer = get_node("plantLife")
+onready var healIndic = preload("res://Scenes/healIndicator.tscn")
 onready var buildPaths = {
 	BuildingType.NONE : preload("res://Scenes/Prefabs/NoBuilding.tscn"),
 	#BuildingType.PARCKING : preload("res://Scenes/Prefabs/Parcking.tscn")
@@ -55,6 +56,7 @@ var plantBuildingcompatibleDict = {
 	PlantType.CHAMPIGNON:[FLATPLACEHOLDER, ROADPLACEHOLDER,BuildingType.HOTEL],
 	PlantType.LIERE:[WALLPLACEHOLDER],
 	PlantType.RONCE:[WALLPLACEHOLDER],
+	PlantType.MYCELIUM:[WALLPLACEHOLDER]
 }
 var buildingLife = {
 	BuildingType.NONE:0,
@@ -88,22 +90,22 @@ var plantLife = {
 
 var buildingAttack = {
 	BuildingType.NONE:0,
-	BuildingType.PARCKING:1,
-	BuildingType.USINE:15,
+	BuildingType.PARCKING:3,
+	BuildingType.USINE:20,
 	BuildingType.HOTEL:2,
-	BuildingType.ROAD0:1,
-	BuildingType.ROAD1:1,
-	BuildingType.ROAD2:1,
-	BuildingType.ROAD3:1,
-	BuildingType.ROAD4:1,
-	BuildingType.ROAD5:1,
-	BuildingType.ROAD6:1,
-	BuildingType.HLM:6,
-	BuildingType.IMMEUBLE:3,
-	BuildingType.IMMEUBLE2:3,
-	BuildingType.BUILDING:10,
-	BuildingType.CENTRALE:12,
-	BuildingType.TERRAIN:100
+	BuildingType.ROAD0:3,
+	BuildingType.ROAD1:3,
+	BuildingType.ROAD2:3,
+	BuildingType.ROAD3:3,
+	BuildingType.ROAD4:3,
+	BuildingType.ROAD5:3,
+	BuildingType.ROAD6:3,
+	BuildingType.HLM:9,
+	BuildingType.IMMEUBLE:6,
+	BuildingType.IMMEUBLE2:6,
+	BuildingType.BUILDING:13,
+	BuildingType.CENTRALE:15,
+	BuildingType.TERRAIN:4
 }
 var plantSoutien = {
 	PlantType.MYCELIUM:5,
@@ -300,6 +302,50 @@ onready var plantBuildingPath = {
 			Vector2(0,2):preload("res://Scenes/Prefabs/RoncePourUsine/RoncePourUsine(0,2).tscn"),
 			Vector2(0,3):preload("res://Scenes/Prefabs/RoncePourUsine/RoncePourUsine(0,3).tscn")
 		}
+	},	PlantType.MYCELIUM : {BuildingType.BUILDING:{
+			Vector2(0,0):preload("res://Scenes/Prefabs/MiceliumPourBuilding/MiceliumPourBuilding(0,0).tscn"),
+			Vector2(1,0):preload("res://Scenes/Prefabs/MiceliumPourBuilding/MiceliumPourBuilding(1,0).tscn"),
+			Vector2(2,0):preload("res://Scenes/Prefabs/MiceliumPourBuilding/MiceliumPourBuilding(2,0).tscn"),
+			Vector2(3,0):preload("res://Scenes/Prefabs/MiceliumPourBuilding/MiceliumPourBuilding(3,0).tscn"),
+			Vector2(0,1):preload("res://Scenes/Prefabs/MiceliumPourBuilding/MiceliumPourBuilding(0,1).tscn"),
+			Vector2(0,2):preload("res://Scenes/Prefabs/MiceliumPourBuilding/MiceliumPourBuilding(0,2).tscn"),
+			Vector2(0,3):preload("res://Scenes/Prefabs/MiceliumPourBuilding/MiceliumPourBuilding(0,3).tscn")
+		},BuildingType.IMMEUBLE2:{
+			Vector2(0,0):preload("res://Scenes/Prefabs/MiceliumPourImmeuble1/MiclieuPourImmeuble1(0,0).tscn"),
+			Vector2(1,0):preload("res://Scenes/Prefabs/MiceliumPourImmeuble1/MiclieuPourImmeuble1(1,0).tscn"),
+		},
+		BuildingType.IMMEUBLE:{
+			Vector2(0,0):preload("res://Scenes/Prefabs/MiceliumPourImmeuble2/MiceliumPourImmeuble2(0,0).tscn"),
+			Vector2(0,1):preload("res://Scenes/Prefabs/MiceliumPourImmeuble2/MiceliumPourImmeuble2(0,1).tscn")
+		},BuildingType.HLM:{
+			Vector2(0,0):preload("res://Scenes/Prefabs/MiceliumPourHLM/MiceliumPourHLM(0,0).tscn"),
+			Vector2(1,0):preload("res://Scenes/Prefabs/MiceliumPourHLM/MiceliumPourHLM(1,0).tscn"),
+			Vector2(2,0):preload("res://Scenes/Prefabs/MiceliumPourHLM/MiceliumPourHLM(2,0).tscn"),
+			Vector2(3,0):preload("res://Scenes/Prefabs/MiceliumPourHLM/MiceliumPourHLM(3,0).tscn"),
+			Vector2(0,1):preload("res://Scenes/Prefabs/MiceliumPourHLM/MiceliumPourHLM(0,1).tscn"),
+			Vector2(0,2):preload("res://Scenes/Prefabs/MiceliumPourHLM/MiceliumPourHLM(0,2).tscn"),
+			Vector2(0,3):preload("res://Scenes/Prefabs/MiceliumPourHLM/MiceliumPourHLM(0,3).tscn")
+		},BuildingType.CENTRALE:{
+			Vector2(0,0):preload("res://Scenes/Prefabs/MiceliumPourCentraleElectrique/MiceliumPourCentraleElectrique(0,0).tscn"),
+			Vector2(1,0):preload("res://Scenes/Prefabs/MiceliumPourCentraleElectrique/MiceliumPourCentraleElectrique(1,0).tscn"),
+			Vector2(2,0):preload("res://Scenes/Prefabs/MiceliumPourCentraleElectrique/MiceliumPourCentraleElectrique(2,0).tscn"),
+			Vector2(3,0):preload("res://Scenes/Prefabs/MiceliumPourCentraleElectrique/MiceliumPourCentraleElectrique(3,0).tscn"),
+			Vector2(0,1):preload("res://Scenes/Prefabs/MiceliumPourCentraleElectrique/MiceliumPourCentraleElectrique(0,1).tscn"),
+			Vector2(0,2):preload("res://Scenes/Prefabs/MiceliumPourCentraleElectrique/MiceliumPourCentraleElectrique(0,2).tscn"),
+			Vector2(0,3):preload("res://Scenes/Prefabs/MiceliumPourCentraleElectrique/MiceliumPourCentraleElectrique(0,3).tscn")
+		},BuildingType.HOTEL:{
+			Vector2(0,0):preload("res://Scenes/Prefabs/MiceliumPourHotel/MiceliumPourHotel(0,0).tscn"),
+			Vector2(1,0):preload("res://Scenes/Prefabs/MiceliumPourHotel/MiceliumPourHotel(1,0).tscn"),
+			Vector2(0,1):preload("res://Scenes/Prefabs/MiceliumPourHotel/MiceliumPourHotel(0,1).tscn")
+		},BuildingType.USINE:{
+			Vector2(0,0):preload("res://Scenes/Prefabs/MiceliumPourUsine/MiceliumPourUsine(0,0).tscn"),
+			Vector2(1,0):preload("res://Scenes/Prefabs/MiceliumPourUsine/MiceliumPourUsine(1,0).tscn"),
+			Vector2(2,0):preload("res://Scenes/Prefabs/MiceliumPourUsine/MiceliumPourUsine(2,0).tscn"),
+			Vector2(3,0):preload("res://Scenes/Prefabs/MiceliumPourUsine/MiceliumPourUsine(3,0).tscn"),
+			Vector2(0,1):preload("res://Scenes/Prefabs/MiceliumPourUsine/MiceliumPourUsine(0,1).tscn"),
+			Vector2(0,2):preload("res://Scenes/Prefabs/MiceliumPourUsine/MiceliumPourUsine(0,2).tscn"),
+			Vector2(0,3):preload("res://Scenes/Prefabs/MiceliumPourUsine/MiceliumPourUsine(0,3).tscn")
+		}
 	}
 }
 
@@ -376,7 +422,11 @@ func activeSoutien(type):
 
 #pas sur pour cette fonction : 
 func receiveSoutien(power):
-	pLife += power
+	var healIndicInstance = healIndic.instance()
+	healIndicInstance.z_index +=5
+	if PType != PlantType.NONE && pLife != null:
+		call_deferred("add_child",healIndicInstance)
+		pLife += power
 
 func getBuilding():
 	return BType
@@ -407,9 +457,10 @@ func spawnPollen():
 	pollenInstance.z_index = 4
 
 func _on_Timer_timeout():
-	timer.set_wait_time(plantGivingBiomasse.get(PType) *(1+ 0.33*(randf()-0.5)))
-	timer.start()
-	spawnPollen()
+	if PType != PlantType.NONE:
+		timer.set_wait_time(plantGivingBiomasse.get(PType) *(1+ 0.33*(randf()-0.5)))
+		timer.start()
+		spawnPollen()
 
 
 func _on_Life_timeout():
@@ -423,10 +474,11 @@ func _on_Life_timeout():
 			print("error")
 
 func _on_plantLife_timeout():
-	print("timout")
+	print("pLife : ", pLife)
 	if ((not root and parent.destroyed) or destroyed):
 		plantLifeTimer.stop()
 	else:
+		activeSoutien(PType)
 		pLife -= buildingDamage
 		if pLife <= 0:
 			plantLifeTimer.stop()
