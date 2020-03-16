@@ -164,6 +164,7 @@ margin_bottom = 1373.0
 [node name="Champignon" type="PanelContainer" parent="VBoxContainer/MenuContainer/Attaque/VBoxContainer"]
 margin_right = 270.0
 margin_bottom = 270.0
+mouse_default_cursor_shape = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Attaque/VBoxContainer/Champignon"]
 margin_left = 7.0
@@ -176,6 +177,7 @@ texture = ExtResource( 2 )
 margin_top = 274.0
 margin_right = 270.0
 margin_bottom = 544.0
+mouse_default_cursor_shape = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Attaque/VBoxContainer/Liere"]
 margin_left = 7.0
@@ -188,6 +190,7 @@ texture = ExtResource( 1 )
 margin_top = 548.0
 margin_right = 270.0
 margin_bottom = 818.0
+mouse_default_cursor_shape = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Attaque/VBoxContainer/Bambou"]
 margin_left = 7.0
@@ -200,6 +203,7 @@ texture = ExtResource( 11 )
 margin_top = 822.0
 margin_right = 270.0
 margin_bottom = 1092.0
+mouse_default_cursor_shape = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Attaque/VBoxContainer/Mousse"]
 margin_left = 7.0
@@ -212,6 +216,7 @@ texture = ExtResource( 12 )
 margin_top = 1096.0
 margin_right = 270.0
 margin_bottom = 1366.0
+mouse_default_cursor_shape = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Attaque/VBoxContainer/Ortie"]
 margin_left = 7.0
@@ -234,6 +239,7 @@ margin_bottom = 1373.0
 [node name="Tournessole" type="PanelContainer" parent="VBoxContainer/MenuContainer/Auxilliaire/VBoxContainer"]
 margin_right = 270.0
 margin_bottom = 270.0
+mouse_default_cursor_shape = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Auxilliaire/VBoxContainer/Tournessole"]
 margin_left = 7.0
@@ -246,6 +252,7 @@ texture = ExtResource( 3 )
 margin_top = 274.0
 margin_right = 270.0
 margin_bottom = 544.0
+mouse_default_cursor_shape = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Auxilliaire/VBoxContainer/Consoude"]
 margin_left = 7.0
@@ -268,6 +275,7 @@ margin_bottom = 1373.0
 [node name="Eucalyptus" type="PanelContainer" parent="VBoxContainer/MenuContainer/Biomasse/VBoxContainer"]
 margin_right = 270.0
 margin_bottom = 270.0
+mouse_default_cursor_shape = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Biomasse/VBoxContainer/Eucalyptus"]
 margin_left = 7.0
@@ -280,6 +288,7 @@ texture = ExtResource( 7 )
 margin_top = 274.0
 margin_right = 270.0
 margin_bottom = 544.0
+mouse_default_cursor_shape = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Biomasse/VBoxContainer/Sequoia"]
 margin_left = 7.0
@@ -292,6 +301,7 @@ texture = ExtResource( 4 )
 margin_top = 548.0
 margin_right = 270.0
 margin_bottom = 818.0
+mouse_default_cursor_shape = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Biomasse/VBoxContainer/Herbe"]
 margin_left = 7.0
@@ -314,6 +324,7 @@ margin_bottom = 1373.0
 [node name="Mycellium" type="PanelContainer" parent="VBoxContainer/MenuContainer/Soutien/VBoxContainer"]
 margin_right = 270.0
 margin_bottom = 270.0
+mouse_default_cursor_shape = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Soutien/VBoxContainer/Mycellium"]
 margin_left = 7.0
@@ -326,6 +337,7 @@ texture = ExtResource( 5 )
 margin_top = 274.0
 margin_right = 270.0
 margin_bottom = 544.0
+mouse_default_cursor_shape = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Soutien/VBoxContainer/Ronces"]
 margin_left = 7.0

@@ -273,6 +273,26 @@ onready var plantBuildingPath = {
 			Vector2(0,1):preload("res://Scenes/Prefabs/RoncePourHLM/RoncePourHLM(0,1).tscn"),
 			Vector2(0,2):preload("res://Scenes/Prefabs/RoncePourHLM/RoncePourHLM(0,2).tscn"),
 			Vector2(0,3):preload("res://Scenes/Prefabs/RoncePourHLM/RoncePourHLM(0,3).tscn")
+		},BuildingType.CENTRALE:{
+			Vector2(0,0):preload("res://Scenes/Prefabs/RoncePourCentraleElectrique/RoncePourCentraleElectrique(0,0).tscn"),
+			Vector2(1,0):preload("res://Scenes/Prefabs/RoncePourCentraleElectrique/RoncePourCentraleElectrique(1,0).tscn"),
+			Vector2(2,0):preload("res://Scenes/Prefabs/RoncePourCentraleElectrique/RoncePourCentraleElectrique(2,0).tscn"),
+			Vector2(3,0):preload("res://Scenes/Prefabs/RoncePourCentraleElectrique/RoncePourCentraleElectrique(3,0).tscn"),
+			Vector2(0,1):preload("res://Scenes/Prefabs/RoncePourCentraleElectrique/RoncePourCentraleElectrique(0,1).tscn"),
+			Vector2(0,2):preload("res://Scenes/Prefabs/RoncePourCentraleElectrique/RoncePourCentraleElectrique(0,2).tscn"),
+			Vector2(0,3):preload("res://Scenes/Prefabs/RoncePourCentraleElectrique/RoncePourCentraleElectrique(0,3).tscn")
+		},BuildingType.HOTEL:{
+			Vector2(0,0):preload("res://Scenes/Prefabs/RoncePourHotel/RoncePourHotel(0,0).tscn"),
+			Vector2(1,0):preload("res://Scenes/Prefabs/RoncePourHotel/RoncePourHotel(1,0).tscn"),
+			Vector2(0,1):preload("res://Scenes/Prefabs/RoncePourHotel/RoncePourHotel(0,1).tscn")
+		},BuildingType.USINE:{
+			Vector2(0,0):preload("res://Scenes/Prefabs/RoncePourUsine/RoncePourUsine(0,0).tscn"),
+			Vector2(1,0):preload("res://Scenes/Prefabs/RoncePourUsine/RoncePourUsine(1,0).tscn"),
+			Vector2(2,0):preload("res://Scenes/Prefabs/RoncePourUsine/RoncePourUsine(2,0).tscn"),
+			Vector2(3,0):preload("res://Scenes/Prefabs/RoncePourUsine/RoncePourUsine(3,0).tscn"),
+			Vector2(0,1):preload("res://Scenes/Prefabs/RoncePourUsine/RoncePourUsine(0,1).tscn"),
+			Vector2(0,2):preload("res://Scenes/Prefabs/RoncePourUsine/RoncePourUsine(0,2).tscn"),
+			Vector2(0,3):preload("res://Scenes/Prefabs/RoncePourUsine/RoncePourUsine(0,3).tscn")
 		}
 	}
 }

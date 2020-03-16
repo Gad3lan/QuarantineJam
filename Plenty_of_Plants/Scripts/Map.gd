@@ -29,7 +29,6 @@ var plantCost ={
 	PlantType.HERBE : 3,
 	PlantType.RONCE : 3,
 	PlantType.NONE : 0
-	
 }
 
 var toDoForBuilding ={
