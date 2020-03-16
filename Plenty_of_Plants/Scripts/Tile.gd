@@ -45,14 +45,14 @@ onready var plantBuildingPath = {
 
 
 var ROADPLACEHOLDER = -1
-
+var FLATPLACEHOLDER = -2
 var plantBuildingcompatibleDict = {
 	PlantType.NONE:[BuildingType.NONE],
-	PlantType.CHAMPIGNON:[BuildingType.NONE, BuildingType.PARCKING, ROADPLACEHOLDER],
-	PlantType.SECOIA:[BuildingType.NONE, BuildingType.PARCKING, ROADPLACEHOLDER],
-	PlantType.EUCALYPTUS:[BuildingType.NONE, BuildingType.PARCKING, ROADPLACEHOLDER],
-		PlantType.HERBE:[BuildingType.NONE, BuildingType.PARCKING,ROADPLACEHOLDER],
-	PlantType.CHAMPIGNON:[BuildingType.NONE, BuildingType.PARCKING, ROADPLACEHOLDER,BuildingType.HOTEL],
+	PlantType.CHAMPIGNON:[FLATPLACEHOLDER, ROADPLACEHOLDER],
+	PlantType.SECOIA:[FLATPLACEHOLDER, ROADPLACEHOLDER],
+	PlantType.EUCALYPTUS:[FLATPLACEHOLDER, ROADPLACEHOLDER],
+	PlantType.HERBE:[FLATPLACEHOLDER,ROADPLACEHOLDER],
+	PlantType.CHAMPIGNON:[FLATPLACEHOLDER, ROADPLACEHOLDER,BuildingType.HOTEL],
 	PlantType.LIERE:[BuildingType.HOTEL, BuildingType.USINE],
 	PlantType.RONCE:[BuildingType.HOTEL, BuildingType.USINE],
 }
@@ -129,17 +129,23 @@ func selectBuilding(buildingType):
 
 
 var roads = [BuildingType.ROAD0, BuildingType.ROAD1, BuildingType.ROAD2, BuildingType.ROAD3, BuildingType.ROAD4, BuildingType.ROAD5, BuildingType.ROAD6]
+var flats = [BuildingType.TERRAIN,BuildingType.PARCKING,BuildingType.NONE]
 func replacePlaceHolderOnDict():
 	for key in plantBuildingcompatibleDict.keys():
 		if plantBuildingcompatibleDict[key].has(ROADPLACEHOLDER):
-			plantBuildingcompatibleDict[key].pop_back()
+			plantBuildingcompatibleDict[key].erase(ROADPLACEHOLDER)
 			for road in roads:
 				plantBuildingcompatibleDict[key].push_back(road)
+		if plantBuildingcompatibleDict[key].has(FLATPLACEHOLDER):
+			plantBuildingcompatibleDict[key].erase(FLATPLACEHOLDER)
+			for flat in flats:
+				plantBuildingcompatibleDict[key].push_back(flat)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("Tiles")
 	replacePlaceHolderOnDict()
+	baseZIndex = self.z_index
 
 
 #return True si il y a une plante
@@ -155,7 +161,7 @@ func findPrefab():
 	if plantBuildingPath[PType].has(BType2):
 		return plantBuildingPath[PType][BType2][coordOnTexture]
 	else:
-		return plantBuildingPath[PType][BuildingType.NONE][coordOnTexture]
+		return plantBuildingPath[PType][BuildingType.NONE][Vector2(0,0)]
 
 func instancePlant(type):
 	print("plant type : ",type)
@@ -165,7 +171,8 @@ func instancePlant(type):
 		plantInstance = findPrefab().instance()
 	else:
 		plantInstance = placeHolderPath.instance()
-	plantInstance.z_index = self.z_index + 1
+	plantInstance.z_as_relative =true
+	plantInstance.z_index = 3
 	call_deferred("add_child",plantInstance)
 	if plantGivingBiomasse.has(PType):
 		timer.set_wait_time(plantGivingBiomasse[PType] *(1+ 0.33*(randf()-0.5)))
@@ -183,15 +190,15 @@ func getBuilding():
 func _input(event):
 	if mouseIsIn and event is InputEventMouseButton:
 		if event.is_pressed() and event.button_index == BUTTON_LEFT:
-				if map.can_place(PlantType.LIERE,self):
+				if map.can_place(PlantType.SECOIA,self):
 					print("can place")
-					setPlant(PlantType.LIERE)
+					setPlant(PlantType.SECOIA)
 
 func _on_Tile_mouse_entered():
 	mouseIsIn = true
 	baseZIndex = self.z_index
 	$BackGround.material.set_shader_param("width", 4.0)
-	self.z_index = 1
+	self.z_index = 10
 
 func _on_Tile_mouse_exited():
 	mouseIsIn = false
@@ -202,7 +209,7 @@ func _on_Tile_mouse_exited():
 func spawnPollen():
 	var pollenInstance = pollen.instance()
 	call_deferred("add_child",pollenInstance)
-	pollenInstance.z_index = 2
+	pollenInstance.z_index = 4
 
 
 func _on_Timer_timeout():
