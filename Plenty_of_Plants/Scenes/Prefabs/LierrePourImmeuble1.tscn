@@ -3,11 +3,11 @@
 [ext_resource path="res://Sprites/TileSprite/Building/sol neutre.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/prefabTile.gd" type="Script" id=5]
 
-[sub_resource type="StreamTexture" id=4]
+[sub_resource type="StreamTexture" id=1]
 flags = 4
 load_path = "res://.import/immeuble 2.png-6387b6cf0a3d38f7ac9800a3d520bfb7.stex"
 
-[sub_resource type="StreamTexture" id=5]
+[sub_resource type="StreamTexture" id=2]
 flags = 4
 load_path = "res://.import/Lierre droit.PNG-4353614897490475b5df24c069c5ffea.stex"
 
@@ -27,14 +27,14 @@ texture = ExtResource( 4 )
 [node name="Sprite2" type="Sprite" parent="toDelete"]
 position = Vector2( -2.63379, -119.559 )
 scale = Vector2( 0.5, 0.5 )
-texture = SubResource( 4 )
+texture = SubResource( 1 )
 
 [node name="toKeep" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="toKeep"]
 position = Vector2( 133.465, -116.741 )
 scale = Vector2( 0.31094, 0.271456 )
-texture = SubResource( 5 )
+texture = SubResource( 2 )
 
 [node name="Sprite2" type="Sprite" parent="toKeep"]
 position = Vector2( 25.8282, -118.838 )
