@@ -7,8 +7,14 @@ var mouseIsIn:bool = false
 var baseZIndex
 onready var pollen = preload("res://Scenes/BioMasse.tscn")
 
-enum PlantType {NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE}
+enum PlantType {NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE, HERBE}
 enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, IMMEUBLE2, BUILDING, CENTRALE, TERRAIN}
+
+var plantGivingBiomasse ={
+	PlantType.SECOIA : 60,
+	PlantType.EUCALYPTUS : 30,
+	PlantType.HERBE : 80
+}
 
 export var coordOnTexture = Vector2(0,0)
 export var root = false
@@ -18,6 +24,8 @@ export (BuildingType) var BType setget selectBuilding
 var BType2 = BuildingType.NONE
 export (int) var texturePart = 0
 
+onready var timer = get_node("Timer")
+
 onready var placeHolderPath = preload("res://Scenes/Prefabs/PlaceHolder.tscn")
 
 onready var buildPaths = {
@@ -25,9 +33,16 @@ onready var buildPaths = {
 	BuildingType.PARCKING : preload("res://Scenes/Prefabs/Parcking.tscn")
 }
 
-onready var plantPaths = {
-	PlantType.SECOIA : preload("res://Scenes/Prefabs/Sequoia.tscn")
+
+#NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE, HERBE
+onready var plantBuildingPath = {
+	PlantType.SECOIA : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Sequoia.tscn")}},
+	PlantType.HERBE : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Herbe.tscn")}},
+	PlantType.EUCALYPTUS : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Eucalyptus.tscn")}},
+	PlantType.CHAMPIGNON : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Champignon.tscn")}},
+	PlantType.LIERE : {BuildingType.USINE:{Vector2(0,0):preload("res://Scenes/Prefabs/LierrePourUsineFront.tscn")}}
 }
+
 
 var ROADPLACEHOLDER = -1
 
@@ -36,9 +51,10 @@ var plantBuildingcompatibleDict = {
 	PlantType.CHAMPIGNON:[BuildingType.NONE, BuildingType.PARCKING, ROADPLACEHOLDER],
 	PlantType.SECOIA:[BuildingType.NONE, BuildingType.PARCKING, ROADPLACEHOLDER],
 	PlantType.EUCALYPTUS:[BuildingType.NONE, BuildingType.PARCKING, ROADPLACEHOLDER],
+		PlantType.HERBE:[BuildingType.NONE, BuildingType.PARCKING,ROADPLACEHOLDER],
 	PlantType.CHAMPIGNON:[BuildingType.NONE, BuildingType.PARCKING, ROADPLACEHOLDER,BuildingType.HOTEL],
 	PlantType.LIERE:[BuildingType.HOTEL, BuildingType.USINE],
-	PlantType.RONCE:[BuildingType.HOTEL, BuildingType.USINE]
+	PlantType.RONCE:[BuildingType.HOTEL, BuildingType.USINE],
 }
 
 export var startTile = false
@@ -133,23 +149,31 @@ func hasPlant():
 	
 
 func plantCanBePlaced(plant):
-	if PType == PlantType.NONE:
-		print (plantBuildingcompatibleDict[plant], ", BType ",BType2)
 	return PType == PlantType.NONE and plantBuildingcompatibleDict[plant].has(BType2)
 
+func findPrefab():
+	if plantBuildingPath[PType].has(BType2):
+		return plantBuildingPath[PType][BType2][coordOnTexture]
+	else:
+		return plantBuildingPath[PType][BuildingType.NONE][coordOnTexture]
+
 func instancePlant(type):
+	print("plant type : ",type)
 	var plantInstance
-	if plantPaths.has(type):
-		plantInstance = plantPaths[type].instance()
+	if plantBuildingPath.has(type):
+		PType = type
+		plantInstance = findPrefab().instance()
 	else:
 		plantInstance = placeHolderPath.instance()
 	plantInstance.z_index = self.z_index + 1
 	call_deferred("add_child",plantInstance)
+	if plantGivingBiomasse.has(PType):
+		timer.set_wait_time(plantGivingBiomasse[PType] *(1+ 0.33*(randf()-0.5)))
+		timer.start()
 
 func setPlant(type):
 	if not plantCanBePlaced(type):
 		return false
-	PType = type
 	instancePlant(type)
 	return true
 
@@ -159,9 +183,9 @@ func getBuilding():
 func _input(event):
 	if mouseIsIn and event is InputEventMouseButton:
 		if event.is_pressed() and event.button_index == BUTTON_LEFT:
-				if map.can_place(PlantType.SECOIA,self):
+				if map.can_place(PlantType.LIERE,self):
 					print("can place")
-					setPlant(PlantType.SECOIA)
+					setPlant(PlantType.LIERE)
 
 func _on_Tile_mouse_entered():
 	mouseIsIn = true
@@ -177,5 +201,12 @@ func _on_Tile_mouse_exited():
 
 func spawnPollen():
 	var pollenInstance = pollen.instance()
-	pollenInstance.z_index = 2
 	call_deferred("add_child",pollenInstance)
+	pollenInstance.z_index = 2
+
+
+func _on_Timer_timeout():
+	timer.set_wait_time(plantGivingBiomasse[PType] *(1+ 0.33*(randf()-0.5)))
+	timer.start()
+	spawnPollen()
+	pass # Replace with function body.

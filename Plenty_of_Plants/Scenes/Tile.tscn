@@ -38,5 +38,9 @@ position = Vector2( 3.68323, -174.339 )
 
 [node name="Building" type="Sprite" parent="."]
 material = SubResource( 4 )
+z_index = 1
+
+[node name="Timer" type="Timer" parent="."]
 [connection signal="mouse_entered" from="." to="." method="_on_Tile_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_Tile_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

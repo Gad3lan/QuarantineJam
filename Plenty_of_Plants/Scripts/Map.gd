@@ -113,6 +113,7 @@ func getAllTiles():
 	return tilesToGet
 
 func initTiles(hasToInit):
+	
 	print("initTiles")
 	allTiles = getAllTiles()
 	if not hasToInit:
@@ -129,7 +130,6 @@ func getRectIndexFrom(index,sizeA,sizeB):
 	print(range(index.x - sizeA+1,index.x+1))
 	for a in range(index.x - sizeA+1,index.x+1):
 		for b in range(index.y - sizeB+1,index.y+1):
-			print("a:b = ",a,":",b)
 			rectIndexes.push_back(Vector2(a,b))
 	return rectIndexes
 
@@ -152,7 +152,7 @@ func checkInBounds(vectorIndex):
 func _ready():
 	assignTiles = true
 	initTiles(true)
-	allTiles[-1][-1].setPlant(PlantType.SECOIA)
+	allTiles[-1][-1].instancePlant(PlantType.SECOIA)
 	tests()
 	pass # Replace with function body.
 
@@ -187,6 +187,7 @@ func hasPlantNeighbors(thisTile):
 
 func pickUpPollen():
 	biomasseNow += 3
+	print(biomasseNow)
 
 func buy(toPlant):
 	var canPlant = biomasseNow > plantCost[toPlant]
@@ -227,7 +228,6 @@ func _input(event):
 	pass
 """
 func tests():
-	flourishNeighbors(Vector2(4,2))
 	for row in allTiles:
 		for tile in row:
 			var indexArray = tilePositionToIndexes(tile.position)
