@@ -15,7 +15,7 @@ export (bool) var placeTiles = false setget roundTilesTransform
 export (bool) var resetCoords = false setget resetTilesCoord
 export var firstTilePos = Vector2(-175.0,-85)
 export var tileSpacing = Vector2(180.0,90.0)
-export var biomasseNow : int = 500
+export var biomasseNow : int = 30
 
 var allTiles : Array
 var tilesWithBuilding : Array
@@ -179,6 +179,12 @@ func buy(toPlant):
 	biomasseNow -= plantCost[toPlant] if canPlant else 0
 	ui.setPollen(biomasseNow)
 	return canPlant
+
+func refund(toPlant):
+	var canPlant = biomasseNow > plantCost[toPlant]
+	biomasseNow += plantCost[toPlant] if canPlant else 0
+	ui.setPollen(biomasseNow)
+
 
 
 func protect(power,tile):

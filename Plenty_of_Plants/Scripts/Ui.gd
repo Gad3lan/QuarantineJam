@@ -6,7 +6,7 @@ onready var biomasseMenu = get_node("Biomasse")
 onready var soutiensMenu = get_node("Soutien")
 onready var numNode = get_node("MenuPrincipale/Money/Label")
 
-enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS,HERBE, SECOIA, MYCELIUM, RONCE, MOUSSE, CONSOUD}
+enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS,HERBE, SECOIA, MYCELIUM, RONCE, CONSOUD}
 
 
 export (PlantType) var selectedPlant = PlantType.NONE;

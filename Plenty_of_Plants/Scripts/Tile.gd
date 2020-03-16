@@ -418,17 +418,16 @@ func instancePlant(type):
 		print("finding prefab")
 		plantInstance = findPrefab().instance()
 	else:
-		plantInstance = placeHolderPath.instance()
+		get_parent().refund(type)
 	plantInstance.z_as_relative =true
 	plantInstance.z_index = 3
 	call_deferred("add_child",plantInstance)
-	get_parent().buy(type)
 	if plantGivingBiomasse.has(PType):
 		timer.set_wait_time(plantGivingBiomasse[PType] *(1+ 0.33*(randf()-0.5)))
 		timer.start()
 
 func setPlant(type):
-	if not plantCanBePlaced(type):
+	if not plantCanBePlaced(type) or not get_parent().buy(type):
 		return false
 	if (root):
 		lifeTimer.start()
@@ -463,6 +462,7 @@ func _input(event):
 		if event.is_pressed() and event.button_index == BUTTON_LEFT:
 			var toPlant = Ui.selectedPlant
 			plantDamage = plantAttack.get(toPlant)
+			print("toPlant : ", toPlant)
 			if map.can_place(toPlant,self):
 				print("can place")
 				setPlant(toPlant)
