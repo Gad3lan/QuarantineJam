@@ -16,7 +16,7 @@ onready var buildPaths = {
 	#BuildingType.PARCKING : preload("res://Scenes/Prefabs/Parcking.tscn")
 }
 
-enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS,HERBE, SECOIA, MYCELIUM, RONCE,BAMBOU, MOUSSE, ORTIE, CONSOUD}
+enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS,HERBE, SECOIA, MYCELIUM, RONCE, CONSOUD}
 enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, IMMEUBLE2, BUILDING, CENTRALE, TERRAIN}
 
 export var coordOnTexture = Vector2(0,0)
@@ -118,9 +118,12 @@ var plantAttack = {
 	PlantType.SECOIA:2,
 	PlantType.EUCALYPTUS:1,
 	PlantType.HERBE:1,
-	PlantType.LIERE:3,
-	PlantType.RONCE:3,
-	PlantType.MYCELIUM:2
+	PlantType.LIERE:4,
+	PlantType.RONCE:6,
+	PlantType.MYCELIUM:2,
+	PlantType.CONSOUD:4,
+	PlantType.TOURNESSOL:5
+	
 }
 var plantSoutien = {
 	PlantType.MYCELIUM:5,
@@ -366,7 +369,7 @@ onready var plantBuildingPath = {
 		BuildingType.NONE :{Vector2(0,0):preload("res://Scenes/Prefabs/Tournesol.tscn")} 
 	},
 	PlantType.CONSOUD:{
-		BuildingType.NONE :{Vector2(0,0):preload("res://Scenes/Prefabs/Cousoude.tscn")} 
+		BuildingType.NONE :{Vector2(0,0):preload("res://Scenes/Prefabs/Consoude.tscn")} 
 	}
 	
 }

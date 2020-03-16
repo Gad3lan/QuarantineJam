@@ -6,7 +6,7 @@ onready var biomasseMenu = get_node("Biomasse")
 onready var soutiensMenu = get_node("Soutien")
 onready var numNode = get_node("MenuPrincipale/Money/Label")
 
-enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS,HERBE, SECOIA, MYCELIUM, RONCE,BAMBOU, MOUSSE, ORTIE, CONSOUD}
+enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS,HERBE, SECOIA, MYCELIUM, RONCE, MOUSSE, CONSOUD}
 
 
 export (PlantType) var selectedPlant = PlantType.NONE;
@@ -92,23 +92,9 @@ func _on_Ronces_gui_input(event):
 		print("RONCE")
 		close_all()
 
-func _on_Bambou_gui_input(event):
-	if event.is_pressed():
-		selectedPlant = PlantType.BAMBOU
-		print("BAMBOU")
-		close_all()
 
-func _on_Mousse_gui_input(event):
-	if event.is_pressed():
-		selectedPlant = PlantType.MOUSSE
-		print("MOUSSE")
-		close_all()
 
-func _on_Ortie_gui_input(event):
-	if event.is_pressed():
-		selectedPlant = PlantType.ORTIE
-		print("ORTIE")
-		close_all()
+
 
 func _on_Consoude_gui_input(event):
 	if event.is_pressed():

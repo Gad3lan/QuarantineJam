@@ -4,7 +4,7 @@ extends Node2D
 onready var ui = get_parent().get_node("CameraNode").get_node("CanvasLayer/Ui")
 
 enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, IMMEUBLE2, BUILDING, CENTRALE, TERRAIN}
-enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS, HERBE, SECOIA, MYCELIUM, RONCE, BAMBOU, MOUSSE, ORTIE, CONSOUD}
+enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS,HERBE, SECOIA, MYCELIUM, RONCE, CONSOUD}
 enum toTransmit {Z_INDEX, B_TYPE}
 
 export var tileCountA : int = 30 # sur le vecteur (1,1)
