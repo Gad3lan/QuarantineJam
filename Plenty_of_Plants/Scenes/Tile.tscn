@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Tile.gd" type="Script" id=1]
 [ext_resource path="res://Shaders/outline.shader" type="Shader" id=2]
+[ext_resource path="res://Sprites/TileSprite/Building/sol neutre.png" type="Texture" id=3]
 [ext_resource path="res://Shaders/city.shader" type="Shader" id=4]
 [ext_resource path="res://Sprites/cityGraph.PNG" type="Texture" id=5]
 
@@ -26,8 +27,8 @@ shader_param/noise = SubResource( 3 )
 script = ExtResource( 1 )
 
 [node name="BackGround" type="Sprite" parent="."]
-visible = false
 material = SubResource( 1 )
+texture = ExtResource( 3 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 0.00820923, -88.3135, -178.866, 0.901711, 0.895317, 88.7231, 178.597, 0.901779 )

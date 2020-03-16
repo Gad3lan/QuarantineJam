@@ -44,42 +44,59 @@ func _on_Soutien_mouse_entered():
 	soutiensMenu.show()
 
 func _on_Attaque_mouse_exited():
-	attaqueMenu.hide()
+	pass
+
 
 func _on_Auxilliaire_mouse_exited():
+	pass
+
+
+func close_all():
+	biomasseMenu.hide()
+	soutiensMenu.hide()
+	attaqueMenu.hide()
 	auxiliaireMenu.hide()
 
+
 func _on_Biomasse_mouse_exited():
-	biomasseMenu.hide()
+	pass
+
 
 func _on_Soutien_mouse_exited():
-	soutiensMenu.hide()
+	pass
 
 func _on_Champignon_gui_input(event):
 	if event.is_pressed():
 		selectedPlant = PlantType.CHAMPIGNON
+		close_all()
 
 func _on_Liere_gui_input(event):
 	if event.is_pressed():
 		selectedPlant = PlantType.LIERE
+		close_all()
 
 func _on_Tournessole_gui_input(event):
 	if event.is_pressed():
 		selectedPlant = PlantType.TOURNESSOL
+		close_all()
 
 func _on_Eucalyptus_gui_input(event):
 	if event.is_pressed():
 		selectedPlant = PlantType.EUCALYPTUS
+		close_all()
 
 func _on_Sequoia_gui_input(event):
 	if event.is_pressed():
 		selectedPlant = PlantType.SECOIA
+		close_all()
 
 
 func _on_Mycellium_gui_input(event):
 	if event.is_pressed():
 		selectedPlant = PlantType.MYCELIUM
+		close_all()
 
 func _on_Ronces_gui_input(event):
 	if event.is_pressed():
 		selectedPlant = PlantType.RONCE
+		close_all()
