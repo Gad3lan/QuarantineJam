@@ -19,5 +19,4 @@ func _process(delta):
 	if(int(abs(yTile))%2 == 1):
 		xTile += 0.50
 	var pos = Vector2(xTile, yTile) * tileSize + viewportSize/2
-	#print(xTile, " ", yTile)
 	set_position(pos)

@@ -1,8 +1,5 @@
 extends Node
 
-
-# Declare member variables here. Examples:
-# var a = 2
 var bioMasse = 0
 # j ai encore rien fait
 
@@ -12,7 +9,3 @@ func _ready():
 
 func _process(delta):
 	var mousePos = get_viewport().get_mouse_position()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

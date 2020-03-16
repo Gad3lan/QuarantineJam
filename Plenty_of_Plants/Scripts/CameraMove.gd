@@ -7,7 +7,6 @@ export (int) var zoomPos = 0
 export (float) var zoomStep = 0.05
 
 onready var camera = get_node("Camera2D")
-#onready var ui = get_node("Ui")
 
 var lastMousePos
 var rightClick = false
@@ -18,7 +17,6 @@ var zoomTarget = zoomPos
 func _ready():
 	sensibility = 1.0/sensibilityRadius
 	lastMousePos = Vector2(0.0,0.0)
-
 
 func rightClicking():
 	if Input.is_mouse_button_pressed(2):
@@ -33,21 +31,17 @@ func moveCamera(delta):
 	var length = vectorToMove.length()
 	if length < minSensibilityRadius:
 		return
-	#vectorToMove *= sensibility
 	if vectorToMove.length() > 1.0:
 		vectorToMove = vectorToMove/vectorToMove.length()
-	#position += maxSpeed * -vectorToMove * delta * camera.zoom
 	self.translate(maxSpeed * -vectorToMove * delta * camera.zoom)
 	
 # Controle le zoom de camera
 func zoom(direcrion):
 	if direcrion > 0:
 		camera.zoom *= (1.0 + zoomStep)
-		#ui.rect_scale *= (1.0 + zoomStep)
 		zoomPos += 1
 	else:
 		camera.zoom *= (1.0 - zoomStep)
-		#ui.rect_scale *= (1.0 - zoomStep)
 		zoomPos -= 1
 
 func _input(event):
@@ -68,7 +62,3 @@ func _process(delta):
 		moveCamera(delta)
 	if (zoomTarget != zoomPos):
 		zoom(zoomTarget - zoomPos)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

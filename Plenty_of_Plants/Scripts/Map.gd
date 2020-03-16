@@ -1,7 +1,12 @@
 tool
 extends Node2D
 
-var allTiles : Array
+onready var ui = get_parent().get_node("CameraNode").get_node("CanvasLayer/Ui")
+
+enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, IMMEUBLE2, BUILDING, CENTRALE, TERRAIN}
+enum PlantType {NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE, HERBE}
+enum toTransmit {Z_INDEX, B_TYPE}
+
 export var tileCountA : int = 30 # sur le vecteur (1,1)
 export var tileCountB : int = 30 # sur le vecteur (-1,1)
 export (bool) var assignTiles = false setget initTiles
@@ -9,19 +14,12 @@ export (bool) var reset = false setget resetTiles
 export (bool) var placeTiles = false setget roundTilesTransform
 export (bool) var resetCoords = false setget resetTilesCoord
 export var firstTilePos = Vector2(-175.0,-85)
+export var tileSpacing = Vector2(180.0,90.0)
+export var biomasseNow : int = 500
 
-
+var allTiles : Array
 var tilesWithBuilding : Array
 var tilesWithPlants : Array
-
-
-export var tileSpacing = Vector2(180.0,90.0)
-
-
-
-enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, IMMEUBLE2, BUILDING, CENTRALE, TERRAIN}
-enum PlantType {NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE, HERBE}
-
 var plantCost ={
 	PlantType.CHAMPIGNON : 3,
 	PlantType.LIERE : 3,
@@ -31,8 +29,6 @@ var plantCost ={
 	PlantType.HERBE : 3,
 	PlantType.NONE : 0
 }
-
-enum toTransmit {Z_INDEX, B_TYPE}
 
 var toDoForBuilding ={
 	BuildingType.HOTEL : Vector2(2,2),
@@ -45,11 +41,6 @@ var toDoForBuilding ={
 	BuildingType.CENTRALE : Vector2(4,4),
 	BuildingType.TERRAIN : Vector2(4,4)
 }
-
-export var biomasseNow : int = 500
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 func tilePositionToIndexes(pos):
 	var arrayPosition = Vector2(0,0)
@@ -68,7 +59,6 @@ func roundTilesTransform(boolean):
 	print("roundTilesTransform")
 	for tile in get_children():
 		tile.position = placeVectorOnGrid(tile.position,tileSpacing,firstTilePos)
-
 
 func resetTiles(boolean):
 	if not boolean:
@@ -114,17 +104,14 @@ func getAllTiles():
 		#tile.baseIndex = -2*max(tileCountA,tileCountB)-round(tile.position.y/firstTilePos.y)
 	return tilesToGet
 
-func initTiles(hasToInit):
-	
+func initTiles(hasToInit):	
 	print("initTiles")
 	allTiles = getAllTiles()
 	if not hasToInit:
 		return
 	hasToInit = false
 	assignTiles = false
-
 	propageTypeAndZ()
-	
 
 func getRectIndexFrom(index,sizeA,sizeB):
 	var rectIndexes = []
@@ -134,8 +121,6 @@ func getRectIndexFrom(index,sizeA,sizeB):
 		for b in range(index.y - sizeB+1,index.y+1):
 			rectIndexes.push_back(Vector2(a,b))
 	return rectIndexes
-
-
 
 func propageTypeAndZ():
 	print("propagate type and Z")
@@ -152,10 +137,10 @@ func checkInBounds(vectorIndex):
 	return  vectorIndex.x >= 0 && vectorIndex.y >= 0 && vectorIndex.x < tileCountA && vectorIndex.y < tileCountB
 
 func _ready():
+	ui.setPollen(biomasseNow)
 	initTiles(true)
 	allTiles[0][-1].instancePlant(PlantType.SECOIA)
 	tests()
-	pass # Replace with function body.
 
 func neighborsIndexes(centerPos):
 	var otherPos:Array = []
@@ -188,20 +173,19 @@ func hasPlantNeighbors(thisTile):
 
 func pickUpPollen():
 	biomasseNow += 3
+	ui.setPollen(biomasseNow)
 	print(biomasseNow)
 
 func buy(toPlant):
 	var canPlant = biomasseNow > plantCost[toPlant]
 	biomasseNow -= plantCost[toPlant] if canPlant else 0
+	ui.setPollen(biomasseNow)
 	return canPlant
 
 
 func can_place(toPlant,thisTile):
 	print("z_index : ",thisTile.baseZIndex)
 	return hasPlantNeighbors(thisTile) && buy(toPlant)
-
-
-
 	
 #A PARTIR DE LA,FONCTIONS DE TEST
 #////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -224,9 +208,6 @@ func _input(event):
 			idxToAddTo.x +=1
 		if event.get_scancode_with_modifiers() == KEY_A:
 			flourishNeighbors(idxToAddTo)
-		
-		
-	pass
 """
 func tests():
 	for row in allTiles:
@@ -236,6 +217,3 @@ func tests():
 			var neighbors = neighborsIndexes(indexArray)
 			for neighIndexes in neighbors:
 				assert(checkInBounds(neighIndexes))
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

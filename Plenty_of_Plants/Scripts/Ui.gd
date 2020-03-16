@@ -1,10 +1,5 @@
 extends MarginContainer
 
-enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL,HERBE, EUCALYPTUS, SECOIA, MYCELIUM, RONCE}
-
-export (PlantType) var selectedPlant = PlantType.NONE;
-export (int) var pollenNum = 0
-
 onready var menuContainer = get_node("VBoxContainer/MenuContainer")
 onready var attaqueMenu = get_node("VBoxContainer/MenuContainer/Attaque")
 onready var auxiliaireMenu = get_node("VBoxContainer/MenuContainer/Auxilliaire")
@@ -12,17 +7,26 @@ onready var biomasseMenu = get_node("VBoxContainer/MenuContainer/Biomasse")
 onready var soutiensMenu = get_node("VBoxContainer/MenuContainer/Soutien")
 onready var numNode = get_node("VBoxContainer/MenuPrincipale/Money/Label")
 
+enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL,HERBE, EUCALYPTUS, SECOIA, MYCELIUM, RONCE}
+
+export (PlantType) var selectedPlant = PlantType.NONE;
+export (int) var pollenNum = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	attaqueMenu.hide()
 	auxiliaireMenu.hide()
 	biomasseMenu.hide()
 	soutiensMenu.hide()
-	showPollen()
+	numNode.text = str(pollenNum)
 
-func showPollen():
+func addPollen(n):
+	pollenNum += n
 	numNode.text = str(pollenNum)
 	
+func setPollen(n):
+	pollenNum = n
+	numNode.text = str(pollenNum)
 
 func _process(delta):
 	pass
