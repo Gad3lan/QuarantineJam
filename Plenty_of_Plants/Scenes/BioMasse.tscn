@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/GetBioMasse.gd" type="Script" id=2]
 [ext_resource path="res://Shaders/pollenShader.shader" type="Shader" id=3]
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
 
 [node name="BioMasse" type="Node2D"]
@@ -23,7 +23,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Button"]
-material = SubResource( 2 )
+material = SubResource( 1 )
 position = Vector2( 89.2785, 69.6485 )
 texture = ExtResource( 1 )
 
