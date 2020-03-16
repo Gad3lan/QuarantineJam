@@ -4,7 +4,7 @@ extends Node2D
 onready var ui = get_parent().get_node("CameraNode").get_node("CanvasLayer/Ui")
 
 enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, IMMEUBLE2, BUILDING, CENTRALE, TERRAIN}
-enum PlantType {NONE, CHAMPIGNON, LIERE, EUCALYPTUS, SECOIA, RONCE, HERBE}
+enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS,HERBE, SECOIA, MYCELIUM, RONCE,BAMBOU, MOUSSE, ORTIE, CONSOUD}
 enum toTransmit {Z_INDEX, B_TYPE}
 
 export var tileCountA : int = 30 # sur le vecteur (1,1)
@@ -27,7 +27,9 @@ var plantCost ={
 	PlantType.EUCALYPTUS : 9,
 	PlantType.SECOIA : 6,
 	PlantType.HERBE : 3,
+	PlantType.RONCE : 3,
 	PlantType.NONE : 0
+	
 }
 
 var toDoForBuilding ={
@@ -179,7 +181,7 @@ func buy(toPlant):
 
 func can_place(toPlant,thisTile):
 	print("z_index : ",thisTile.baseZIndex)
-	return hasPlantNeighbors(thisTile) && buy(toPlant)
+	return hasPlantNeighbors(thisTile)
 	
 #A PARTIR DE LA,FONCTIONS DE TEST
 #////////////////////////////////////////////////////////////////////////////////////////////////////////

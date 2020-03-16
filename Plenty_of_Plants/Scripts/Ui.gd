@@ -7,7 +7,8 @@ onready var biomasseMenu = get_node("VBoxContainer/MenuContainer/Biomasse")
 onready var soutiensMenu = get_node("VBoxContainer/MenuContainer/Soutien")
 onready var numNode = get_node("VBoxContainer/MenuPrincipale/Money/Label")
 
-enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS,HERBE, SECOIA, MYCELIUM, RONCE, BAMBOU, MOUSSE, ORTIE, HERBE, CONSOUD}
+enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS,HERBE, SECOIA, MYCELIUM, RONCE,BAMBOU, MOUSSE, ORTIE, CONSOUD}
+
 
 export (PlantType) var selectedPlant = PlantType.NONE;
 export (int) var pollenNum = 0
@@ -54,6 +55,7 @@ func close_all():
 	soutiensMenu.hide()
 	attaqueMenu.hide()
 	auxiliaireMenu.hide()
+	print("selectedPlant: ",selectedPlant)
 
 func _on_Biomasse_mouse_exited():
 	pass

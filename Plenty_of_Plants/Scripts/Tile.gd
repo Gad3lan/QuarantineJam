@@ -14,7 +14,7 @@ onready var buildPaths = {
 	#BuildingType.PARCKING : preload("res://Scenes/Prefabs/Parcking.tscn")
 }
 
-enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS,HERBE, SECOIA, MYCELIUM, RONCE}
+enum PlantType {NONE, CHAMPIGNON, LIERE, TOURNESSOL, EUCALYPTUS,HERBE, SECOIA, MYCELIUM, RONCE,BAMBOU, MOUSSE, ORTIE, CONSOUD}
 enum BuildingType {NONE, PARCKING, USINE, HOTEL, ROAD0, ROAD1, ROAD2, ROAD3, ROAD4, ROAD5, ROAD6, HLM, IMMEUBLE, IMMEUBLE2, BUILDING, CENTRALE, TERRAIN}
 
 export var coordOnTexture = Vector2(0,0)
@@ -215,31 +215,55 @@ onready var plantBuildingPath = {
 			Vector2(0,3):preload("res://Scenes/Prefabs/LierrePourHLM/LierrePourHLM(0,3).tscn")
 		}
 	},
-	PlantType.HERBE : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Herbe.tscn")}}
-	
+	PlantType.HERBE : {BuildingType.NONE:{Vector2(0,0):preload("res://Scenes/Prefabs/Herbe.tscn")}},
+	PlantType.RONCE : {BuildingType.BUILDING:{
+			Vector2(0,0):preload("res://Scenes/Prefabs/RoncePourBuilding/RoncePourBuildingV2(0,0).tscn"),
+			Vector2(1,0):preload("res://Scenes/Prefabs/RoncePourBuilding/RoncePourBuildingV2(1,0).tscn"),
+			Vector2(2,0):preload("res://Scenes/Prefabs/RoncePourBuilding/RoncePourBuildingV2(2,0).tscn"),
+			Vector2(3,0):preload("res://Scenes/Prefabs/RoncePourBuilding/RoncePourBuildingV2(3,0).tscn"),
+			Vector2(0,1):preload("res://Scenes/Prefabs/RoncePourBuilding/RoncePourBuildingV2(0,1).tscn"),
+			Vector2(0,2):preload("res://Scenes/Prefabs/RoncePourBuilding/RoncePourBuildingV2(0,2).tscn"),
+			Vector2(0,3):preload("res://Scenes/Prefabs/RoncePourBuilding/RoncePourBuildingV2(0,3).tscn")
+		},BuildingType.IMMEUBLE2:{
+			Vector2(0,0):preload("res://Scenes/Prefabs/RoncePourImmeuble1/RoncePourImmeuble1(0,0).tscn"),
+			Vector2(1,0):preload("res://Scenes/Prefabs/RoncePourImmeuble1/RoncePourImmeuble1(1,0).tscn"),
+		},
+		BuildingType.IMMEUBLE:{
+			Vector2(0,0):preload("res://Scenes/Prefabs/RoncePourImmeuble2/RoncePourImmeuble(0,0).tscn"),
+			Vector2(0,1):preload("res://Scenes/Prefabs/RoncePourImmeuble2/RoncePourImmeuble(0,1).tscn")
+		},BuildingType.HLM:{
+			Vector2(0,0):preload("res://Scenes/Prefabs/RoncePourHLM/RoncePourHLM(0,0).tscn"),
+			Vector2(1,0):preload("res://Scenes/Prefabs/RoncePourHLM/RoncePourHLM(1,0).tscn"),
+			Vector2(2,0):preload("res://Scenes/Prefabs/RoncePourHLM/RoncePourHLM(2,0).tscn"),
+			Vector2(3,0):preload("res://Scenes/Prefabs/RoncePourHLM/RoncePourHLM(3,0).tscn"),
+			Vector2(0,1):preload("res://Scenes/Prefabs/RoncePourHLM/RoncePourHLM(0,1).tscn"),
+			Vector2(0,2):preload("res://Scenes/Prefabs/RoncePourHLM/RoncePourHLM(0,2).tscn"),
+			Vector2(0,3):preload("res://Scenes/Prefabs/RoncePourHLM/RoncePourHLM(0,3).tscn")
+		}
+	}
 }
-"""
-			Vector2(0,0):preload(),
-			Vector2(1,0):preload(),
-			Vector2(2,0):preload(),
-			Vector2(3,0):preload(),
-			Vector2(0,1):preload(),
-			Vector2(0,2):preload(),
-			Vector2(0,3):preload()
-
-			Vector2(0,0):preload(),
-			Vector2(1,0):preload(),
-			Vector2(2,0):preload(),
-			Vector2(0,1):preload(),
-			Vector2(0,2):preload()
-
-			Vector2(0,0):preload(),
-			Vector2(1,0):preload(),
-			Vector2(0,1):preload()
 
 
 
-"""
+
+#			Vector2(0,0):preload(),
+#			Vector2(1,0):preload(),
+#			Vector2(2,0):preload(),
+#			Vector2(3,0):preload(),
+#			Vector2(0,1):preload(),
+#			Vector2(0,2):preload(),
+#			Vector2(0,3):preload()
+#
+#			Vector2(0,0):preload(),
+#			Vector2(1,0):preload(),
+#			Vector2(2,0):preload(),
+#			Vector2(0,1):preload(),
+#			Vector2(0,2):preload()
+#
+#			Vector2(0,0):preload(),
+#			Vector2(1,0):preload(),
+#			Vector2(0,1):preload()
+
 
 func hasPrefab(type):
 	if plantBuildingPath[type].has(BType2) &&plantBuildingPath[type][BType2].has(coordOnTexture) :
@@ -267,6 +291,7 @@ func instancePlant(type):
 	plantInstance.z_as_relative =true
 	plantInstance.z_index = 3
 	call_deferred("add_child",plantInstance)
+	get_parent().buy(type)
 	if plantGivingBiomasse.has(PType):
 		timer.set_wait_time(plantGivingBiomasse[PType] *(1+ 0.33*(randf()-0.5)))
 		timer.start()

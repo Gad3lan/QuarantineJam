@@ -6,5 +6,9 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="CameraNode" parent="." instance=ExtResource( 1 )]
+minx = -6500
+maxx = 6500
+miny = -6500
+maxy = 6500
 
 [node name="Map" parent="." instance=ExtResource( 3 )]

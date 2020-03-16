@@ -8,15 +8,15 @@
 flags = 4
 load_path = "res://.import/HLM.png-37b6808a5280b01c410e0a3133ebef60.stex"
 
-[sub_resource type="StreamTexture" id=3]
+[sub_resource type="StreamTexture" id=2]
 flags = 4
 load_path = "res://.import/IMG_6602.PNG-6b8b8bb177dfd1d34e0ed3e564e16a34.stex"
 
-[sub_resource type="StreamTexture" id=2]
+[sub_resource type="StreamTexture" id=3]
 flags = 4
 load_path = "res://.import/IMG_6616.PNG-9171e6b7995ea6cc3c6f326d48d8e328.stex"
 
-[sub_resource type="StreamTexture" id=5]
+[sub_resource type="StreamTexture" id=4]
 flags = 4
 load_path = "res://.import/Ronces haute 2 droite.PNG-728b9cbaebf74fa2b6ad7d58a2adf0a6.stex"
 
@@ -98,20 +98,20 @@ texture = SubResource( 1 )
 [node name="Sprite(0,2)" type="Sprite" parent="toKeep"]
 position = Vector2( 390.225, -181.539 )
 scale = Vector2( 0.71, 0.71 )
-texture = SubResource( 3 )
+texture = SubResource( 2 )
 
 [node name="Droite4" type="Sprite" parent="toKeep/Sprite(0,2)"]
 position = Vector2( 14.9045, 53.7786 )
-texture = SubResource( 3 )
+texture = SubResource( 2 )
 
 [node name="Droite5" type="Sprite" parent="toKeep/Sprite(0,2)"]
 position = Vector2( 33.6368, 91.2433 )
-texture = SubResource( 3 )
+texture = SubResource( 2 )
 
 [node name="DroiteG2" type="Sprite" parent="toKeep/Sprite(0,2)"]
 position = Vector2( -121.867, -83.6122 )
 scale = Vector2( 0.614625, 0.614625 )
-texture = SubResource( 2 )
+texture = SubResource( 3 )
 
 [node name="Sprite5" type="Sprite" parent="toKeep/Sprite(0,2)"]
 position = Vector2( -56.0016, -269.731 )
@@ -120,4 +120,4 @@ texture = ExtResource( 6 )
 
 [node name="Sprite2" type="Sprite" parent="toKeep/Sprite(0,2)"]
 position = Vector2( -191.362, -151.009 )
-texture = SubResource( 5 )
+texture = SubResource( 4 )
