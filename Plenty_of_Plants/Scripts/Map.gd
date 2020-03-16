@@ -56,7 +56,6 @@ func placeVectorOnGrid(vec,gridDims,gridOffset):
 	return vec
 
 func roundTilesTransform(boolean):
-	print("roundTilesTransform")
 	for tile in get_children():
 		tile.position = placeVectorOnGrid(tile.position,tileSpacing,firstTilePos)
 
@@ -65,10 +64,7 @@ func resetTiles(boolean):
 		return
 	assignTiles = false
 	allTiles = getAllTiles()
-	print("hey")
-	print("allTiles")
 	for tile in get_children():
-		print(tile)
 		tile.coordOnTexture = Vector2(0,0)
 		tile.root = true
 		tile.BType = BuildingType.NONE
@@ -105,7 +101,6 @@ func getAllTiles():
 	return tilesToGet
 
 func initTiles(hasToInit):	
-	print("initTiles")
 	allTiles = getAllTiles()
 	if not hasToInit:
 		return
@@ -115,15 +110,12 @@ func initTiles(hasToInit):
 
 func getRectIndexFrom(index,sizeA,sizeB):
 	var rectIndexes = []
-	print(index, sizeA, sizeB)
-	print(range(index.x - sizeA+1,index.x+1))
 	for a in range(index.x - sizeA+1,index.x+1):
 		for b in range(index.y - sizeB+1,index.y+1):
 			rectIndexes.push_back(Vector2(a,b))
 	return rectIndexes
 
 func propageTypeAndZ():
-	print("propagate type and Z")
 	for tile in get_children():
 		if toDoForBuilding.has(tile.BType) and tile.root:
 			var dimensions = toDoForBuilding[tile.BType]
@@ -174,7 +166,6 @@ func hasPlantNeighbors(thisTile):
 func pickUpPollen():
 	biomasseNow += 3
 	ui.setPollen(biomasseNow)
-	print(biomasseNow)
 
 func buy(toPlant):
 	var canPlant = biomasseNow > plantCost[toPlant]
@@ -190,8 +181,6 @@ func can_place(toPlant,thisTile):
 #A PARTIR DE LA,FONCTIONS DE TEST
 #////////////////////////////////////////////////////////////////////////////////////////////////////////
 func flourishNeighbors(pos:Vector2):
-	print(allTiles)
-	print("flourish")
 	for tilePos in neighborsIndexes(pos):
 		print(allTiles[tilePos.x][tilePos.y])
 		allTiles[tilePos.x][tilePos.y].spawnPollen()
