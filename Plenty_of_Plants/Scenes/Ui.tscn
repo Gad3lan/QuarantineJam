@@ -32,35 +32,31 @@ font_data = ExtResource( 8 )
 size = 70
 font_data = ExtResource( 8 )
 
-[node name="Ui" type="MarginContainer"]
+[node name="Ui" type="Control"]
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MenuPrincipale" type="HBoxContainer" parent="."]
 margin_right = 1198.0
-margin_bottom = 1654.0
+margin_bottom = 270.0
+alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MenuPrincipale" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 1198.0
-margin_bottom = 270.0
-alignment = 1
-
-[node name="Attaque" type="PanelContainer" parent="VBoxContainer/MenuPrincipale"]
+[node name="Attaque" type="PanelContainer" parent="MenuPrincipale"]
 margin_right = 229.0
 margin_bottom = 270.0
 
-[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/MenuPrincipale/Attaque"]
+[node name="NinePatchRect" type="NinePatchRect" parent="MenuPrincipale/Attaque"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 222.0
 margin_bottom = 263.0
 
-[node name="Titre" type="Label" parent="VBoxContainer/MenuPrincipale/Attaque"]
+[node name="Titre" type="Label" parent="MenuPrincipale/Attaque"]
 margin_left = 7.0
 margin_top = 93.0
 margin_right = 222.0
@@ -68,18 +64,18 @@ margin_bottom = 177.0
 custom_fonts/font = SubResource( 1 )
 text = "Attaque"
 
-[node name="Auxiliaire" type="PanelContainer" parent="VBoxContainer/MenuPrincipale"]
+[node name="Auxiliaire" type="PanelContainer" parent="MenuPrincipale"]
 margin_left = 233.0
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/MenuPrincipale/Auxiliaire"]
+[node name="NinePatchRect" type="NinePatchRect" parent="MenuPrincipale/Auxiliaire"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 240.0
 margin_bottom = 263.0
 
-[node name="Titre" type="Label" parent="VBoxContainer/MenuPrincipale/Auxiliaire"]
+[node name="Titre" type="Label" parent="MenuPrincipale/Auxiliaire"]
 margin_left = 7.0
 margin_top = 93.0
 margin_right = 240.0
@@ -87,18 +83,18 @@ margin_bottom = 177.0
 custom_fonts/font = SubResource( 1 )
 text = "Auxiliaire"
 
-[node name="Biomasse" type="PanelContainer" parent="VBoxContainer/MenuPrincipale"]
+[node name="Biomasse" type="PanelContainer" parent="MenuPrincipale"]
 margin_left = 484.0
 margin_right = 700.0
 margin_bottom = 270.0
 
-[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/MenuPrincipale/Biomasse"]
+[node name="NinePatchRect" type="NinePatchRect" parent="MenuPrincipale/Biomasse"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 209.0
 margin_bottom = 263.0
 
-[node name="Titre" type="Label" parent="VBoxContainer/MenuPrincipale/Biomasse"]
+[node name="Titre" type="Label" parent="MenuPrincipale/Biomasse"]
 margin_left = 7.0
 margin_top = 93.0
 margin_right = 209.0
@@ -106,18 +102,18 @@ margin_bottom = 177.0
 custom_fonts/font = SubResource( 2 )
 text = "Biomasse"
 
-[node name="Soutien" type="PanelContainer" parent="VBoxContainer/MenuPrincipale"]
+[node name="Soutien" type="PanelContainer" parent="MenuPrincipale"]
 margin_left = 704.0
 margin_right = 924.0
 margin_bottom = 270.0
 
-[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/MenuPrincipale/Soutien"]
+[node name="NinePatchRect" type="NinePatchRect" parent="MenuPrincipale/Soutien"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 213.0
 margin_bottom = 263.0
 
-[node name="Titre" type="Label" parent="VBoxContainer/MenuPrincipale/Soutien"]
+[node name="Titre" type="Label" parent="MenuPrincipale/Soutien"]
 margin_left = 7.0
 margin_top = 93.0
 margin_right = 213.0
@@ -125,19 +121,19 @@ margin_bottom = 177.0
 custom_fonts/font = SubResource( 3 )
 text = "Soutiens"
 
-[node name="Money" type="PanelContainer" parent="VBoxContainer/MenuPrincipale"]
+[node name="Money" type="PanelContainer" parent="MenuPrincipale"]
 margin_left = 928.0
 margin_right = 1198.0
 margin_bottom = 270.0
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuPrincipale/Money"]
+[node name="TextureRect" type="TextureRect" parent="MenuPrincipale/Money"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 263.0
 margin_bottom = 263.0
 texture = ExtResource( 10 )
 
-[node name="Label" type="Label" parent="VBoxContainer/MenuPrincipale/Money"]
+[node name="Label" type="Label" parent="MenuPrincipale/Money"]
 margin_left = 7.0
 margin_top = 93.0
 margin_right = 263.0
@@ -146,222 +142,252 @@ custom_fonts/font = SubResource( 4 )
 text = "17"
 align = 1
 
-[node name="MenuContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 274.0
-margin_right = 1198.0
-margin_bottom = 1654.0
+[node name="Attaque" type="PopupMenu" parent="."]
+margin_top = 100.0
+margin_right = 1359.0
+margin_bottom = 374.0
+rect_scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Attaque" type="PanelContainer" parent="VBoxContainer/MenuContainer"]
-margin_right = 284.0
-margin_bottom = 1380.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Attaque"]
+margin_right = 40.0
+margin_bottom = 40.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MenuContainer/Attaque"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 277.0
-margin_bottom = 1373.0
-
-[node name="Champignon" type="PanelContainer" parent="VBoxContainer/MenuContainer/Attaque/VBoxContainer"]
+[node name="Liere" type="PanelContainer" parent="Attaque/HBoxContainer"]
 margin_right = 270.0
 margin_bottom = 270.0
 mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Attaque/VBoxContainer/Champignon"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 263.0
-margin_bottom = 263.0
-texture = ExtResource( 2 )
-
-[node name="Liere" type="PanelContainer" parent="VBoxContainer/MenuContainer/Attaque/VBoxContainer"]
-margin_top = 274.0
-margin_right = 270.0
-margin_bottom = 544.0
-mouse_default_cursor_shape = 2
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Attaque/VBoxContainer/Liere"]
+[node name="TextureRect" type="TextureRect" parent="Attaque/HBoxContainer/Liere"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 263.0
 margin_bottom = 263.0
 texture = ExtResource( 1 )
 
-[node name="Bambou" type="PanelContainer" parent="VBoxContainer/MenuContainer/Attaque/VBoxContainer"]
-margin_top = 548.0
-margin_right = 270.0
-margin_bottom = 818.0
+[node name="Bambou" type="PanelContainer" parent="Attaque/HBoxContainer"]
+margin_left = 274.0
+margin_right = 544.0
+margin_bottom = 270.0
 mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Attaque/VBoxContainer/Bambou"]
+[node name="TextureRect" type="TextureRect" parent="Attaque/HBoxContainer/Bambou"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 263.0
 margin_bottom = 263.0
 texture = ExtResource( 11 )
 
-[node name="Mousse" type="PanelContainer" parent="VBoxContainer/MenuContainer/Attaque/VBoxContainer"]
-margin_top = 822.0
-margin_right = 270.0
-margin_bottom = 1092.0
+[node name="Mousse" type="PanelContainer" parent="Attaque/HBoxContainer"]
+margin_left = 548.0
+margin_right = 818.0
+margin_bottom = 270.0
 mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Attaque/VBoxContainer/Mousse"]
+[node name="TextureRect" type="TextureRect" parent="Attaque/HBoxContainer/Mousse"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 263.0
 margin_bottom = 263.0
 texture = ExtResource( 12 )
 
-[node name="Ortie" type="PanelContainer" parent="VBoxContainer/MenuContainer/Attaque/VBoxContainer"]
-margin_top = 1096.0
-margin_right = 270.0
-margin_bottom = 1366.0
+[node name="Ortie" type="PanelContainer" parent="Attaque/HBoxContainer"]
+margin_left = 822.0
+margin_right = 1092.0
+margin_bottom = 270.0
 mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Attaque/VBoxContainer/Ortie"]
+[node name="TextureRect" type="TextureRect" parent="Attaque/HBoxContainer/Ortie"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 263.0
 margin_bottom = 263.0
 texture = ExtResource( 13 )
 
-[node name="Auxilliaire" type="PanelContainer" parent="VBoxContainer/MenuContainer"]
-margin_left = 288.0
-margin_right = 572.0
-margin_bottom = 1380.0
+[node name="Champignon" type="PanelContainer" parent="Attaque/HBoxContainer"]
+margin_left = 1096.0
+margin_right = 1366.0
+margin_bottom = 270.0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MenuContainer/Auxilliaire"]
+[node name="TextureRect" type="TextureRect" parent="Attaque/HBoxContainer/Champignon"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 277.0
-margin_bottom = 1373.0
+margin_right = 263.0
+margin_bottom = 263.0
+texture = ExtResource( 2 )
 
-[node name="Tournessole" type="PanelContainer" parent="VBoxContainer/MenuContainer/Auxilliaire/VBoxContainer"]
+[node name="Auxilliaire" type="PopupMenu" parent="."]
+margin_left = 7.0
+margin_top = 93.0
+margin_right = 558.0
+margin_bottom = 374.0
+rect_scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Auxilliaire"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 551.0
+margin_bottom = 277.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tournessole" type="PanelContainer" parent="Auxilliaire/VBoxContainer"]
 margin_right = 270.0
 margin_bottom = 270.0
 mouse_default_cursor_shape = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Auxilliaire/VBoxContainer/Tournessole"]
+[node name="TextureRect" type="TextureRect" parent="Auxilliaire/VBoxContainer/Tournessole"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 263.0
 margin_bottom = 263.0
 texture = ExtResource( 3 )
 
-[node name="Consoude" type="PanelContainer" parent="VBoxContainer/MenuContainer/Auxilliaire/VBoxContainer"]
-margin_top = 274.0
-margin_right = 270.0
-margin_bottom = 544.0
+[node name="Consoude" type="PanelContainer" parent="Auxilliaire/VBoxContainer"]
+margin_left = 274.0
+margin_right = 544.0
+margin_bottom = 270.0
 mouse_default_cursor_shape = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Auxilliaire/VBoxContainer/Consoude"]
+[node name="TextureRect" type="TextureRect" parent="Auxilliaire/VBoxContainer/Consoude"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 263.0
 margin_bottom = 263.0
 texture = ExtResource( 14 )
 
-[node name="Biomasse" type="PanelContainer" parent="VBoxContainer/MenuContainer"]
-margin_left = 576.0
-margin_right = 860.0
-margin_bottom = 1380.0
+[node name="Biomasse" type="PopupMenu" parent="."]
+margin_left = 14.0
+margin_top = 93.0
+margin_right = 843.0
+margin_bottom = 367.0
+rect_scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MenuContainer/Biomasse"]
+[node name="VBoxContainer" type="HBoxContainer" parent="Biomasse"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 277.0
-margin_bottom = 1373.0
+margin_right = 825.0
+margin_bottom = 277.0
 
-[node name="Eucalyptus" type="PanelContainer" parent="VBoxContainer/MenuContainer/Biomasse/VBoxContainer"]
+[node name="Eucalyptus" type="PanelContainer" parent="Biomasse/VBoxContainer"]
 margin_right = 270.0
 margin_bottom = 270.0
 mouse_default_cursor_shape = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Biomasse/VBoxContainer/Eucalyptus"]
+[node name="TextureRect" type="TextureRect" parent="Biomasse/VBoxContainer/Eucalyptus"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 263.0
 margin_bottom = 263.0
 texture = ExtResource( 7 )
 
-[node name="Sequoia" type="PanelContainer" parent="VBoxContainer/MenuContainer/Biomasse/VBoxContainer"]
-margin_top = 274.0
-margin_right = 270.0
-margin_bottom = 544.0
+[node name="Sequoia" type="PanelContainer" parent="Biomasse/VBoxContainer"]
+margin_left = 274.0
+margin_right = 544.0
+margin_bottom = 270.0
 mouse_default_cursor_shape = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Biomasse/VBoxContainer/Sequoia"]
+[node name="TextureRect" type="TextureRect" parent="Biomasse/VBoxContainer/Sequoia"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 263.0
 margin_bottom = 263.0
 texture = ExtResource( 4 )
 
-[node name="Herbe" type="PanelContainer" parent="VBoxContainer/MenuContainer/Biomasse/VBoxContainer"]
-margin_top = 548.0
-margin_right = 270.0
-margin_bottom = 818.0
+[node name="Herbe" type="PanelContainer" parent="Biomasse/VBoxContainer"]
+margin_left = 548.0
+margin_right = 818.0
+margin_bottom = 270.0
 mouse_default_cursor_shape = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Biomasse/VBoxContainer/Herbe"]
+[node name="TextureRect" type="TextureRect" parent="Biomasse/VBoxContainer/Herbe"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 263.0
 margin_bottom = 263.0
 texture = ExtResource( 15 )
 
-[node name="Soutien" type="PanelContainer" parent="VBoxContainer/MenuContainer"]
-margin_left = 864.0
-margin_right = 1148.0
-margin_bottom = 1380.0
+[node name="Soutien" type="PopupMenu" parent="."]
+margin_left = 7.0
+margin_top = 107.0
+margin_right = 558.0
+margin_bottom = 384.0
+rect_scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MenuContainer/Soutien"]
+[node name="VBoxContainer" type="HBoxContainer" parent="Soutien"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 277.0
-margin_bottom = 1373.0
+margin_right = 551.0
+margin_bottom = 277.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Mycellium" type="PanelContainer" parent="VBoxContainer/MenuContainer/Soutien/VBoxContainer"]
+[node name="Mycellium" type="PanelContainer" parent="Soutien/VBoxContainer"]
 margin_right = 270.0
 margin_bottom = 270.0
 mouse_default_cursor_shape = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Soutien/VBoxContainer/Mycellium"]
+[node name="TextureRect" type="TextureRect" parent="Soutien/VBoxContainer/Mycellium"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 263.0
 margin_bottom = 263.0
 texture = ExtResource( 5 )
 
-[node name="Ronces" type="PanelContainer" parent="VBoxContainer/MenuContainer/Soutien/VBoxContainer"]
-margin_top = 274.0
-margin_right = 270.0
-margin_bottom = 544.0
+[node name="Ronces" type="PanelContainer" parent="Soutien/VBoxContainer"]
+margin_left = 274.0
+margin_right = 544.0
+margin_bottom = 270.0
 mouse_default_cursor_shape = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MenuContainer/Soutien/VBoxContainer/Ronces"]
+[node name="TextureRect" type="TextureRect" parent="Soutien/VBoxContainer/Ronces"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 263.0
 margin_bottom = 263.0
 texture = ExtResource( 6 )
-[connection signal="mouse_entered" from="VBoxContainer/MenuPrincipale/Attaque" to="." method="_on_Attaque_mouse_entered"]
-[connection signal="mouse_entered" from="VBoxContainer/MenuPrincipale/Auxiliaire" to="." method="_on_Auxiliaire_mouse_entered"]
-[connection signal="mouse_entered" from="VBoxContainer/MenuPrincipale/Biomasse" to="." method="_on_Biomasse_mouse_entered"]
-[connection signal="mouse_entered" from="VBoxContainer/MenuPrincipale/Soutien" to="." method="_on_Soutien_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/MenuContainer/Attaque" to="." method="_on_Attaque_mouse_exited"]
-[connection signal="gui_input" from="VBoxContainer/MenuContainer/Attaque/VBoxContainer/Champignon" to="." method="_on_Champignon_gui_input"]
-[connection signal="gui_input" from="VBoxContainer/MenuContainer/Attaque/VBoxContainer/Liere" to="." method="_on_Liere_gui_input"]
-[connection signal="gui_input" from="VBoxContainer/MenuContainer/Attaque/VBoxContainer/Bambou" to="." method="_on_Bambou_gui_input"]
-[connection signal="gui_input" from="VBoxContainer/MenuContainer/Attaque/VBoxContainer/Mousse" to="." method="_on_Mousse_gui_input"]
-[connection signal="gui_input" from="VBoxContainer/MenuContainer/Attaque/VBoxContainer/Ortie" to="." method="_on_Ortie_gui_input"]
-[connection signal="mouse_exited" from="VBoxContainer/MenuContainer/Auxilliaire" to="." method="_on_Auxilliaire_mouse_exited"]
-[connection signal="gui_input" from="VBoxContainer/MenuContainer/Auxilliaire/VBoxContainer/Tournessole" to="." method="_on_Tournessole_gui_input"]
-[connection signal="gui_input" from="VBoxContainer/MenuContainer/Auxilliaire/VBoxContainer/Consoude" to="." method="_on_Consoude_gui_input"]
-[connection signal="mouse_exited" from="VBoxContainer/MenuContainer/Biomasse" to="." method="_on_Biomasse_mouse_exited"]
-[connection signal="gui_input" from="VBoxContainer/MenuContainer/Biomasse/VBoxContainer/Eucalyptus" to="." method="_on_Eucalyptus_gui_input"]
-[connection signal="gui_input" from="VBoxContainer/MenuContainer/Biomasse/VBoxContainer/Sequoia" to="." method="_on_Sequoia_gui_input"]
-[connection signal="gui_input" from="VBoxContainer/MenuContainer/Biomasse/VBoxContainer/Herbe" to="." method="_on_Herbe_gui_input"]
-[connection signal="mouse_exited" from="VBoxContainer/MenuContainer/Soutien" to="." method="_on_Soutien_mouse_exited"]
-[connection signal="gui_input" from="VBoxContainer/MenuContainer/Soutien/VBoxContainer/Mycellium" to="." method="_on_Mycellium_gui_input"]
-[connection signal="gui_input" from="VBoxContainer/MenuContainer/Soutien/VBoxContainer/Ronces" to="." method="_on_Ronces_gui_input"]
+[connection signal="mouse_entered" from="MenuPrincipale/Attaque" to="." method="_on_Attaque_mouse_entered"]
+[connection signal="mouse_entered" from="MenuPrincipale/Auxiliaire" to="." method="_on_Auxiliaire_mouse_entered"]
+[connection signal="mouse_entered" from="MenuPrincipale/Biomasse" to="." method="_on_Biomasse_mouse_entered"]
+[connection signal="mouse_entered" from="MenuPrincipale/Soutien" to="." method="_on_Soutien_mouse_entered"]
+[connection signal="gui_input" from="Attaque/HBoxContainer/Liere" to="." method="_on_Liere_gui_input"]
+[connection signal="gui_input" from="Attaque/HBoxContainer/Bambou" to="." method="_on_Bambou_gui_input"]
+[connection signal="gui_input" from="Attaque/HBoxContainer/Mousse" to="." method="_on_Mousse_gui_input"]
+[connection signal="gui_input" from="Attaque/HBoxContainer/Ortie" to="." method="_on_Ortie_gui_input"]
+[connection signal="gui_input" from="Attaque/HBoxContainer/Champignon" to="." method="_on_Champignon_gui_input"]
+[connection signal="gui_input" from="Auxilliaire/VBoxContainer/Tournessole" to="." method="_on_Tournessole_gui_input"]
+[connection signal="gui_input" from="Auxilliaire/VBoxContainer/Consoude" to="." method="_on_Consoude_gui_input"]
+[connection signal="gui_input" from="Biomasse/VBoxContainer/Eucalyptus" to="." method="_on_Eucalyptus_gui_input"]
+[connection signal="gui_input" from="Biomasse/VBoxContainer/Sequoia" to="." method="_on_Sequoia_gui_input"]
+[connection signal="gui_input" from="Biomasse/VBoxContainer/Herbe" to="." method="_on_Herbe_gui_input"]
+[connection signal="gui_input" from="Soutien/VBoxContainer/Mycellium" to="." method="_on_Mycellium_gui_input"]
+[connection signal="gui_input" from="Soutien/VBoxContainer/Ronces" to="." method="_on_Ronces_gui_input"]
