@@ -374,28 +374,6 @@ onready var plantBuildingPath = {
 	
 }
 
-
-
-
-#			Vector2(0,0):preload(),
-#			Vector2(1,0):preload(),
-#			Vector2(2,0):preload(),
-#			Vector2(3,0):preload(),
-#			Vector2(0,1):preload(),
-#			Vector2(0,2):preload(),
-#			Vector2(0,3):preload()
-#
-#			Vector2(0,0):preload(),
-#			Vector2(1,0):preload(),
-#			Vector2(2,0):preload(),
-#			Vector2(0,1):preload(),
-#			Vector2(0,2):preload()
-#
-#			Vector2(0,0):preload(),
-#			Vector2(1,0):preload(),
-#			Vector2(0,1):preload()
-
-
 func hasPrefab(type):
 	if plantBuildingPath[type].has(BType2) && plantBuildingPath[type][BType2].has(coordOnTexture) :
 		return true
@@ -505,7 +483,6 @@ func _on_plantLife_timeout():
 	print("pLife : ", pLife)
 	if ((not root and parent.destroyed) or destroyed):
 		plantLifeTimer.stop()
-		timer.stop()
 		$Fire.hide()
 	else:
 		activeSoutien(PType)
