@@ -23,14 +23,14 @@ var tilesWithPlants : Array
 var plantCost ={
 	PlantType.CHAMPIGNON : 3,
 	PlantType.LIERE : 4,
-	PlantType.RONCE : 5,
+	PlantType.RONCE : 7,
 	PlantType.EUCALYPTUS : 7,
 	PlantType.SECOIA : 6,
 	PlantType.HERBE : 3,
 	PlantType.RONCE : 3,
 	PlantType.MYCELIUM : 4,
-	PlantType.CONSOUD : 5,
-	PlantType.TOURNESSOL : 5,
+	PlantType.CONSOUD : 7,
+	PlantType.TOURNESSOL : 10,
 	PlantType.NONE : 0
 }
 

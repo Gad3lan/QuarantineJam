@@ -7,6 +7,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="CameraNode" parent="." instance=ExtResource( 1 )]
+position = Vector2( -4963.23, 2506.58 )
 minx = -6500
 maxx = 6500
 miny = -6500

@@ -84,15 +84,15 @@ var buildingLife = {
 }
 var plantLife = {
 	PlantType.NONE:0,
-	PlantType.CHAMPIGNON:5,
+	PlantType.CHAMPIGNON:10,
 	PlantType.SECOIA:100,
 	PlantType.EUCALYPTUS:60,
 	PlantType.HERBE:10,
-	PlantType.LIERE:40,
+	PlantType.LIERE:60,
 	PlantType.RONCE:50,
 	PlantType.MYCELIUM:30,
 	PlantType.TOURNESSOL:120,
-	PlantType.CONSOUD:110
+	PlantType.CONSOUD:60
 }
 
 var buildingAttack = {
@@ -116,13 +116,13 @@ var buildingAttack = {
 }
 var plantAttack = {
 	PlantType.NONE:0,
-	PlantType.CHAMPIGNON:1,
-	PlantType.SECOIA:2,
+	PlantType.CHAMPIGNON:2,
+	PlantType.SECOIA:1,
 	PlantType.EUCALYPTUS:1,
 	PlantType.HERBE:1,
 	PlantType.LIERE:4,
-	PlantType.RONCE:6,
-	PlantType.MYCELIUM:2,
+	PlantType.RONCE:3,
+	PlantType.MYCELIUM:1,
 	PlantType.CONSOUD:4,
 	PlantType.TOURNESSOL:5
 	
