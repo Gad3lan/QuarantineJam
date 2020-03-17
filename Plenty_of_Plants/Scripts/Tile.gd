@@ -65,31 +65,31 @@ var plantBuildingcompatibleDict = {
 }
 var buildingLife = {
 	BuildingType.NONE:0,
-	BuildingType.PARCKING:30,
-	BuildingType.USINE:120,
-	BuildingType.HOTEL:60,
-	BuildingType.ROAD0:10,
-	BuildingType.ROAD1:10,
-	BuildingType.ROAD2:10,
-	BuildingType.ROAD3:10,
-	BuildingType.ROAD4:10,
-	BuildingType.ROAD5:10,
-	BuildingType.ROAD6:10,
-	BuildingType.HLM:90,
-	BuildingType.IMMEUBLE:60,
-	BuildingType.IMMEUBLE2:60,
-	BuildingType.BUILDING:120,
-	BuildingType.CENTRALE:150,
-	BuildingType.TERRAIN:20
+	BuildingType.PARCKING:300,
+	BuildingType.USINE:1200,
+	BuildingType.HOTEL:600,
+	BuildingType.ROAD0:100,
+	BuildingType.ROAD1:100,
+	BuildingType.ROAD2:100,
+	BuildingType.ROAD3:100,
+	BuildingType.ROAD4:100,
+	BuildingType.ROAD5:100,
+	BuildingType.ROAD6:100,
+	BuildingType.HLM:900,
+	BuildingType.IMMEUBLE:600,
+	BuildingType.IMMEUBLE2:600,
+	BuildingType.BUILDING:1200,
+	BuildingType.CENTRALE:1500,
+	BuildingType.TERRAIN:200
 }
 var plantLife = {
 	PlantType.NONE:0,
-	PlantType.CHAMPIGNON:10,
+	PlantType.CHAMPIGNON:30,
 	PlantType.SECOIA:100,
 	PlantType.EUCALYPTUS:60,
 	PlantType.HERBE:10,
 	PlantType.LIERE:60,
-	PlantType.RONCE:50,
+	PlantType.RONCE:90,
 	PlantType.MYCELIUM:30,
 	PlantType.TOURNESSOL:120,
 	PlantType.CONSOUD:60
@@ -129,7 +129,7 @@ var plantAttack = {
 }
 var plantSoutien = {
 	PlantType.MYCELIUM:12,
-	PlantType.RONCE:19
+	PlantType.CHAMPIGNON:19
 }
 
 #Fonction de l'outil
@@ -503,7 +503,9 @@ func _on_plantLife_timeout():
 
 
 func _on_Heal_timeout():
-	healTimer.set_wait_time(plantSoutien[PType])
-	healTimer.start()
-	activeSoutien(PType)
+	if plantSoutien.has(PType):
+		healTimer.set_wait_time(plantSoutien[PType])
+		healTimer.start()
+		activeSoutien(PType)
+	healTimer.stop()
 	pass # Replace with function body.
