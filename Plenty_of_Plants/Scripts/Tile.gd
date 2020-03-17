@@ -414,8 +414,10 @@ func setPlant(type):
 		return false
 	if (root):
 		lifeTimer.start()
-	nbPlantsInTile += plantDamage
+		nbPlantsInTile += plantDamage
 	if ((not root and not parent.destroyed) or not destroyed):
+		parent.nbPlantsInTile += plantDamage
+		parent.lifeTimer.start()
 		plantLifeTimer.start()
 	pLife = plantLife.get(type)
 	print(pLife, ", ", buildingDamage)
