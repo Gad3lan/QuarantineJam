@@ -1,6 +1,7 @@
 tool
 extends Area2D
 
+
 onready var map = self.get_parent()
 onready var pollen = preload("res://Scenes/BioMasse.tscn")
 onready var Ui = map.get_parent().get_node("CameraNode").get_node("CanvasLayer/Ui")
@@ -10,6 +11,7 @@ onready var plant : Sprite = get_node("Plant")
 onready var building : Sprite = get_node("Building")
 onready var lifeTimer = get_node("Life")
 onready var plantLifeTimer = get_node("plantLife")
+onready var healTimer = get_node("Heal")
 onready var healIndic = preload("res://Scenes/healIndicator.tscn")
 onready var buildPaths = {
 	BuildingType.NONE : preload("res://Scenes/Prefabs/NoBuilding.tscn"),
@@ -126,8 +128,8 @@ var plantAttack = {
 	
 }
 var plantSoutien = {
-	PlantType.MYCELIUM:5,
-	PlantType.RONCE:3
+	PlantType.MYCELIUM:12,
+	PlantType.RONCE:19
 }
 
 #Fonction de l'outil
@@ -403,6 +405,9 @@ func instancePlant(type):
 	if plantGivingBiomasse.has(PType):
 		timer.set_wait_time(plantGivingBiomasse[PType] *(1+ 0.33*(randf()-0.5)))
 		timer.start()
+	if plantSoutien.has(PType):
+		healTimer.set_wait_time(plantSoutien[PType])
+		healTimer.start()
 
 func setPlant(type):
 	if not plantCanBePlaced(type) or not get_parent().buy(type):
@@ -421,8 +426,7 @@ func setPlant(type):
 
 
 func activeSoutien(type):
-	if plantSoutien.has(type):
-		map.protect(plantSoutien[type],self)
+		map.protect(1,self)
 
 #pas sur pour cette fonction : 
 func receiveSoutien(power):
@@ -485,7 +489,6 @@ func _on_plantLife_timeout():
 		plantLifeTimer.stop()
 		$Fire.hide()
 	else:
-		activeSoutien(PType)
 		pLife -= buildingDamage
 		if pLife <= 0:
 			plantLifeTimer.stop()
@@ -493,3 +496,12 @@ func _on_plantLife_timeout():
 			$Fire.hide()
 			$Node2D.queue_free()
 			PType = PlantType.NONE
+
+
+
+
+func _on_Heal_timeout():
+	healTimer.set_wait_time(plantSoutien[PType])
+	healTimer.start()
+	activeSoutien(PType)
+	pass # Replace with function body.

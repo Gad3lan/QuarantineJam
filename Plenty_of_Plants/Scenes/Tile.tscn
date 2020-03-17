@@ -55,8 +55,11 @@ position = Vector2( -43.9067, -176.85 )
 scale = Vector2( 0.565507, 0.565507 )
 z_index = 2
 texture = ExtResource( 6 )
+
+[node name="Heal" type="Timer" parent="."]
 [connection signal="mouse_entered" from="." to="." method="_on_Tile_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_Tile_mouse_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Life" to="." method="_on_Life_timeout"]
 [connection signal="timeout" from="plantLife" to="." method="_on_plantLife_timeout"]
+[connection signal="timeout" from="Heal" to="." method="_on_Heal_timeout"]

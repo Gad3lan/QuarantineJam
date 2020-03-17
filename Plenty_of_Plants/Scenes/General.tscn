@@ -13,6 +13,7 @@ miny = -6500
 maxy = 6500
 
 [node name="Map" parent="." instance=ExtResource( 3 )]
+biomasseNow = 60
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 57.8846, 1635.48 )
