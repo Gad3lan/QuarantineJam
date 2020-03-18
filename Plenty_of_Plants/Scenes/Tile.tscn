@@ -49,11 +49,10 @@ z_index = 1
 [node name="plantLife" type="Timer" parent="."]
 
 [node name="Fire" type="Sprite" parent="."]
-visible = false
 material = ExtResource( 7 )
-position = Vector2( -43.9067, -176.85 )
+position = Vector2( 9.97403, -141.424 )
 scale = Vector2( 0.565507, 0.565507 )
-z_index = 2
+z_index = 4
 texture = ExtResource( 6 )
 
 [node name="Heal" type="Timer" parent="."]

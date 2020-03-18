@@ -412,17 +412,19 @@ func instancePlant(type):
 func setPlant(type):
 	if not plantCanBePlaced(type) or not get_parent().buy(type):
 		return false
-	if (root):
+	if (root and not destroyed):
 		lifeTimer.start()
 		nbPlantsInTile += plantDamage
-	if ((not root and not parent.destroyed) or not destroyed):
+	if ((not root and not parent.destroyed)):
 		parent.nbPlantsInTile += plantDamage
 		parent.lifeTimer.start()
 		plantLifeTimer.start()
 	pLife = plantLife.get(type)
 	print(pLife, ", ", buildingDamage)
-	if ((not root and not parent.destroyed) or not destroyed):
+	if ((not root and not parent.destroyed) or (root and not destroyed)):
 		$Fire.show()
+	else:
+		$Fire.hide()
 	instancePlant(type)
 	return true
 
@@ -466,7 +468,7 @@ func _on_Tile_mouse_exited():
 func spawnPollen():
 	var pollenInstance = pollen.instance()
 	call_deferred("add_child",pollenInstance)
-	pollenInstance.z_index = 4
+	pollenInstance.z_index = 5
 
 func _on_Timer_timeout():
 	if PType != PlantType.NONE:

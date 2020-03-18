@@ -1,6 +1,7 @@
 shader_type canvas_item;
 
 uniform vec2 Offset = vec2(8,8);
+uniform vec2 UVOffset = vec2(0, 0);
 uniform vec4 WrappingColor :hint_color;
 uniform float Wrapping;
 
@@ -30,6 +31,7 @@ void fragment(){
 	float inversesWrapping = 1./Wrapping;
 	vec2 uv = -0.25+(0.05+-0.1*noise((UV-timeFactRot*2.)*8.)+UV-0.5)
 	*Wrapping*Wrapping+0.5*inversesWrapping;
+	uv += UVOffset;
     vec4 col = texture(TEXTURE, uv);
 	col = mix(col,WrappingColor,col.a*(1.-inversesWrapping));
 	col.a *= inversesWrapping;

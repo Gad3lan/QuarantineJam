@@ -5,5 +5,6 @@
 [resource]
 shader = ExtResource( 1 )
 shader_param/Offset = Vector2( 0, 0 )
+shader_param/UVOffset = Vector2( 0.256, 0.216 )
 shader_param/WrappingColor = Color( 0.243137, 1, 0.243137, 1 )
 shader_param/Wrapping = 1.0
