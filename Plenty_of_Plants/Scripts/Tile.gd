@@ -482,6 +482,7 @@ func _on_Life_timeout():
 	if bLife <= 0:
 		lifeTimer.stop()
 		destroyed = true
+		$Fire.hide()
 		if textureName != null:
 			$Building.texture = load(textureName + "Destroyed.png")
 		else:
